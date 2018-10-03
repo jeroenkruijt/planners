@@ -24,7 +24,7 @@
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item">
-                        <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
+<!--                        <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">-->
                     </a>
                     <span class="navbar-burger burger" data-target="navbarMenuHeroC">
             <span></span>

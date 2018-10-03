@@ -26,3 +26,9 @@ WHERE P.deleted = 0 AND C.CursusID > 4657 AND C.CursusID < 4700
 ";
 
     $result = $conn->query($Sql);
+//    $row = $result->fetch_assoc();
+//    print_r($row);
+//    echo "<br>";
+//    $row = $result->fetch_assoc();
+//    print_r($row);
+//
