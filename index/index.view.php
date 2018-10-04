@@ -8,7 +8,7 @@
 
     //    deze word gebruikt in index.php om de data te showen in index
 
-include_once 'index.sql.php';
+    include_once 'index.sql.php';
 
     //echo het verwerken om het showbaar te maken, en de html code klaar maken die
 ?>
@@ -35,8 +35,16 @@ include_once 'index.sql.php';
 
                     while ($row = mysqli_fetch_array($result)) {
 
-                        echo "<tr><td>". $row['onderdeelnaam'] ."</td><td>" . $row['Opleidingnaam'] . "</td><td>" . $row['Bedrijf'] ."</td><td>" . $row['Docent'] . "</td><td>" . $row['datum'] .
-                        "</td><td>". $row['Aantal'] ."</td><td>" . $row['Locatie'] . "</td><td>" . $row['Plaats'] . "</td></tr>";
+                        echo "<tr>";
+                        echo    "<td>" . $row['onderdeelnaam'] . "</td>";
+                        echo    "<td>" . $row['Opleidingnaam'] . "</td>";
+                        echo    "<td>" . $row['Bedrijf'] . "</td>";
+                        echo    "<td>" . $row['Docent'] . "</td>";
+                        echo    "<td>" . $row['datum'] . "</td>";
+                        echo    "<td>" . $row['Aantal'] . "</td>";
+                        echo    "<td>" . $row['Locatie'] . "</td>";
+                        echo    "<td>" . $row['Plaats'] . "</td>";
+                        echo "</tr>";
 
                     }
                 }
