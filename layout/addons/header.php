@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Planner systeem</title>
-    <link rel="stylesheet" type="text/css" href="bulma-0.7.1/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="css/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
 </head>
 <body>
