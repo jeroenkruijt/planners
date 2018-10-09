@@ -12,7 +12,7 @@
 
     //echo het verwerken om het showbaar te maken, en de html code klaar maken die
 ?>
-<div class="hero-body">
+<div class="hero-body" xmlns="http://www.w3.org/1999/html">
     <div class="container has-text-centered">
 
         <table class="table is-striped is-hoverable is-fullwidth">
@@ -35,21 +35,21 @@
 
                     while ($row = mysqli_fetch_array($result)) {
 
-                        echo "<tr>";
-                        echo    "<td>" . $row['onderdeelnaam'] . "</td>";
-                        echo    "<td>" . $row['Opleidingnaam'] . "</td>";
-                        echo    "<td>" . $row['Bedrijf'] . "</td>";
-                        echo    "<td>" . $row['Docent'] . "</td>";
-                        echo    "<td>" . $row['datum'] . "</td>";
-                        echo    "<td>" . $row['Aantal'] . "</td>";
-                        echo    "<td>" . $row['Locatie'] . "</td>";
-                        echo    "<td>" . $row['Plaats'] . "</td>";
-                        echo "</tr>";
+                        $link = "details.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&BedrijfID=" . $row['BedrijfID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID'];
 
+                        echo "<tr onclick='window.location.href=\"". $link . "\"'>";
+                        echo "<td>" . $row['onderdeelnaam'] . "</td>";
+                        echo "<td>" . $row['Opleidingnaam'] . "</td>";
+                        echo "<td>" . $row['Bedrijf'] . "</td>";
+                        echo "<td>" . $row['Docent'] . "</td>";
+                        echo "<td>" . $row['datum'] . "</td>";
+                        echo "<td>" . $row['Aantal'] . "</td>";
+                        echo "<td>" . $row['Locatie'] . "</td>";
+                        echo "<td>" . $row['Plaats'] . "</td>";
+                        echo "</tr>";
                     }
                 }
             ?>
-
             </tbody>
         </table>
     </div>

@@ -14,6 +14,7 @@
     <title>Planner systeem</title>
     <link rel="stylesheet" type="text/css" href="css/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
