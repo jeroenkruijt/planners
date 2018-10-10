@@ -35,7 +35,7 @@
                 </div>
                 <div id="navbarMenuHeroC" class="navbar-menu">
                     <div class="navbar-end">
-                        <a class="navbar-item is-active">
+                        <a class="navbar-item" href="/planners">
                             Home
                         </a>
                         <a class="navbar-item">

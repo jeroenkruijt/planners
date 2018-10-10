@@ -35,7 +35,7 @@
 
                     while ($row = mysqli_fetch_array($result)) {
 
-                        $link = "details.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&BedrijfID=" . $row['BedrijfID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID'];
+                        $link = "details.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&BedrijfID=" . $row['BedrijfID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID'] . "&docentid=". $row['DocentID'];
 
                         echo "<tr onclick='window.location.href=\"". $link . "\"'>";
                         echo "<td>" . $row['onderdeelnaam'] . "</td>";
