@@ -10,6 +10,10 @@
     $opleidingid = $_GET['OpleidingID'];
     $bedrijfid = $_GET['BedrijfID'];
     $cursusonderdeel = $_GET['CursusOnderdeelID'];
+    $docentid = $_GET['docentid'];
+    $docent = 'and D.DocentID = '. $docentid;
+
+
 
     $Sql = "SELECT C.CursusID, C.OpleidingID, CB.BedrijfID, CO.CursusOnderdeelID, D.DocentID, OP.Opleidingnaam, O.onderdeelnaam, B.accountname AS Bedrijf, CONCAT(d.Voornaam, \" \", d.Achternaam) AS Docent, date(co.DatumBegin) AS datum, COL.LocatieID, COL.BedrijfID, Aantal,
 CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE \"Geen locatie\" END AS Locatie,
@@ -27,8 +31,10 @@ LEFT JOIN locaties L ON COL.LocatieID = L.LocatieID
 LEFT JOIN docenten D ON COD.DocentID = D.DocentID
 LEFT JOIN vtigercrm600.vtiger_accountshipads AS BA ON COL.BedrijfID = BA.accountaddressid
 LEFT JOIN psentity P ON C.CursusID = P.psid
-WHERE P.deleted = 0 AND C.CursusID = $cursusid AND C.OpleidingID = $opleidingid AND CB.BedrijfID = $bedrijfid AND CO.CursusOnderdeelID = $cursusonderdeel
+WHERE P.deleted = 0 AND C.CursusID = $cursusid AND C.OpleidingID = $opleidingid AND CO.CursusOnderdeelID = $cursusonderdeel $docent
 ";
+
+    echo $Sql;
 
     $result = $conn->query($Sql);
     $row = mysqli_fetch_array($result);
