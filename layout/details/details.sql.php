@@ -15,6 +15,7 @@
 
 
 
+
     $Sql = "SELECT C.CursusID, C.OpleidingID, CB.BedrijfID, CO.CursusOnderdeelID, D.DocentID, OP.Opleidingnaam, O.onderdeelnaam, B.accountname AS Bedrijf, CONCAT(d.Voornaam, \" \", d.Achternaam) AS Docent, date(co.DatumBegin) AS datum, COL.LocatieID, COL.BedrijfID, Aantal,
 CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE \"Geen locatie\" END AS Locatie,
 CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BA.ship_city ELSE \"Geen locatie\" END AS Plaats
@@ -31,7 +32,7 @@ LEFT JOIN locaties L ON COL.LocatieID = L.LocatieID
 LEFT JOIN docenten D ON COD.DocentID = D.DocentID
 LEFT JOIN vtigercrm600.vtiger_accountshipads AS BA ON COL.BedrijfID = BA.accountaddressid
 LEFT JOIN psentity P ON C.CursusID = P.psid
-WHERE P.deleted = 0 AND C.CursusID = $cursusid AND C.OpleidingID = $opleidingid AND CO.CursusOnderdeelID = $cursusonderdeel $docent
+WHERE P.deleted = 0 AND C.CursusID = $cursusid AND C.OpleidingID = $opleidingid AND CO.CursusOnderdeelID = $cursusonderdeel
 ";
 
     echo $Sql;

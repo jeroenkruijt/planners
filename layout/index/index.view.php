@@ -35,8 +35,12 @@
 
                     while ($row = mysqli_fetch_array($result)) {
 
-                        $link = "details.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&BedrijfID=" . $row['BedrijfID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID'] . "&docentid=". $row['DocentID'];
+                        if ($row['DocentID']>0) {
+                            $link = "details.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID'] . "&docentid=" . $row['DocentID'];
+                        }else{
+                            $link = "details.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID'];
 
+                        }
                         echo "<tr onclick='window.location.href=\"". $link . "\"'>";
                         echo "<td>" . $row['onderdeelnaam'] . "</td>";
                         echo "<td>" . $row['Opleidingnaam'] . "</td>";
