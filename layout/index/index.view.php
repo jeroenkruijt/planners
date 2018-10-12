@@ -36,9 +36,9 @@
                     while ($row = mysqli_fetch_array($result)) {
 
                         if ($row['DocentID']>0) {
-                            $link = "details.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID'] . "&docentid=" . $row['DocentID'];
+                            $link = "details.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID'] . "&docentid=" . $row['DocentID']. "&optie=0";
                         }else{
-                            $link = "details.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID'];
+                            $link = "details.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID']. "&optie=1";
 
                         }
                         echo "<tr onclick='window.location.href=\"". $link . "\"'>";
