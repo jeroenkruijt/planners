@@ -18,7 +18,7 @@
 
                     <div class="box">
                         <div class="field">
-                            <form class="signup-form" action="details.add.php" method="post">
+                            <form class="signup-form" action="layout/details/details.add.php" method="post">
 
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
@@ -30,7 +30,7 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control">
-                                                <input class="input is-hovered" type="text" name="veld1" placeholder="opmerking..">
+                                                <input class="input is-hovered" type="text" name="onderdeelnaam" placeholder="opmerking..">
                                             </p>
                                         </div>
                                     </div>
@@ -48,11 +48,12 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control">
-                                                <input class="input is-hovered" type="text" name="veld1" placeholder="opmerking..">
+                                                <input class="input is-hovered" type="text" name="opleidingnaam" placeholder="opmerking..">
                                             </p>
                                         </div>
                                     </div>
                                 </div>
+
 
                                 <hr>
 
@@ -66,7 +67,7 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control">
-                                                <input class="input is-hovered" type="text" name="veld1" placeholder="opmerking..">
+                                                <input class="input is-hovered" type="text" name="bedrijf" placeholder="opmerking..">
                                             </p>
                                         </div>
                                     </div>
@@ -80,11 +81,14 @@
                                     </div>
                                     <div class="field-label is-normal">
                                         <label class="label"><?php echo $row['Docent'];?></label>
+
+
+
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control">
-                                                <input class="input is-hovered " type="text" name="veld1" placeholder="opmerking..">
+                                                <input class="input is-hovered " type="text" name="docent" placeholder="opmerking..">
                                             </p>
                                         </div>
                                     </div>
@@ -102,7 +106,7 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control">
-                                                <input class="input is-hovered" type="text" name="veld1" placeholder="opmerking..">
+                                                <input class="input is-hovered" type="text" name="datum" placeholder="opmerking..">
                                             </p>
                                         </div>
                                     </div>
@@ -120,7 +124,7 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control">
-                                                <input class="input is-hovered" type="text" name="veld1" placeholder="opmerking..">
+                                                <input class="input is-hovered" type="text" name="aantal" placeholder="opmerking..">
                                             </p>
                                         </div>
                                     </div>
@@ -138,7 +142,7 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control">
-                                                <input class="input is-hovered" type="text" name="veld1" placeholder="opmerking..">
+                                                <input class="input is-hovered" type="text" name="locatie" placeholder="opmerking..">
                                             </p>
                                         </div>
                                     </div>
@@ -156,7 +160,7 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control">
-                                                <input class="input is-hovered" type="text" name="veld1" placeholder="opmerking..">
+                                                <input class="input is-hovered" type="text" name="plaats" placeholder="opmerking..">
                                             </p>
                                         </div>
                                     </div>
@@ -166,14 +170,10 @@
 
                                 <div class="field is-grouped is-grouped-centered">
                                     <p class="control">
-                                        <a class="button is-primary">
-                                            Submit
-                                        </a>
+                                       <input type="submit" value="submit" class="button is-primary" name="submit">
                                     </p>
                                     <p class="control">
-                                        <a class="button is-light">
-                                            Cancel
-                                        </a>
+                                        <input class="button is-danger" type="submit" value="cancel" name="cancel">
                                     </p>
                                 </div>
 

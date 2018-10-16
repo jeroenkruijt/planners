@@ -6,6 +6,8 @@
      * Time: 15:26
      */
 
+    session_start();
+
     $optie = $_GET['optie'];
 
 
@@ -27,6 +29,8 @@
 
     }
 
+    $_SESSION['cursusid'] = $cursusid;
+    $_SESSION['cursusonderdeelid'] = $cursusonderdeel;
 
     $Sql = "SELECT C.CursusID, C.OpleidingID, CB.BedrijfID, CO.CursusOnderdeelID, D.DocentID, OP.Opleidingnaam, O.onderdeelnaam, B.accountname AS Bedrijf, CONCAT(d.Voornaam, \" \", d.Achternaam) AS Docent, date(co.DatumBegin) AS datum, COL.LocatieID, COL.BedrijfID, Aantal,
 CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE \"Geen locatie\" END AS Locatie,
@@ -46,8 +50,6 @@ LEFT JOIN vtigercrm600.vtiger_accountshipads AS BA ON COL.BedrijfID = BA.account
 LEFT JOIN psentity P ON C.CursusID = P.psid
 $docent
 ";
-
-    echo $Sql;
 
     $result = $conn->query($Sql);
     $row = mysqli_fetch_array($result);
