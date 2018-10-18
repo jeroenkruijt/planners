@@ -10,38 +10,45 @@
 
     include_once 'index.sql.php';
 
+    require_once 'index.javascript.php';
+
     //echo het verwerken om het showbaar te maken, en de html code klaar maken die
 ?>
 <div class="hero-body" xmlns="http://www.w3.org/1999/html">
     <div class="container has-text-centered">
 
+        <button class="button showModal">Show</button>
+
         <table class="table is-striped is-hoverable is-fullwidth">
             <thead>
             <tr>
-                <th>Onderdeelnaam</th>
-                <th>Opleidingnaam</th>
-                <th>Bedrijf</th>
-                <th>Docent</th>
-                <th>Datum</th>
-                <th>Aantal</th>
-                <th>Locatie</th>
-                <th>Plaats</th>
+                <?php
+                    if ($thead->num_rows > 0) {
+
+                        while ($row = mysqli_fetch_array($thead)) {
+
+                            echo "<th>" . $row['Veldnaam'] . "</th>";
+
+                        }
+                    }
+                ?>
             </tr>
             </thead>
             <tbody>
-
             <?php
                 if ($result->num_rows > 0) {
 
                     while ($row = mysqli_fetch_array($result)) {
 
-                        if ($row['DocentID']>0) {
-                            $link = "details.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID'] . "&docentid=" . $row['DocentID']. "&optie=0";
-                        }else{
-                            $link = "details.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID']. "&optie=1";
+                        if ($row['DocentID'] > 0) {
+                            $link = "details.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID'] . "&docentid=" . $row['DocentID'] . "&optie=0";
+                        } else {
+                            $link = "details.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID'] . "&optie=1";
 
                         }
-                        echo "<tr onclick='window.location.href=\"". $link . "\"'>";
+
+//                        onclick='window.location.href=\"" . $link . "\"'
+                        echo "<tr class='showModal'>";
                         echo "<td>" . $row['onderdeelnaam'] . "</td>";
                         echo "<td>" . $row['Opleidingnaam'] . "</td>";
                         echo "<td>" . $row['Bedrijf'] . "</td>";
@@ -51,10 +58,31 @@
                         echo "<td>" . $row['Locatie'] . "</td>";
                         echo "<td>" . $row['Plaats'] . "</td>";
                         echo "</tr>";
+
+                        //de include voor het toevoegen van het scherm van de popup
+                        include_once "index.modal.php";
+
                     }
+                    echo "</tbody>";
+                    echo "</table>";
                 }
+
             ?>
-            </tbody>
-        </table>
+
+        <script>
+
+            $(".showModal").click(function () {
+                $(".modal").addClass("is-active");
+            });
+
+            $(".closemodal").click(function () {
+                $(".modal").removeClass("is-active");
+            });
+
+            $(".delete").click(function () {
+                $(".modal").removeClass("is-active");
+            });
+
+        </script>
     </div>
 </div>
