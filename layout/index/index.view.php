@@ -79,20 +79,6 @@
 
             ?>
 
-<!--            <script>-->
-<!---->
-<!--                $(".showModal").click(function () {-->
-<!--                    $(".modal").addClass("is-active");-->
-<!--                });-->
-<!---->
-<!--                $(".closemodal").click(function () {-->
-<!--                    $(".modal").removeClass("is-active");-->
-<!--                });-->
-<!---->
-<!--                $(".delete").click(function () {-->
-<!--                    $(".modal").removeClass("is-active");-->
-<!--                });-->
-<!---->
-<!--            </script>-->
+
     </div>
 </div>
