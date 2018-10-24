@@ -27,7 +27,7 @@ LEFT JOIN locaties L ON COL.LocatieID = L.LocatieID
 LEFT JOIN docenten D ON COD.DocentID = D.DocentID
 LEFT JOIN vtigercrm600.vtiger_accountshipads AS BA ON COL.BedrijfID = BA.accountaddressid
 LEFT JOIN psentity P ON C.CursusID = P.psid
-WHERE P.deleted = 0 AND C.CursusID > 4657 AND C.CursusID < 4700
+WHERE P.deleted = 0 AND C.CursusID = 4658 
 ";
 
     $result = $conn->query($Sql);

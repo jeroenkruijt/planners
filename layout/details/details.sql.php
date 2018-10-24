@@ -17,6 +17,11 @@
         $opleidingid = $_GET['OpleidingID'];
         $cursusonderdeel = $_GET['CursusOnderdeelID'];
         $docentid = $_GET['docentid'];
+
+        $_SESSION['cursusid'] = $cursusid;
+        $_SESSION['cursusonderdeelid'] = $cursusonderdeel;
+        $_SESSION['docentid'] = $docentid;
+
         $docent = 'WHERE P.deleted = 0 AND C.CursusID =' . $cursusid . ' AND C.OpleidingID =' . $opleidingid . ' AND CO.CursusOnderdeelID =' . $cursusonderdeel . ' and D.DocentID = ' . $docentid;
 
     } elseif($optie == 1){
@@ -24,6 +29,10 @@
         $cursusid = $_GET['CursusID'];
         $opleidingid = $_GET['OpleidingID'];
         $cursusonderdeel = $_GET['CursusOnderdeelID'];
+
+        $_SESSION['cursusid'] = $cursusid;
+        $_SESSION['cursusonderdeelid'] = $cursusonderdeel;
+
 
         $docent = 'WHERE P.deleted = 0 AND C.CursusID =' . $cursusid . ' AND C.OpleidingID =' . $opleidingid . ' AND CO.CursusOnderdeelID =' . $cursusonderdeel;
 

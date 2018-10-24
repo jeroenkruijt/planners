@@ -17,8 +17,6 @@
 <div class="hero-body" xmlns="http://www.w3.org/1999/html">
     <div class="container has-text-centered">
 
-        <button class="button showModal">Show</button>
-
         <table class="table is-striped is-hoverable is-fullwidth">
             <thead>
             <tr>
@@ -30,6 +28,8 @@
                             echo "<th>" . $row['Veldnaam'] . "</th>";
 
                         }
+                        echo "<th>opmerking plaatsen</th>";
+                        echo "<th>view</th>";
                     }
                 ?>
             </tr>
@@ -48,6 +48,7 @@
                         }
 
 //                        onclick='window.location.href=\"" . $link . "\"'
+
                         echo "<tr class='showModal'>";
                         echo "<td>" . $row['onderdeelnaam'] . "</td>";
                         echo "<td>" . $row['Opleidingnaam'] . "</td>";
@@ -57,32 +58,41 @@
                         echo "<td>" . $row['Aantal'] . "</td>";
                         echo "<td>" . $row['Locatie'] . "</td>";
                         echo "<td>" . $row['Plaats'] . "</td>";
+                        echo "<td> <input type='button' name='edit' value='Edit' id= " . $row["CursusID"] . " class='btn btn-info btn-xs edit_data'> </td>";
+                        echo "<td> <input type='button' name='view' value='view' id= " . $row["CursusID"] . " class='btn btn-info btn-xs view_data'> </td>";
                         echo "</tr>";
 
+                        /*                        <input type=\"button\" name=\"view\" value=\"view\" id=\"<?php echo $row[\"id\"]; ?>\" class=\"btn btn-info btn-xs view_data\" />*/
+
+
                         //de include voor het toevoegen van het scherm van de popup
-                        include_once "index.modal.php";
+
 
                     }
+
                     echo "</tbody>";
                     echo "</table>";
+
+                    include_once "index.select.php";
+
                 }
 
             ?>
 
-        <script>
-
-            $(".showModal").click(function () {
-                $(".modal").addClass("is-active");
-            });
-
-            $(".closemodal").click(function () {
-                $(".modal").removeClass("is-active");
-            });
-
-            $(".delete").click(function () {
-                $(".modal").removeClass("is-active");
-            });
-
-        </script>
+<!--            <script>-->
+<!---->
+<!--                $(".showModal").click(function () {-->
+<!--                    $(".modal").addClass("is-active");-->
+<!--                });-->
+<!---->
+<!--                $(".closemodal").click(function () {-->
+<!--                    $(".modal").removeClass("is-active");-->
+<!--                });-->
+<!---->
+<!--                $(".delete").click(function () {-->
+<!--                    $(".modal").removeClass("is-active");-->
+<!--                });-->
+<!---->
+<!--            </script>-->
     </div>
 </div>
