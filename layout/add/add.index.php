@@ -6,7 +6,9 @@
      * Time: 15:27
      */
 
-    include_once 'details.sql.php';
+    include_once 'add.sql.php';
+
+
 ?>
 
 
@@ -18,7 +20,7 @@
 
                     <div class="box">
                         <div class="field">
-                            <form class="signup-form" action="layout/details/details.add.php" method="post">
+                            <form class="signup-form" action="layout/add/add.add.php" method="post">
 
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">

@@ -41,10 +41,15 @@
                     while ($row = mysqli_fetch_array($result)) {
 
                         if ($row['DocentID'] > 0) {
-                            $link = "details.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID'] . "&docentid=" . $row['DocentID'] . "&optie=0";
+                            $link = "add.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID'] . "&docentid=" . $row['DocentID'] . "&optie=0";
                         } else {
-                            $link = "details.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID'] . "&optie=1";
+                            $link = "add.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID'] . "&optie=1";
+                        }
 
+                        if ($row['DocentID'] > 0) {
+                            $lopmerking = "opmerking.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID'] . "&docentid=" . $row['DocentID'] . "&optie=0";
+                        } else {
+                            $lopmerking = "opmerking.php?CursusID=" . $row['CursusID'] . "&OpleidingID=" . $row['OpleidingID'] . "&CursusOnderdeelID=" . $row['CursusOnderdeelID'] . "&optie=1";
                         }
 
 //                        onclick='window.location.href=\"" . $link . "\"'
@@ -58,9 +63,10 @@
                         echo "<td>" . $row['Aantal'] . "</td>";
                         echo "<td>" . $row['Locatie'] . "</td>";
                         echo "<td>" . $row['Plaats'] . "</td>";
-                        echo "<td> <input type='button' name='edit' value='Edit' id= " . $row["CursusID"] . " class='btn btn-info btn-xs edit_data'> </td>";
-                        echo "<td> <input type='button' name='view' value='view' id= " . $row["CursusID"] . " class='btn btn-info btn-xs view_data'> </td>";
+                        echo "<td><a class='button is-link' href='$lopmerking'>bekijk opmerkingen</a></td>";
+                        echo "<td><a class='button is-warning' href='$link'>plaats opmerking</a></td>";
                         echo "</tr>";
+
 
                         /*                        <input type=\"button\" name=\"view\" value=\"view\" id=\"<?php echo $row[\"id\"]; ?>\" class=\"btn btn-info btn-xs view_data\" />*/
 
@@ -72,8 +78,6 @@
 
                     echo "</tbody>";
                     echo "</table>";
-
-                    include_once "index.select.php";
 
                 }
 
