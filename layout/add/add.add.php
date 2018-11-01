@@ -100,7 +100,7 @@
         if ($aantal !== '') {
             if (!preg_match($regex, $aantal)) {
 
-                $sql = "INSERT INTO opmerking(VeldID, CursusID, CursusonderdeelID, DocentID ,UsersID, Opmerking) VALUES ('5', '$cursusid', '$cursusonderdeelid', '$docentid', '1', '$aantal')";
+                $sql = "INSERT INTO opmerking(VeldID, CursusID, CursusonderdeelID, DocentID ,UsersID, Opmerking) VALUES ('6', '$cursusid', '$cursusonderdeelid', '$docentid', '1', '$aantal')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";
