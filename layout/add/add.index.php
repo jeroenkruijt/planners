@@ -172,10 +172,10 @@
 
                                 <div class="field is-grouped is-grouped-centered">
                                     <p class="control">
-                                       <input type="submit" value="submit" class="button is-primary" name="submit">
+                                        <input type="submit" value="verstuur" class="button is-primary" name="submit">
                                     </p>
                                     <p class="control">
-                                        <input class="button is-danger" type="submit" value="cancel" name="cancel">
+                                        <input type="submit" value="terug" class="button is-danger" name="cancel">
                                     </p>
                                 </div>
 

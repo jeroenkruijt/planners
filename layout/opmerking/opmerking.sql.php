@@ -1,10 +1,10 @@
 <?php
-    /**
-     * Created by PhpStorm.
-     * User: jkruijt
-     * Date: 31-10-2018
-     * Time: 9:09
-     */
+/**
+ * Created by PhpStorm.
+ * User: jkruijt
+ * Date: 31-10-2018
+ * Time: 9:09
+ */
 
 if (isset($_GET['optie'])) {
     //hier komt de code om de veld waarden voor de titel van de gegevens te halen
@@ -48,7 +48,7 @@ if (isset($_GET['optie'])) {
 
     }
 
-    $Sql = "SELECT C.CursusID, C.OpleidingID, CB.BedrijfID, CO.CursusOnderdeelID, D.DocentID, OP.Opleidingnaam, O.onderdeelnaam, B.accountname AS Bedrijf, CONCAT(d.Voornaam, \" \", d.Achternaam) AS Docent, date(co.DatumBegin) AS datum, COL.LocatieID, COL.BedrijfID, Aantal,
+    $Sql = "SELECT OP.Opleidingnaam, O.onderdeelnaam, B.accountname AS Bedrijf, CONCAT(d.Voornaam, \" \", d.Achternaam) AS Docent, date(co.DatumBegin) AS datum, Aantal,
 CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE \"Geen locatie\" END AS Locatie,
 CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BA.ship_city ELSE \"Geen locatie\" END AS Plaats
 FROM cursussen C
@@ -72,11 +72,15 @@ $docent
 
         $info = $row;
 
+
     }
 
 
 //      query om de opmerking uit de  database te halen aan hand van de var die boven word in gevuld aan hand van de get methode
-    $opmerking = "SELECT VeldID, UsersID, Opmerking, datum FROM opmerking $opmerking";
+//    $opmerking = "SELECT VeldID, UsersID, Opmerking, datum FROM opmerking $opmerking";
+
+    $opmerking = "SELECT VeldID, UsersID, Opmerking, datum, U.voornaam FROM opmerking OPM
+LEFT JOIN users U ON OPM.UsersID =  U.userid $opmerking";
 
 
     $result = $conn->query($opmerking);
@@ -85,6 +89,7 @@ $docent
         $opmerkingen[] = $row;
 
     }
+
 
 } else {
 

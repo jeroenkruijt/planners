@@ -26,7 +26,9 @@
         $plaats = mysqli_real_escape_string($conn, $_POST['plaats']);
 
 
-        $regex = "([a-z0-9+!*(),;?&=\$_.-]+(\:[a-z0-9+!*(),;?&=\$_.-]+)?@)";
+        $regex = "([a-zA-Z0-9+!*(),;?&=\$_.-]+(\:[a-zA-Z0-9+!*(),;?&=\$_.-]+)?@)";
+
+
 
         if ($onderdeelnaam !== '') {
             if (!preg_match($regex, $onderdeelnaam)) {

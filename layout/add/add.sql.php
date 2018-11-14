@@ -19,7 +19,7 @@
             $cursusonderdeel = $_GET['CursusOnderdeelID'];
             $docentid = $_GET['docentid'];
 
-            $_SESSION['docentid'] = $docentid;
+            $_SESSION['docentid'] = $_GET['docentid'];
 
             $docent = 'WHERE P.deleted = 0 AND C.CursusID =' . $cursusid . ' AND C.OpleidingID =' . $opleidingid . ' AND CO.CursusOnderdeelID =' . $cursusonderdeel . ' and D.DocentID = ' . $docentid;
 

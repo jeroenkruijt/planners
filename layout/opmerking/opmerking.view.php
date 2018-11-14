@@ -13,6 +13,15 @@ if (isset($_GET['optie'])) {
     $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     $parameters = strstr($actual_link, '?');
 
+//    print_r($opmerkingen);
+
+    if (empty($opmerkingen)) {
+
+        echo "<script>
+alert('Er zijn nog geen opmerkingen geplaats voor deze cursus.');
+window.location.href='layout/opmerking/opmerking.buttonfun.php" . $parameters . "';
+</script>";
+    }
 
     ?>
 
@@ -30,31 +39,45 @@ if (isset($_GET['optie'])) {
 
                                     <?php
                                     foreach ($titels as $titel) {
+
+                                        $titels = $titel['Veldnaam'];
+                                        $titelids = $titel['VeldID'];
+
                                         ?>
 
                                         <div class="field is-horizontal">
                                             <div class="field-label is-normal">
-                                                <label class="label"><?php echo $titel['Veldnaam']; ?>:</label>
+                                                <label class="label"><?php echo $titels; ?>:</label>
                                             </div>
                                             <div class="field-label is-normal">
-                                                <label class="label"><?php echo $info['onderdeelnaam'] ?></label>
+                                                <label class="label"><?php echo $info[$titels] ?></label>
                                             </div>
                                             <div class="field-body">
-                                                <div class="field">
-                                                    <p class="control">
+                                                <div class="field ">
+                                                    <p class="control is-center">
+
                                                         <?php
+                                                        if (!empty($opmerkingen)) {
 
-                                                        foreach ($opmerkingen as $opmerking) {
+                                                            foreach ($opmerkingen as $opmerking) {
 
-                                                            if ($titel['VeldID'] == $opmerking['VeldID']) {
+                                                                if ($titelids == $opmerking['VeldID']) {
 
-                                                                echo $opmerking['Opmerking'];
+                                                                    $ogdate = $opmerking['datum'];
+                                                                    $new = date("d-m-Y H:i", strtotime($ogdate));
+
+                                                                    echo '<strong>' . $opmerking['Opmerking'] . '</strong>';
+                                                                    echo '<br>';
+                                                                    echo '- Door: ' . $opmerking['voornaam'] . ' op ' . $new;
+                                                                    echo '<br>';
+
+                                                                }
 
                                                             }
 
                                                         }
-
                                                         ?>
+
                                                     </p>
                                                 </div>
                                             </div>
@@ -69,10 +92,11 @@ if (isset($_GET['optie'])) {
                                     ?>
                                     <div class="field is-grouped is-grouped-centered">
                                         <p class="control">
-                                            <input type="submit" value="submit" class="button is-primary" name="submit">
+                                            <input type="submit" value="verander opmerking" class="button is-primary"
+                                                   name="submit">
                                         </p>
                                         <p class="control">
-                                            <input class="button is-danger" type="submit" value="cancel" name="cancel">
+                                            <input type="submit" value="terug" class="button is-danger" name="cancel">
                                         </p>
                                     </div>
 
