@@ -6,7 +6,7 @@
  * Time: 09:46
  */
 
-// link voor de knoppen samestellen
+// link voor de knoppen samestellen deze disable of de knop gebruiken als er wel een opmerking aanwezig is
 
 if ($row['DocentID'] > 0) {
     $link = "add.php?CursusID=" . $cursusid . "&OpleidingID=" . $opleidingid . "&CursusOnderdeelID=" . $cursusonderdeelid . "&docentid=" . $docentid . "&optie=0";

@@ -1,12 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: jkruijt
- * Date: 5-10-2018
- * Time: 11:46
- */
-?>
-
 <table class="table is-fullwidth">
     <thead>
     <tr>
@@ -20,13 +11,15 @@
                 echo "<th>" . $row['Veldnaam'] . "</th>";
 
             }
-            echo "<th>opmerking plaatsen</th>";
-            echo "<th>bekijken</th>";
+
         }
+
         ?>
+
     </tr>
     </thead>
     <tbody>
+
     <?php
 
     // include word gebruikt om de data in de table te zetten en de tussen thead er tussen te doen op cursusid verandering
@@ -50,12 +43,8 @@
             $docentid = $row['DocentID'];
 
 
-            // include staat de $link en $butshow in en deze in de tabel te zetten
-            include 'index.button.php';
-
-
             // informatie die in de tabel komt
-            echo "<tr class='showModal'>";
+            echo "<tr class='showModal' onclick='testFucntion(\" " . $cursusid . "\", \" " . $cursusonderdeelid . " \", \" " . $docentid . " \")'>";
             echo "<td>" . $cursusid . "</td>";
             echo "<td>" . $row['onderdeelnaam'] . "</td>";
             echo "<td>" . $row['Opleidingnaam'] . "</td>";
@@ -66,9 +55,9 @@
             echo "<td>" . $row['Locatie'] . "</td>";
             echo "<td>" . $row['Plaats'] . "</td>";
 
-            echo "<td><a class='button is-warning' href='$link'>plaats opmerking</a></td>";
-
-            echo $butshow;
+            //            echo "<td><a class='button is-warning' href='$link'>plaats opmerking</a></td>";
+            //
+            //            echo $butshow;
 
             echo "</tr>";
 
