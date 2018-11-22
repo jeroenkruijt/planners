@@ -5,6 +5,34 @@
  * Date: 15/11/2018
  * Time: 17:00
  */
+
+$optie = $_GET['optie'];
+
+
+if ($optie == 0) {
+
+
+    $cursusid = $_GET['CursusID'];
+    $opleidingid = $_GET['OpleidingID'];
+    $cursusonderdeel = $_GET['CursusOnderdeelID'];
+    $docentid = $_GET['docentid'];
+
+    $docent = 'WHERE P.deleted = 0 AND C.CursusID =' . $cursusid . ' AND C.OpleidingID =' . $opleidingid . ' AND CO.CursusOnderdeelID =' . $cursusonderdeel . ' and D.DocentID = ' . $docentid;
+
+    $opmerking = 'WHERE CursusID = ' . $cursusid . ' AND CursusOnderdeelID = ' . $cursusonderdeel . ' and DocentID = ' . $docentid;
+
+} elseif ($optie == 1) {
+
+    $cursusid = $_GET['CursusID'];
+    $opleidingid = $_GET['OpleidingID'];
+    $cursusonderdeel = $_GET['CursusOnderdeelID'];
+
+    $docent = 'WHERE P.deleted = 0 AND C.CursusID =' . $cursusid . ' AND C.OpleidingID =' . $opleidingid . ' AND CO.CursusOnderdeelID =' . $cursusonderdeel;
+
+    $opmerking = 'WHERE C.CursusID =' . $cursusid . ' AND CO.CursusOnderdeelID =' . $cursusonderdeel;
+
+}
+
 $query = "SELECT C.CursusID, C.OpleidingID, CB.BedrijfID, CO.CursusOnderdeelID, D.DocentID, OP.Opleidingnaam, O.onderdeelnaam, B.accountname AS Bedrijf, CONCAT(d.Voornaam, \" \", d.Achternaam) AS Docent, date(co.DatumBegin) AS datum, COL.LocatieID, COL.BedrijfID, Aantal,
 CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE \"Geen locatie\" END AS Locatie,
 CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BA.ship_city ELSE \"Geen locatie\" END AS Plaats

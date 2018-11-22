@@ -32,7 +32,7 @@
 
 
             if ($cursusid !== $row['CursusID']) {
-                echo "<tr class='showModal' bgcolor='aqua'>";
+                echo "<tr class='showModal' bgcolor='#87cefa' >";
                 echo "<th colspan='100%'>" . $row['Opleidingnaam'] . "</th>";
                 echo "</tr>";
             }
@@ -44,7 +44,7 @@
 
 
             // informatie die in de tabel komt
-            echo "<tr class='showModal' onclick='testFucntion(\" " . $cursusid . "\", \" " . $cursusonderdeelid . " \", \" " . $docentid . " \")'>";
+            echo "<tr class='view_data' onclick='testFucntion(\" " . $cursusid . "\", \" " . $cursusonderdeelid . " \", \" " . $docentid . " \")'>";
             echo "<td>" . $cursusid . "</td>";
             echo "<td>" . $row['onderdeelnaam'] . "</td>";
             echo "<td>" . $row['Opleidingnaam'] . "</td>";

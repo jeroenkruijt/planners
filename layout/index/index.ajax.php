@@ -1,14 +1,3 @@
-<script>
-    function testFucntion(str, str2, str3) {
-        if (str.length == 0) {
-            document.getElementById("txtHint").innerHTML = "";
-
-        } else {
-            document.getElementById("txtHint").innerHTML = str + " " + str2 + " " + str3;
-        }
-    }
-</script>
-
 <div id="dataModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -16,8 +5,8 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Employee Details</h4>
             </div>
-            <!--            // deze word gevuld-->
             <div class="modal-body" id="employee_detail">
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -26,4 +15,23 @@
     </div>
 </div>
 
-<p>text: <span id="txtHint"></span></p>
+<script>
+    function testFucntion(str, str2, str3) {
+
+        var cid = str;
+        var coid = str2;
+        var dic = str3;
+
+        $(document).ready(function () {
+            $.ajax({
+                url: "select.php",
+                method: "post",
+                data: {cursusid: cid, coid: coid, did: dic},
+                success: function (data) {
+                    $('#employee_detail').html(data);
+                    $('#dataModal').modal("show");
+                }
+            });
+        });
+    }
+</script>
