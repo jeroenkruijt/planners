@@ -1,189 +1,85 @@
 <?php
-    /*
-     * Created by PhpStorm.
-     * User: jkruijt
-     * Date: 4-10-2018
-     * Time: 15:27
-     */
+/*
+ * Created by PhpStorm.
+ * User: jkruijt
+ * Date: 4-10-2018
+ * Time: 15:27
+ */
 
-    include_once 'add.sql.php';
+include_once 'add.sql.php';
 
 
 ?>
 
+<div class="container" style="width:1500px;">
+    <h3 align="center">Plaatsen van de opmerking</h3>
+    <br/>
+    <form class="signup-form" action="layout/add/add.add.php" method="post">
+        <div class="table-responsive">
+            <table class="table table-bordered">
 
-<section class="hero is-fullheight is-dark is-bold">
-    <div class="hero-body">
-        <div class="container">
-            <div class="columns is-vcentered">
-                <div class="column is-10 is-offset-1 has-text-centered">
+                <tr>
+                    <td width="15%"><label>Onderdeelnaam:</label></td>
+                    <td width="15%"><?php echo $row['onderdeelnaam']; ?></td>
+                    <td width="70%"><input class="form-control" type="text" name="onderdeelnaam"
+                                           placeholder="opmerking.."></td>
+                </tr>
 
-                    <div class="box">
-                        <div class="field">
-                            <form class="signup-form" action="layout/add/add.add.php" method="post">
+                <tr>
+                    <td width="15%"><label>Opleidingnaam:</label></td>
+                    <td width="15%"><?php echo $row['Opleidingnaam']; ?></td>
+                    <td width="70%"><input class="form-control" type="text" name="opleidingnaam"
+                                           placeholder="opmerking.."></td>
+                </tr>
 
-                                <div class="field is-horizontal">
-                                    <div class="field-label is-normal">
-                                        <label class="label">Onderdeelnaam:</label>
-                                    </div>
-                                    <div class="field-label is-normal">
-                                        <label class="label"><?php echo $row['onderdeelnaam'];?></label>
-                                    </div>
-                                    <div class="field-body">
-                                        <div class="field">
-                                            <p class="control">
-                                                <input class="input is-hovered" type="text" name="onderdeelnaam" placeholder="opmerking..">
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                <tr>
+                    <td width="15%"><label>Bedrijf:</label></td>
+                    <td width="15%"><?php echo $row['Bedrijf']; ?></td>
+                    <td width="70%"><input class="form-control" type="text" name="bedrijf" placeholder="opmerking..">
+                    </td>
+                </tr>
 
-                                <hr>
+                <tr>
+                    <td width="15%"><label>Docent:</label></td>
+                    <td width="15%"><?php echo $row['Docent']; ?></td>
+                    <td width="70%"><input class="form-control" type="text" name="docent" placeholder="opmerking..">
+                    </td>
+                </tr>
 
-                                <div class="field is-horizontal">
-                                    <div class="field-label is-normal">
-                                        <label class="label">Opleidingnaam:</label>
-                                    </div>
-                                    <div class="field-label is-normal">
-                                        <label class="label"><?php echo $row['Opleidingnaam'];?></label>
-                                    </div>
-                                    <div class="field-body">
-                                        <div class="field">
-                                            <p class="control">
-                                                <input class="input is-hovered" type="text" name="opleidingnaam" placeholder="opmerking..">
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                <tr>
+                    <td width="15%"><label>Datum:</label></td>
+                    <td width="15%"><?php echo $row['datum']; ?></td>
+                    <td width="70%"><input class="form-control" type="text" name="datum" placeholder="opmerking.."></td>
+                </tr>
 
+                <tr>
+                    <td width="15%"><label>Aantal:</label></td>
+                    <td width="15%"><?php echo $row['Aantal']; ?></td>
+                    <td width="70%"><input class="form-control" type="text" name="aantal" placeholder="opmerking..">
+                    </td>
+                </tr>
 
-                                <hr>
+                <tr>
+                    <td width="15%"><label>Locatie:</label></td>
+                    <td width="15%"><?php echo $row['Locatie']; ?></td>
+                    <td width="70%"><input class="form-control" type="text" name="locatie" placeholder="opmerking..">
+                    </td>
+                </tr>
 
-                                <div class="field is-horizontal">
-                                    <div class="field-label is-normal">
-                                        <label class="label">Bedrijf:</label>
-                                    </div>
-                                    <div class="field-label is-normal">
-                                        <label class="label"><?php echo $row['Bedrijf'];?></label>
-                                    </div>
-                                    <div class="field-body">
-                                        <div class="field">
-                                            <p class="control">
-                                                <input class="input is-hovered" type="text" name="bedrijf" placeholder="opmerking..">
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                <tr>
+                    <td width="15%"><label>Plaats:</label></td>
+                    <td width="15%"><?php echo $row['Plaats']; ?></td>
+                    <td width="70%"><input class="form-control" type="text" name="plaats" placeholder="opmerking..">
+                    </td>
+                </tr>
 
-                                <hr>
+            </table>
 
-                                <div class="field is-horizontal">
-                                    <div class="field-label is-normal">
-                                        <label class="label">Docent:</label>
-                                    </div>
-                                    <div class="field-label is-normal">
-                                        <label class="label"><?php echo $row['Docent'];?></label>
+            <button type="submit" value="verstuur" name="submit" class="btn btn-primary btn-lg btn-block">op sturen
+            </button>
+            <button type="submit" value="terug" name="submit" class="btn btn-default btn-lg btn-block">cancel</button>
 
-
-
-                                    </div>
-                                    <div class="field-body">
-                                        <div class="field">
-                                            <p class="control">
-                                                <input class="input is-hovered " type="text" name="docent" placeholder="opmerking..">
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <hr>
-
-                                <div class="field is-horizontal">
-                                    <div class="field-label is-normal">
-                                        <label class="label">Datum:</label>
-                                    </div>
-                                    <div class="field-label is-normal">
-                                        <label class="label"><?php echo $row['datum'];?></label>
-                                    </div>
-                                    <div class="field-body">
-                                        <div class="field">
-                                            <p class="control">
-                                                <input class="input is-hovered" type="text" name="datum" placeholder="opmerking..">
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <hr>
-
-                                <div class="field is-horizontal">
-                                    <div class="field-label is-normal">
-                                        <label class="label">Aantal:</label>
-                                    </div>
-                                    <div class="field-label is-normal">
-                                        <label class="label"><?php echo $row['Aantal'];?></label>
-                                    </div>
-                                    <div class="field-body">
-                                        <div class="field">
-                                            <p class="control">
-                                                <input class="input is-hovered" type="text" name="aantal" placeholder="opmerking..">
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <hr>
-
-                                <div class="field is-horizontal">
-                                    <div class="field-label is-normal">
-                                        <label class="label">Locatie:</label>
-                                    </div>
-                                    <div class="field-label is-normal">
-                                        <label class="label"><?php echo $row['Locatie'];?></label>
-                                    </div>
-                                    <div class="field-body">
-                                        <div class="field">
-                                            <p class="control">
-                                                <input class="input is-hovered" type="text" name="locatie" placeholder="opmerking..">
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <hr>
-
-                                <div class="field is-horizontal">
-                                    <div class="field-label is-normal">
-                                        <label class="label">Plaats:</label>
-                                    </div>
-                                    <div class="field-label is-normal">
-                                        <label class="label"><?php echo $row['Plaats'];?></label>
-                                    </div>
-                                    <div class="field-body">
-                                        <div class="field">
-                                            <p class="control">
-                                                <input class="input is-hovered" type="text" name="plaats" placeholder="opmerking..">
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <hr>
-
-                                <div class="field is-grouped is-grouped-centered">
-                                    <p class="control">
-                                        <input type="submit" value="verstuur" class="button is-primary" name="submit">
-                                    </p>
-                                    <p class="control">
-                                        <input type="submit" value="terug" class="button is-danger" name="cancel">
-                                    </p>
-                                </div>
-
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-</section>
+    </form>
+</div>
+

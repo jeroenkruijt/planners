@@ -6,33 +6,16 @@
  * Time: 17:00
  */
 
-$optie = $_GET['optie'];
+$cursusid = $_POST["cursusid"];
+$coid = $_POST["coid"];
+$did = $_POST["did"];
+//$opleiding = $_POST["op"];
 
+//echo $cursusid . $coid . $did . $opleiding;
 
-if ($optie == 0) {
+$output = '';
 
-
-    $cursusid = $_GET['CursusID'];
-    $opleidingid = $_GET['OpleidingID'];
-    $cursusonderdeel = $_GET['CursusOnderdeelID'];
-    $docentid = $_GET['docentid'];
-
-    $docent = 'WHERE P.deleted = 0 AND C.CursusID =' . $cursusid . ' AND C.OpleidingID =' . $opleidingid . ' AND CO.CursusOnderdeelID =' . $cursusonderdeel . ' and D.DocentID = ' . $docentid;
-
-    $opmerking = 'WHERE CursusID = ' . $cursusid . ' AND CursusOnderdeelID = ' . $cursusonderdeel . ' and DocentID = ' . $docentid;
-
-} elseif ($optie == 1) {
-
-    $cursusid = $_GET['CursusID'];
-    $opleidingid = $_GET['OpleidingID'];
-    $cursusonderdeel = $_GET['CursusOnderdeelID'];
-
-    $docent = 'WHERE P.deleted = 0 AND C.CursusID =' . $cursusid . ' AND C.OpleidingID =' . $opleidingid . ' AND CO.CursusOnderdeelID =' . $cursusonderdeel;
-
-    $opmerking = 'WHERE C.CursusID =' . $cursusid . ' AND CO.CursusOnderdeelID =' . $cursusonderdeel;
-
-}
-
+// code om de waarden van de gegevens te pakken aan de hand van de volgende id's cursus id, cursusonderdeel id en docent id
 $query = "SELECT C.CursusID, C.OpleidingID, CB.BedrijfID, CO.CursusOnderdeelID, D.DocentID, OP.Opleidingnaam, O.onderdeelnaam, B.accountname AS Bedrijf, CONCAT(d.Voornaam, \" \", d.Achternaam) AS Docent, date(co.DatumBegin) AS datum, COL.LocatieID, COL.BedrijfID, Aantal,
 CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE \"Geen locatie\" END AS Locatie,
 CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BA.ship_city ELSE \"Geen locatie\" END AS Plaats
@@ -48,7 +31,37 @@ LEFT JOIN (SELECT CursusID, CursusOnderdeelID, COUNT(CursistID) AS Aantal FROM c
 LEFT JOIN locaties L ON COL.LocatieID = L.LocatieID
 LEFT JOIN docenten D ON COD.DocentID = D.DocentID
 LEFT JOIN vtigercrm600.vtiger_accountshipads AS BA ON COL.BedrijfID = BA.accountaddressid
-LEFT JOIN psentity P ON C.CursusID = P.psid
-WHERE P.deleted = 0 AND C.CursusID = $cursusid AND CO.CursusOnderdeelID = $cursusonderdeel and D.DocentID = $docentid";
+LEFT JOIN psentity P ON C.CursusID = P.psid 
+WHERE P.deleted = 0 AND C.CursusID = $cursusid AND CO.CursusOnderdeelID = $coid and D.DocentID = $did ";
 
-$result = $conn->query($query);
+$content = mysqli_query($conn, $query);
+
+while ($row = mysqli_fetch_array($content)) {
+
+    $info = $row;
+
+}
+
+
+//hier komt de code om de veld waarden voor de titel van de gegevens te halen
+$velden = "SELECT * FROM velden WHERE AfdelingID = 0";
+
+$result = mysqli_query($conn, $velden);
+
+while ($row = mysqli_fetch_array($result)) {
+
+    $titels[] = $row;
+}
+
+// opmerking uit de db halen
+$opmerking = "SELECT VeldID, Opmerking, datum, u.voornaam FROM opmerking 
+left join users U on opmerking.UsersID = U.userid 
+WHERE CursusID = $cursusid AND CursusonderdeelID = $coid AND DocentID = $did";
+
+$res = mysqli_query($conn, $opmerking);
+
+while ($row = mysqli_fetch_array($res)) {
+
+    $opmerkingen[] = $row;
+
+}

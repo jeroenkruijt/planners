@@ -1,5 +1,5 @@
-<div id="dataModal" class="modal fade">
-    <div class="modal-dialog">
+<div id="dataModal" class="modal fade ">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -21,6 +21,7 @@
         var cid = str;
         var coid = str2;
         var dic = str3;
+
 
         $(document).ready(function () {
             $.ajax({

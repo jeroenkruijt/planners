@@ -44,7 +44,7 @@
 
 
             // informatie die in de tabel komt
-            echo "<tr class='view_data' onclick='testFucntion(\" " . $cursusid . "\", \" " . $cursusonderdeelid . " \", \" " . $docentid . " \")'>";
+            echo "<tr class='view_data' onclick='testFucntion(\"" . $cursusid . "\",\"" . $cursusonderdeelid . "\",\"" . $docentid . "\")'>";
             echo "<td>" . $cursusid . "</td>";
             echo "<td>" . $row['onderdeelnaam'] . "</td>";
             echo "<td>" . $row['Opleidingnaam'] . "</td>";

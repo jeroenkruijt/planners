@@ -1,45 +1,29 @@
 <?php
-    /**
-     * Created by PhpStorm.
-     * User: jkruijt
-     * Date: 4-10-2018
-     * Time: 15:26
-     */
+/**
+ * Created by PhpStorm.
+ * User: jkruijt
+ * Date: 4-10-2018
+ * Time: 15:26
+ */
 
-    if (isset($_GET['optie'])) {
-        session_start();
+if (isset($_GET['optie'])) {
+    session_start();
 
-        $optie = $_GET['optie'];
-
-
-        if ($optie == 0) {
-
-            $cursusid = $_GET['CursusID'];
-            $opleidingid = $_GET['OpleidingID'];
-            $cursusonderdeel = $_GET['CursusOnderdeelID'];
-            $docentid = $_GET['docentid'];
-
-            $_SESSION['docentid'] = $_GET['docentid'];
-
-            $docent = 'WHERE P.deleted = 0 AND C.CursusID =' . $cursusid . ' AND C.OpleidingID =' . $opleidingid . ' AND CO.CursusOnderdeelID =' . $cursusonderdeel . ' and D.DocentID = ' . $docentid;
-
-        } elseif ($optie == 1) {
-
-            $cursusid = $_GET['CursusID'];
-            $opleidingid = $_GET['OpleidingID'];
-            $cursusonderdeel = $_GET['CursusOnderdeelID'];
-
-            $_SESSION['docentid'] = '';
+    $optie = $_GET['optie'];
 
 
-            $docent = 'WHERE P.deleted = 0 AND C.CursusID =' . $cursusid . ' AND C.OpleidingID =' . $opleidingid . ' AND CO.CursusOnderdeelID =' . $cursusonderdeel;
+    $cursusid = $_GET['CursusID'];
+//            $opleidingid = $_GET['OpleidingID'];
+    $cursusonderdeel = $_GET['CursusonderdeelID'];
+    $docentid = $_GET['docentid'];
 
-        }
+    $docent = 'WHERE P.deleted = 0 AND C.CursusID =' . $cursusid . ' AND CO.CursusOnderdeelID =' . $cursusonderdeel . ' and D.DocentID = ' . $docentid;
 
-        $_SESSION['cursusid'] = $cursusid;
-        $_SESSION['cursusonderdeelid'] = $cursusonderdeel;
+    $_SESSION['docentid'] = $_GET['docentid'];
+    $_SESSION['cursusid'] = $cursusid;
+    $_SESSION['cursusonderdeelid'] = $cursusonderdeel;
 
-        $Sql = "SELECT C.CursusID, C.OpleidingID, CB.BedrijfID, CO.CursusOnderdeelID, D.DocentID, OP.Opleidingnaam, O.onderdeelnaam, B.accountname AS Bedrijf, CONCAT(d.Voornaam, \" \", d.Achternaam) AS Docent, date(co.DatumBegin) AS datum, COL.LocatieID, COL.BedrijfID, Aantal,
+    $Sql = "SELECT C.CursusID, C.OpleidingID, CB.BedrijfID, CO.CursusOnderdeelID, D.DocentID, OP.Opleidingnaam, O.onderdeelnaam, B.accountname AS Bedrijf, CONCAT(d.Voornaam, \" \", d.Achternaam) AS Docent, date(co.DatumBegin) AS datum, COL.LocatieID, COL.BedrijfID, Aantal,
 CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE \"Geen locatie\" END AS Locatie,
 CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BA.ship_city ELSE \"Geen locatie\" END AS Plaats
 FROM cursussen C
@@ -58,8 +42,12 @@ LEFT JOIN psentity P ON C.CursusID = P.psid
 $docent
 ";
 
-        $result = $conn->query($Sql);
-        $row = mysqli_fetch_array($result);
-        //    $row = $result->fetch_assoc();
-        //    print_r($row);
-    }
+    $result = $conn->query($Sql);
+    $row = mysqli_fetch_array($result);
+
+} else {
+    header("location: ./");
+    session_destroy();
+    exit();
+
+}
