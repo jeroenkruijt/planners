@@ -10,26 +10,52 @@ $sql = "SELECT * FROM velden WHERE Zichtbaar = 1";
 $thead = $conn->query($sql);
 
 
+////  select statement voor de content in de main menu/home page
+//$Sql = "SELECT C.CursusID, C.OpleidingID, CB.BedrijfID, CO.CursusOnderdeelID, D.DocentID, OP.Opleidingnaam, O.onderdeelnaam, B.accountname AS Bedrijf, CONCAT(D.Voornaam, \" \", D.Achternaam) AS Docent, date(CO.DatumBegin) AS datum, COL.LocatieID, COL.BedrijfID, Aantal,
+//CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE \"Geen locatie\" END AS Locatie,
+//CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BA.ship_city ELSE \"Geen locatie\" END AS Plaats
+//FROM cursussen C
+//LEFT JOIN opleidingen OP ON C.OpleidingID = OP.OpleidingID
+//LEFT JOIN cursusbedrijven CB ON C.CursusID = CB.CursusID
+//LEFT JOIN vtigercrm600.vtiger_account AS B ON CB.BedrijfID = B.accountid
+//LEFT JOIN cursusonderdelen CO ON C.CursusID = CO.CursusID
+//LEFT JOIN onderdelen O ON CO.onderdeelID = O.onderdeelID
+//LEFT JOIN cursusonderdeeldocenten COD ON CO.CursusOnderdeelID = COD.CursusOnderdeelID
+//LEFT JOIN cursusonderdeellocaties COL ON CO.CursusOnderdeelID = COL.CursusOnderdeelID
+//LEFT JOIN (SELECT CursusID, CursusOnderdeelID, COUNT(CursistID) AS Aantal FROM cursusonderdeelcursisten GROUP BY CursusOnderdeelID) COC ON CO.CursusOnderdeelID = COC.CursusOnderdeelID
+//LEFT JOIN locaties L ON COL.LocatieID = L.LocatieID
+//LEFT JOIN docenten D ON COD.DocentID = D.DocentID
+//LEFT JOIN vtigercrm600.vtiger_accountshipads AS BA ON COL.BedrijfID = BA.accountaddressid
+//LEFT JOIN psentity P ON C.CursusID = P.psid
+//WHERE P.deleted = 0 AND C.CursusID > 20000";
 
-//  select statement voor de content in de main menu/home page
-$Sql = "SELECT C.CursusID, C.OpleidingID, CB.BedrijfID, CO.CursusOnderdeelID, D.DocentID, OP.Opleidingnaam, O.onderdeelnaam, B.accountname AS Bedrijf, CONCAT(D.Voornaam, \" \", D.Achternaam) AS Docent, date(CO.DatumBegin) AS datum, COL.LocatieID, COL.BedrijfID, Aantal,
-CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE \"Geen locatie\" END AS Locatie,
-CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BA.ship_city ELSE \"Geen locatie\" END AS Plaats
+$sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, OP.Opleidingnaam, O.onderdeelnaam, BCB.Bedrijven, CODD.Docenten, Aantal, DATE(CO.DatumBegin) as datum,
+CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Locatienaam,
+CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BS.ship_city ELSE 'Geen locatie' END AS Plaats
 FROM cursussen C
 LEFT JOIN opleidingen OP ON C.OpleidingID = OP.OpleidingID
-LEFT JOIN cursusbedrijven CB ON C.CursusID = CB.CursusID
-LEFT JOIN vtigercrm600.vtiger_account AS B ON CB.BedrijfID = B.accountid
 LEFT JOIN cursusonderdelen CO ON C.CursusID = CO.CursusID
-LEFT JOIN onderdelen O ON CO.onderdeelID = O.onderdeelID
-LEFT JOIN cursusonderdeeldocenten COD ON CO.CursusOnderdeelID = COD.CursusOnderdeelID
 LEFT JOIN cursusonderdeellocaties COL ON CO.CursusOnderdeelID = COL.CursusOnderdeelID
-LEFT JOIN (SELECT CursusID, CursusOnderdeelID, COUNT(CursistID) AS Aantal FROM cursusonderdeelcursisten GROUP BY CursusOnderdeelID) COC ON CO.CursusOnderdeelID = COC.CursusOnderdeelID 
+LEFT JOIN onderdelen O ON CO.onderdeelID = O.onderdeelID
+LEFT JOIN vtigercrm600.vtiger_account B ON COL.BedrijfID = B.accountid
+LEFT JOIN vtigercrm600.vtiger_accountshipads BS ON B.accountid = BS.accountaddressid
 LEFT JOIN locaties L ON COL.LocatieID = L.LocatieID
+LEFT JOIN (SELECT CursusID, CursusOnderdeelID, COUNT(CursistID) AS Aantal FROM cursusonderdeelcursisten GROUP BY CursusOnderdeelID) COC ON CO.CursusOnderdeelID = COC.CursusOnderdeelID
+LEFT JOIN (SELECT CB.CursusID, GROUP_CONCAT(\" \",B.accountname) AS Bedrijven
+                        FROM cursusbedrijven CB
+                        LEFT JOIN vtigercrm600.vtiger_account AS B ON CB.BedrijfID = B.accountid
+                        GROUP BY CB.CursusID) BCB ON C.CursusID = BCB.CursusID
+LEFT JOIN (SELECT COD.CursusOnderdeelID, GROUP_CONCAT(\" \", CONCAT(D.Voornaam, \" \", D.Achternaam)) AS Docenten
+FROM cursusonderdeeldocenten COD
 LEFT JOIN docenten D ON COD.DocentID = D.DocentID
-LEFT JOIN vtigercrm600.vtiger_accountshipads AS BA ON COL.BedrijfID = BA.accountaddressid
+GROUP BY COD.CursusOnderdeelID) CODD ON CO.CursusOnderdeelID = CODD.CursusOnderdeelID
 LEFT JOIN psentity P ON C.CursusID = P.psid
-WHERE P.deleted = 0 AND C.CursusID > 20000";
+WHERE P.deleted = 0 AND C.CursusID > 23000 AND C.CursusID < 30000
+";
 
-$result = $conn->query($Sql);
+$result = $conn->query($sql);
 
+$res = mysqli_fetch_array($result);
+
+print_r($res);
 

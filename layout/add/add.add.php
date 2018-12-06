@@ -13,7 +13,6 @@
 
         $cursusid = $_SESSION['cursusid'];
         $cursusonderdeelid = $_SESSION['cursusonderdeelid'];
-        $docentid = $_SESSION['docentid'];
 
 
         $onderdeelnaam = mysqli_real_escape_string($conn, $_POST['onderdeelnaam']);
@@ -33,7 +32,7 @@
         if ($onderdeelnaam !== '') {
             if (!preg_match($regex, $onderdeelnaam)) {
 
-                $sql = "INSERT INTO opmerking(VeldID, CursusID, CursusonderdeelID, DocentID ,UsersID, Opmerking) VALUES ('1', '$cursusid', '$cursusonderdeelid', '$docentid' ,'1', '$onderdeelnaam')";
+                $sql = "INSERT INTO opmerking(VeldID, CursusID, CursusonderdeelID, UsersID, Opmerking) VALUES ('1', '$cursusid', '$cursusonderdeelid' ,'1', '$onderdeelnaam')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";
@@ -46,7 +45,7 @@
 
         if ($opleidingnaam !== '') {
             if (!preg_match($regex, $opleidingnaam)) {
-                $sql = "INSERT INTO opmerking(VeldID, CursusID, CursusonderdeelID, DocentID , UsersID, Opmerking) VALUES ('2', '$cursusid', '$cursusonderdeelid', '$docentid', '1', '$opleidingnaam')";
+                $sql = "INSERT INTO opmerking(VeldID, CursusID, CursusonderdeelID, UsersID, Opmerking) VALUES ('2', '$cursusid', '$cursusonderdeelid', '1', '$opleidingnaam')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";
@@ -60,7 +59,7 @@
         if ($bedrijf !== '') {
             if (!preg_match($regex, $bedrijf)) {
 
-                $sql = "INSERT INTO opmerking(VeldID, CursusID, CursusonderdeelID, DocentID ,UsersID, Opmerking) VALUES ('3', '$cursusid', '$cursusonderdeelid', '$docentid', '1', '$bedrijf')";
+                $sql = "INSERT INTO opmerking(VeldID, CursusID, CursusonderdeelID, UsersID, Opmerking) VALUES ('3', '$cursusid', '$cursusonderdeelid', '1', '$bedrijf')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";
@@ -74,7 +73,7 @@
         if ($docent !== '') {
             if (!preg_match($regex, $docent)) {
 
-                $sql = "INSERT INTO opmerking(VeldID, CursusID, CursusonderdeelID, DocentID ,UsersID, Opmerking) VALUES ('4', '$cursusid', '$cursusonderdeelid', '$docentid', '1', '$docent')";
+                $sql = "INSERT INTO opmerking(VeldID, CursusID, CursusonderdeelID, UsersID, Opmerking) VALUES ('4', '$cursusid', '$cursusonderdeelid', '1', '$docent')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";
@@ -88,7 +87,7 @@
         if ($datum !== '') {
             if (!preg_match($regex, $datum)) {
 
-                $sql = "INSERT INTO opmerking(VeldID, CursusID, CursusonderdeelID, DocentID ,UsersID, Opmerking) VALUES ('5', '$cursusid', '$cursusonderdeelid', '$docentid', '1', '$datum')";
+                $sql = "INSERT INTO opmerking(VeldID, CursusID, CursusonderdeelID, UsersID, Opmerking) VALUES ('5', '$cursusid', '$cursusonderdeelid', '1', '$datum')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";
@@ -102,7 +101,7 @@
         if ($aantal !== '') {
             if (!preg_match($regex, $aantal)) {
 
-                $sql = "INSERT INTO opmerking(VeldID, CursusID, CursusonderdeelID, DocentID ,UsersID, Opmerking) VALUES ('6', '$cursusid', '$cursusonderdeelid', '$docentid', '1', '$aantal')";
+                $sql = "INSERT INTO opmerking(VeldID, CursusID, CursusonderdeelID, UsersID, Opmerking) VALUES ('6', '$cursusid', '$cursusonderdeelid', '1', '$aantal')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";
@@ -116,7 +115,7 @@
         if ($locatie !== '') {
             if (!preg_match($regex, $locatie)) {
 
-                $sql = "INSERT INTO opmerking(VeldID, CursusID, CursusonderdeelID, DocentID ,UsersID, Opmerking) VALUES ('7', '$cursusid', '$cursusonderdeelid', '$docentid', '1', '$locatie')";
+                $sql = "INSERT INTO opmerking(VeldID, CursusID, CursusonderdeelID, UsersID, Opmerking) VALUES ('7', '$cursusid', '$cursusonderdeelid', '1', '$locatie')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";
@@ -130,7 +129,7 @@
         if ($plaats !== '') {
             if (!preg_match($regex, $plaats)) {
 
-                $sql = "INSERT INTO opmerking(VeldID, CursusID, CursusonderdeelID, DocentID ,UsersID, Opmerking) VALUES ('8', '$cursusid', '$cursusonderdeelid', '$docentid', '1', '$plaats')";
+                $sql = "INSERT INTO opmerking(VeldID, CursusID, CursusonderdeelID, UsersID, Opmerking) VALUES ('8', '$cursusid', '$cursusonderdeelid', '1', '$plaats')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";

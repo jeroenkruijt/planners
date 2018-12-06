@@ -40,19 +40,23 @@
             $cursusid = $row['CursusID'];
             $opleidingid = $row['OpleidingID'];
             $cursusonderdeelid = $row['CursusOnderdeelID'];
-            $docentid = $row['DocentID'];
+//            $docentid = $row['DocentID'];
 
 
             // informatie die in de tabel komt
-            echo "<tr class='view_data' onclick='testFucntion(\"" . $cursusid . "\",\"" . $cursusonderdeelid . "\",\"" . $docentid . "\")'>";
+            echo "<tr class='view_data' onclick='testFucntion(\"" . $cursusid . "\",\"" . $cursusonderdeelid . "\",\"7\")'>";
             echo "<td>" . $cursusid . "</td>";
             echo "<td>" . $row['onderdeelnaam'] . "</td>";
             echo "<td>" . $row['Opleidingnaam'] . "</td>";
-            echo "<td>" . $row['Bedrijf'] . "</td>";
-            echo "<td>" . $row['Docent'] . "</td>";
+            echo "<td>" . $row['Bedrijven'] . "</td>";
+
+
+            echo "<td>" . $row['Docenten'] . "</td>";
             echo "<td>" . $row['datum'] . "</td>";
+//
+//
             echo "<td>" . $row['Aantal'] . "</td>";
-            echo "<td>" . $row['Locatie'] . "</td>";
+            echo "<td>" . $row['Locatienaam'] . "</td>";
             echo "<td>" . $row['Plaats'] . "</td>";
 
             //            echo "<td><a class='button is-warning' href='$link'>plaats opmerking</a></td>";

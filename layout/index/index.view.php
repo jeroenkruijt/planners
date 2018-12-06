@@ -6,7 +6,7 @@
  * Time: 12:20
  */
 
-include_once 'index.sql.php';
+
 ?>
 
 <body>

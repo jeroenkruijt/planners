@@ -7,7 +7,7 @@
  */
 
 $output .= '
- <a href="add.php?CursusID=' . $cursusid . '&CursusonderdeelID=' . $coid . '&docentid=' . $did . '&optie=0" class="btn btn-info" role="button">Link Button</a>
+ <a href="add.php?CursusID=' . $cursusid . '&CursusonderdeelID=' . $coid . '" class="btn btn-info" role="button">Link Button</a>
       <div class="table-responsive">
            <table class="table is-bordered">';
 

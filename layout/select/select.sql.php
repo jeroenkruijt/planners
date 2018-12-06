@@ -32,7 +32,7 @@ LEFT JOIN locaties L ON COL.LocatieID = L.LocatieID
 LEFT JOIN docenten D ON COD.DocentID = D.DocentID
 LEFT JOIN vtigercrm600.vtiger_accountshipads AS BA ON COL.BedrijfID = BA.accountaddressid
 LEFT JOIN psentity P ON C.CursusID = P.psid 
-WHERE P.deleted = 0 AND C.CursusID = $cursusid AND CO.CursusOnderdeelID = $coid and D.DocentID = $did ";
+WHERE P.deleted = 0 AND C.CursusID = $cursusid AND CO.CursusOnderdeelID = $coid";
 
 $content = mysqli_query($conn, $query);
 
@@ -56,7 +56,7 @@ while ($row = mysqli_fetch_array($result)) {
 // opmerking uit de db halen
 $opmerking = "SELECT VeldID, Opmerking, datum, u.voornaam FROM opmerking 
 left join users U on opmerking.UsersID = U.userid 
-WHERE CursusID = $cursusid AND CursusonderdeelID = $coid AND DocentID = $did";
+WHERE CursusID = $cursusid AND CursusonderdeelID = $coid ";
 
 $res = mysqli_query($conn, $opmerking);
 

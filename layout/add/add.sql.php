@@ -6,20 +6,17 @@
  * Time: 15:26
  */
 
-if (isset($_GET['optie'])) {
+if (isset($_GET['CursusID']) || isset($_GET['CursusonderdeelID'])) {
     session_start();
 
-    $optie = $_GET['optie'];
+
 
 
     $cursusid = $_GET['CursusID'];
-//            $opleidingid = $_GET['OpleidingID'];
     $cursusonderdeel = $_GET['CursusonderdeelID'];
-    $docentid = $_GET['docentid'];
 
-    $docent = 'WHERE P.deleted = 0 AND C.CursusID =' . $cursusid . ' AND CO.CursusOnderdeelID =' . $cursusonderdeel . ' and D.DocentID = ' . $docentid;
+//    $where = 'WHERE P.deleted = 0 AND C.CursusID =' . $cursusid . ' AND CO.CursusOnderdeelID =' . $cursusonderdeel;
 
-    $_SESSION['docentid'] = $_GET['docentid'];
     $_SESSION['cursusid'] = $cursusid;
     $_SESSION['cursusonderdeelid'] = $cursusonderdeel;
 
@@ -39,11 +36,61 @@ LEFT JOIN locaties L ON COL.LocatieID = L.LocatieID
 LEFT JOIN docenten D ON COD.DocentID = D.DocentID
 LEFT JOIN vtigercrm600.vtiger_accountshipads AS BA ON COL.BedrijfID = BA.accountaddressid
 LEFT JOIN psentity P ON C.CursusID = P.psid
-$docent
-";
+WHERE P.deleted = 0 AND C.CursusID = $cursusid  AND CO.CursusOnderdeelID = $cursusonderdeel";
 
     $result = $conn->query($Sql);
-    $row = mysqli_fetch_array($result);
+    $info = mysqli_fetch_array($result);
+
+    $sql = "SELECT CB.BedrijfID, D.DocentID, B.accountname 
+AS Bedrijf, CONCAT(d.Voornaam, \" \", d.Achternaam) AS Docent, COL.BedrijfID 
+FROM cursussen C 
+LEFT JOIN cursusbedrijven CB ON C.CursusID = CB.CursusID 
+LEFT JOIN vtigercrm600.vtiger_account AS B ON CB.BedrijfID = B.accountid 
+LEFT JOIN cursusonderdelen CO ON C.CursusID = CO.CursusID 
+LEFT JOIN cursusonderdeeldocenten COD ON CO.CursusOnderdeelID = COD.CursusOnderdeelID 
+LEFT JOIN cursusonderdeellocaties COL ON CO.CursusOnderdeelID = COL.CursusOnderdeelID 
+LEFT JOIN (SELECT CursusID, CursusOnderdeelID, COUNT(CursistID) AS Aantal FROM cursusonderdeelcursisten GROUP BY CursusOnderdeelID) COC ON CO.CursusOnderdeelID = COC.CursusOnderdeelID 
+LEFT JOIN docenten D ON COD.DocentID = D.DocentID 
+LEFT JOIN vtigercrm600.vtiger_accountshipads AS BA ON COL.BedrijfID = BA.accountaddressid 
+LEFT JOIN psentity P ON C.CursusID = P.psid 
+WHERE P.deleted = 0 AND C.CursusID = $cursusid  AND CO.CursusOnderdeelID = $cursusonderdeel";
+
+    $result = $conn->query($sql);
+
+    $docent = '';
+
+    $bedrijf = '';
+
+    $bcheck = '';
+    $dcheck = '';
+
+    while ($gegevens = mysqli_fetch_array($result)) {
+
+        if ($dcheck !== $gegevens['Docent']) {
+            $dcheck = $gegevens['Docent'];
+        } else {
+
+            $dcheck = '';
+
+        }
+
+        $docent .= $dcheck . '<br>';
+
+
+        if ($bcheck != $gegevens['Bedrijf']) {
+
+            $bcheck = $gegevens['Bedrijf'];
+
+        } else {
+
+            $bcheck = '';
+
+        }
+
+        $bedrijf .= $bcheck . '<br>';
+
+    }
+
 
 } else {
     header("location: ./");
