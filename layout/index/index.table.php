@@ -30,16 +30,18 @@
 
         while ($row = mysqli_fetch_array($result)) {
 
+
+            // header tussen andere cursusids te plaatse
+
             if ($cursusid !== $row['CursusID']) {
                 echo "<tr class='showModal' bgcolor='#87cefa' >";
                 echo "<th colspan='100%'>" . $row['Opleidingnaam'] . "</th>";
                 echo "</tr>";
             }
-
             $cursusid = $row['CursusID'];
-            $opleidingid = $row['OpleidingID'];
             $cursusonderdeelid = $row['CursusOnderdeelID'];
 
+            //indicator plaatsen over een tabel die
 
 
             // informatie die in de tabel komt

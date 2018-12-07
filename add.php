@@ -16,5 +16,7 @@
 
 
 
+//to-do-list
 
+//todo het menu van toevoegen van een opmerking in modal te krijgen voor beter ui
 
