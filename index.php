@@ -27,3 +27,6 @@ include_once 'layout/index/index.ajax.php';
 
 //todo zoek functio aan maken voor de tabel om userfriendlis te verbeteren
 
+//todo button to change a comment
+
+//todo button to delete a comment
