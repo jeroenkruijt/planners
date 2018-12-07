@@ -8,10 +8,7 @@
 
 $cursusid = $_POST["cursusid"];
 $coid = $_POST["coid"];
-$did = $_POST["did"];
-//$opleiding = $_POST["op"];
 
-//echo $cursusid . $coid . $did . $opleiding;
 
 $output = '';
 

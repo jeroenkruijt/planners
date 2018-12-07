@@ -13,8 +13,8 @@
         <table class="table table-bordered">
 
             <tr>
-                <td width="15%"><label>Onderdeelnaam:</label></td>
-                <td width="15%">
+                <td width="20%"><label>Onderdeelnaam:</label></td>
+                <td width="20%">
                     <?php echo $info['onderdeelnaam']; ?>
                 </td>
                 <td width="70%"><input class="form-control" type="text" name="onderdeelnaam"
@@ -22,9 +22,9 @@
             </tr>
 
             <tr>
-                <td width="15%"><label>Opleidingnaam:</label></td>
+                <td width="20%"><label>Opleidingnaam:</label></td>
 
-                <td width="15%">
+                <td width="20%">
                     <?php echo $info['Opleidingnaam']; ?>
                 </td>
 
@@ -34,10 +34,10 @@
 
 
             <tr>
-                <td width="15%"><label>Bedrijf:</label></td>
+                <td width="20%"><label>Bedrijf:</label></td>
 
-                <td width="15%">
-                    <?php echo $bedrijf; ?>
+                <td width="20%">
+                    <?php echo $info['Bedrijven']; ?>
                 </td>
 
                 <td width="70%"><input class="form-control" type="text" name="bedrijf" placeholder="opmerking..">
@@ -45,10 +45,10 @@
             </tr>
 
             <tr>
-                <td width="15%"><label>Docent:</label></td>
+                <td width="20%"><label>Docent:</label></td>
 
-                <td width="15%">
-                    <?php echo $docent; ?>
+                <td width="20%">
+                    <?php echo $info['Docenten']; ?>
                 </td>
 
                 <td width="70%"><input class="form-control" type="text" name="docent" placeholder="opmerking..">
@@ -56,9 +56,9 @@
             </tr>
 
             <tr>
-                <td width="15%"><label>Datum:</label></td>
+                <td width="20%"><label>Datum:</label></td>
 
-                <td width="15%">
+                <td width="20%">
                     <?php echo $info['datum']; ?>
                 </td>
 
@@ -66,9 +66,9 @@
             </tr>
 
             <tr>
-                <td width="15%"><label>Aantal:</label></td>
+                <td width="20%"><label>Aantal:</label></td>
 
-                <td width="15%">
+                <td width="20%">
                     <?php echo $info['Aantal']; ?>
                 </td>
 
@@ -77,10 +77,10 @@
             </tr>
 
             <tr>
-                <td width="15%"><label>Locatie:</label></td>
+                <td width="20%"><label>Locatie:</label></td>
 
-                <td width="15%">
-                    <?php echo $info['Locatie']; ?>
+                <td width="20%">
+                    <?php echo $info['Locatienaam']; ?>
                 </td>
 
                 <td width="70%"><input class="form-control" type="text" name="locatie" placeholder="opmerking..">
@@ -88,9 +88,9 @@
             </tr>
 
             <tr>
-                <td width="15%"><label>Plaats:</label></td>
+                <td width="20%"><label>Plaats:</label></td>
 
-                <td width="15%">
+                <td width="20%">
                     <?php echo $info['Plaats']; ?>
                 </td>
 

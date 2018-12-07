@@ -16,18 +16,17 @@
 </div>
 
 <script>
-    function testFucntion(str, str2, str3) {
+    function testFucntion(str, str2) {
 
         var cid = str;
         var coid = str2;
-        var dic = str3;
 
 
         $(document).ready(function () {
             $.ajax({
                 url: "select.php",
                 method: "post",
-                data: {cursusid: cid, coid: coid, did: dic},
+                data: {cursusid: cid, coid: coid},
                 success: function (data) {
                     $('#employee_detail').html(data);
                     $('#dataModal').modal("show");

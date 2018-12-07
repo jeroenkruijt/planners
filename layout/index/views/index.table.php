@@ -30,7 +30,6 @@
 
         while ($row = mysqli_fetch_array($result)) {
 
-
             if ($cursusid !== $row['CursusID']) {
                 echo "<tr class='showModal' bgcolor='#87cefa' >";
                 echo "<th colspan='100%'>" . $row['Opleidingnaam'] . "</th>";
@@ -40,37 +39,29 @@
             $cursusid = $row['CursusID'];
             $opleidingid = $row['OpleidingID'];
             $cursusonderdeelid = $row['CursusOnderdeelID'];
-//            $docentid = $row['DocentID'];
+
 
 
             // informatie die in de tabel komt
-            echo "<tr class='view_data' onclick='testFucntion(\"" . $cursusid . "\",\"" . $cursusonderdeelid . "\",\"7\")'>";
+            echo "<tr class='view_data' onclick='testFucntion(\"" . $cursusid . "\",\"" . $cursusonderdeelid . "\")'>";
+
             echo "<td>" . $cursusid . "</td>";
             echo "<td>" . $row['onderdeelnaam'] . "</td>";
             echo "<td>" . $row['Opleidingnaam'] . "</td>";
             echo "<td>" . $row['Bedrijven'] . "</td>";
 
-
             echo "<td>" . $row['Docenten'] . "</td>";
             echo "<td>" . $row['datum'] . "</td>";
-//
-//
+
             echo "<td>" . $row['Aantal'] . "</td>";
             echo "<td>" . $row['Locatienaam'] . "</td>";
             echo "<td>" . $row['Plaats'] . "</td>";
 
-            //            echo "<td><a class='button is-warning' href='$link'>plaats opmerking</a></td>";
-            //
-            //            echo $butshow;
-
             echo "</tr>";
-
 
         }
 
-
     }
-
 
     ?>
     </tbody>
