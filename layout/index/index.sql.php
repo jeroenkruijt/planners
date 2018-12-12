@@ -12,6 +12,8 @@ $thead = $conn->query($sql);
 
 ////  select statement voor de content in de main menu/home page
 
+$year = date('Y');
+
 $sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, OP.Opleidingnaam, O.onderdeelnaam, BCB.Bedrijven, CODD.Docenten, Aantal, DATE(CO.DatumBegin) as datum,
 CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Locatienaam,
 CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BS.ship_city ELSE 'Geen locatie' END AS Plaats
@@ -33,7 +35,7 @@ FROM cursusonderdeeldocenten COD
 LEFT JOIN docenten D ON COD.DocentID = D.DocentID
 GROUP BY COD.CursusOnderdeelID) CODD ON CO.CursusOnderdeelID = CODD.CursusOnderdeelID
 LEFT JOIN psentity P ON C.CursusID = P.psid
-WHERE P.deleted = 0 AND C.CursusID > 23000 AND C.CursusID < 30000
+WHERE P.deleted = 0 AND CO.DatumBegin > '2018-10-10'
 ";
 
 $result = $conn->query($sql);

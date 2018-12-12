@@ -1,3 +1,9 @@
+<?php
+
+echo $year;
+
+?>
+
 <table class="table is-fullwidth">
     <thead>
     <tr>
@@ -34,7 +40,7 @@
             // header tussen andere cursusids te plaatse
 
             if ($cursusid !== $row['CursusID']) {
-                echo "<tr class='showModal' bgcolor='#87cefa' >";
+                echo "<tr class='showModal' bgcolor='#003d6b' style='color: #FFFFFF;'>";
                 echo "<th colspan='100%'>" . $row['Opleidingnaam'] . "</th>";
                 echo "</tr>";
             }
@@ -42,10 +48,22 @@
             $cursusonderdeelid = $row['CursusOnderdeelID'];
 
             //indicator plaatsen over een tabel die
+            $comment = 'select datum from opmerking where CursusID = ' . $cursusid . ' AND CursusonderdeelID = ' . $cursusonderdeelid;
+
+            $comm = $conn->query($comment);
+
+//            $indicatie  = mysqli_fetch_array($comm);
+
+
+            if (mysqli_num_rows($comm) > 0) {
+                echo "<tr class='view_data' onclick='testFucntion(\"" . $cursusid . "\",\"" . $cursusonderdeelid . "\")' style='color: #FFFFFF;' bgcolor='#2e6da4'>";
+            } else {
+                echo "<tr class='view_data' onclick='testFucntion(\"" . $cursusid . "\",\"" . $cursusonderdeelid . "\")' >";
+            }
 
 
             // informatie die in de tabel komt
-            echo "<tr class='view_data' onclick='testFucntion(\"" . $cursusid . "\",\"" . $cursusonderdeelid . "\")'>";
+//            echo "<tr class='view_data' onclick='testFucntion(\"" . $cursusid . "\",\"" . $cursusonderdeelid . "\")' >";
 
             echo "<td>" . $cursusid . "</td>";
             echo "<td>" . $row['onderdeelnaam'] . "</td>";

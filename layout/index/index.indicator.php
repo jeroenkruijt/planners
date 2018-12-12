@@ -8,5 +8,10 @@
 
 //todo indicatie sql maken en check maken
 
-$sql = 'select datum from opmerking where CursusID = $cursusid AND CursusonderdeelID = $cursusonderdeelid';
+//$comment = 'select datum from opmerking where CursusID = $cursusid AND CursusonderdeelID = $cursusonderdeelid';
+//
+//$comm = $conn->query($comment);
+//
+//print_r($comm);
+
 
