@@ -8,6 +8,8 @@ if (isset($_POST["cursusid"])) {
     //informatie toevoegen aan de tabel die word in geladen in de ajax modal
     include_once 'layout/select/select.view.php';
 
+    include_once 'layout/select/select.ajax.php';
+
 }
 
 

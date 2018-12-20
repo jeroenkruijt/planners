@@ -10,7 +10,7 @@ $cursusid = $_POST["cursusid"];
 $coid = $_POST["coid"];
 
 
-$output = 'helllllopoooo';
+$output = '';
 
 // code om de waarden van de gegevens te pakken aan de hand van de volgende id's cursus id, cursusonderdeel id en docent id
 $query = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, OP.Opleidingnaam, O.onderdeelnaam, BCB.Bedrijf, CODD.Docent, Aantal, DATE(CO.DatumBegin) as datum,

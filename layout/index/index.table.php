@@ -1,16 +1,9 @@
-<?php
-
-echo $year;
-
-?>
-
 <table class="table is-fullwidth">
     <thead>
     <tr>
         <?php
         if ($thead->num_rows > 0) {
 
-            echo "<th>cid</th>";
 
             while ($row = mysqli_fetch_array($thead)) {
 
@@ -37,6 +30,11 @@ echo $year;
         while ($row = mysqli_fetch_array($result)) {
 
 
+            //datetime format veranderen van Y-m-d naar d-m-Y
+            $var = $row['datum'];
+            $date = date('d-m-Y', strtotime($var));
+
+
             // header tussen andere cursusids te plaatse
 
             if ($cursusid !== $row['CursusID']) {
@@ -44,40 +42,29 @@ echo $year;
                 echo "<th colspan='100%'>" . $row['Opleidingnaam'] . "</th>";
                 echo "</tr>";
             }
+
+            // staan hier zodat de functie hierboven niet al de volgende var krijg en dus niet meer functioneert
             $cursusid = $row['CursusID'];
             $cursusonderdeelid = $row['CursusOnderdeelID'];
 
-            //indicator plaatsen over een tabel die
-            $comment = 'select datum from opmerking where CursusID = ' . $cursusid . ' AND CursusonderdeelID = ' . $cursusonderdeelid;
-
-            $comm = $conn->query($comment);
-
-//            $indicatie  = mysqli_fetch_array($comm);
-
-
-            if (mysqli_num_rows($comm) > 0) {
-                echo "<tr class='view_data' onclick='testFucntion(\"" . $cursusid . "\",\"" . $cursusonderdeelid . "\")' style='color: #FFFFFF;' bgcolor='#2e6da4'>";
-            } else {
-                echo "<tr class='view_data' onclick='testFucntion(\"" . $cursusid . "\",\"" . $cursusonderdeelid . "\")' >";
-            }
+            //indicatie include om aan te geven dat er een opmerking aanwezig is
+            include 'index.indicatie.php';
 
 
             // informatie die in de tabel komt
-//            echo "<tr class='view_data' onclick='testFucntion(\"" . $cursusid . "\",\"" . $cursusonderdeelid . "\")' >";
-
-            echo "<td>" . $cursusid . "</td>";
-            echo "<td>" . $row['onderdeelnaam'] . "</td>";
-            echo "<td>" . $row['Opleidingnaam'] . "</td>";
-            echo "<td>" . $row['Bedrijven'] . "</td>";
-
-            echo "<td>" . $row['Docenten'] . "</td>";
-            echo "<td>" . $row['datum'] . "</td>";
-
-            echo "<td>" . $row['Aantal'] . "</td>";
-            echo "<td>" . $row['Locatienaam'] . "</td>";
-            echo "<td>" . $row['Plaats'] . "</td>";
-
+            echo "<tr class='view_data' onclick='testFucntion(\"" . $cursusid . "\",\"" . $cursusonderdeelid . "\")' >";
+            echo "<td width='12.5%' id='1".$row['CursusOnderdeelID']."' bgcolor='".$bgcolor."' style=''>" . $row['onderdeelnaam'] . "</td>";
+            echo "<td width='12.5%' id='2".$row['CursusOnderdeelID']."' bgcolor='".$bgcolor."' style=''> " . $row['Opleidingnaam'] . " </td>";
+            echo "<td width='12.5%' id='3".$row['CursusOnderdeelID']."' bgcolor='".$bgcolor."' style=''>" . $row['Bedrijf'] . "</td>";
+            echo "<td width='12.5%' id='4".$row['CursusOnderdeelID']."' bgcolor='".$bgcolor."' style=''>" . $row['Docent'] . "</td>";
+            echo "<td width='12.5%' id='5".$row['CursusOnderdeelID']."' bgcolor='".$bgcolor."' style=''>" . $date . "</td>";
+            echo "<td width='12.5%' id='6".$row['CursusOnderdeelID']."' bgcolor='".$bgcolor."' style=''>" . $row['Aantal'] . "</td>";
+            echo "<td width='12.5%' id='7".$row['CursusOnderdeelID']."' bgcolor='".$bgcolor."' style=''>" . $row['Locatie'] . "</td>";
+            echo "<td width='12.5%' id='8".$row['CursusOnderdeelID']."' bgcolor='".$bgcolor."' style=''>" . $row['Plaats'] . "</td>";
             echo "</tr>";
+
+
+
 
         }
 
