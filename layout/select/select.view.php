@@ -22,8 +22,8 @@ foreach ($titels as $titel) {
 
     $output .= '
                 <tr >
-                     <td width="10%" id="'.$titelids.'"  bgcolor="#e6e6e6"  onclick="updateFucntion(\''.$titelids.'\', \''.$coid.'\', \''.$cursusid.'\')"><label>' . $titels . '</label></td>
-                     <td width="10%" id="info'.$titelids.'"  bgcolor="#e6e6e6" onclick="updateFucntion(\''.$titelids.'\', \''.$coid.'\', \''.$cursusid.'\')">' . $info[$titels] . '</td>
+                     <td width="10%" class="'.$titelids.'"  bgcolor="#e6e6e6"  onclick="updateFucntion(\''.$titelids.'\', \''.$coid.'\', \''.$cursusid.'\')"><label>' . $titels . '</label></td>
+                     <td width="10%" class="info'.$titelids.'"  bgcolor="#e6e6e6" onclick="updateFucntion(\''.$titelids.'\', \''.$coid.'\', \''.$cursusid.'\')">' . $info[$titels] . '</td>
                 ';
 
     if (!empty($opmerkingen)) {
