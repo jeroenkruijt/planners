@@ -13,6 +13,8 @@
 
         $cursusid = $_SESSION['cursusid'];
         $cursusonderdeelid = $_SESSION['cursusonderdeelid'];
+        $year = $_SESSION['year'];
+        $month = $_SESSION['month'];
 
 
         $onderdeelnaam = mysqli_real_escape_string($conn, $_POST['onderdeelnaam']);
@@ -141,7 +143,6 @@
         }
 
         header("location: ../../?status=succes");
-        session_destroy();
         exit();
 
 
@@ -149,13 +150,11 @@
     } elseif ($_POST['cancel']) {
 
         header("location: ../../");
-        session_destroy();
         exit();
 
     } else {
 
         header("location: ../../");
-        session_destroy();
         exit();
 
     }

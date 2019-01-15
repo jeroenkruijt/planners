@@ -10,23 +10,10 @@ $sql = "SELECT * FROM velden WHERE Zichtbaar = 1";
 $thead = $conn->query($sql);
 
 
+session_start();
 
-////  select statement voor de content in de main menu/home page
-
-$year = date('Y');
-
-$month = date('m');
-
-if(isset($_GET['jaar']) || isset($_GET['maand'])) {
-
-    if ($year != $_GET['jaar']) {
-        $year = $_GET['jaar'];
-    }
-
-    if ($month != $_GET['maand']) {
-        $month = $_GET['maand'];
-    }
-}
+$year = $_SESSION['year'];
+$month = $_SESSION['month'];
 
 $sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, OP.Opleidingnaam, O.onderdeelnaam, BCB.Bedrijf, CODD.Docent, Aantal, DATE(CO.DatumBegin) as datum,
 CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Locatie,

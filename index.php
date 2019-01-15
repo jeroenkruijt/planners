@@ -18,16 +18,5 @@ include_once 'layout/addons/footer.php';
 
 include_once 'layout/index/index.ajax.php';
 
+die();
 
-
-// to-do-list for index
-
-//todo paginator aan maken zodat de site overzichtelijker word
-
-//TODO filter functie aan maken in de tabel om userfriendly te verbeteren
-
-//todo zoek functio aan maken voor de tabel om userfriendlis te verbeteren
-
-//todo button to change a comment
-
-//todo button to delete a comment

@@ -13,10 +13,3 @@
     include_once "layout/add/add.index.php";
 
     include_once "layout/addons/footer.php";
-
-
-
-//to-do-list
-
-//todo het menu van toevoegen van een opmerking in modal te krijgen voor beter ui
-

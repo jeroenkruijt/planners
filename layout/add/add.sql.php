@@ -46,10 +46,11 @@ WHERE P.deleted = 0 AND C.CursusID = $cursusid AND CO.CursusOnderdeelID = $cursu
     $result = $conn->query($Sql);
     $info = mysqli_fetch_array($result);
 
+    $datum = $info['datum'];
 
 } else {
+
     header("location: ./");
-    session_destroy();
     exit();
 
 }

@@ -11,12 +11,12 @@
 
 <body>
 
-<div class="container">
+<div class="container-fluid">
     <div class="table-responsive">
 
         <?php
 
-        include_once 'index.datum.php';
+        include_once 'index.datummenu.php';
 
         include_once 'index.table.php';
 

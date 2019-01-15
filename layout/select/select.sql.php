@@ -57,7 +57,7 @@ while ($row = mysqli_fetch_array($result)) {
 }
 
 // opmerking uit de db halen
-$opmerking = "SELECT VeldID, Opmerking, datum, u.voornaam FROM opmerking 
+$opmerking = "SELECT OpmerkingID, VeldID, Opmerking, datum, u.voornaam FROM opmerking 
 left join users U on opmerking.UsersID = U.userid 
 WHERE CursusID = $cursusid AND CursusonderdeelID = $coid ";
 

@@ -20,11 +20,15 @@ foreach ($titels as $titel) {
     $titels = $titel['Veldnaam'];
     $titelids = $titel['VeldID'];
 
+    include 'select.indicatie.php';
+
     $output .= '
                 <tr >
-                     <td width="10%" class="'.$titelids.'"  bgcolor="#e6e6e6"  onclick="updateFucntion(\''.$titelids.'\', \''.$coid.'\', \''.$cursusid.'\')"><label>' . $titels . '</label></td>
-                     <td width="10%" class="info'.$titelids.'"  bgcolor="#e6e6e6" onclick="updateFucntion(\''.$titelids.'\', \''.$coid.'\', \''.$cursusid.'\')">' . $info[$titels] . '</td>
+                     <td width="10%" class="' . $titelids . $coid . '"  bgcolor="' . $bgc . '"  onclick="updateFucntion(\'' . $titelids . '\', \'' . $coid . '\', \'' . $cursusid . '\')"><label>' . $titels . '</label></td>
+                     <td width="10%" class="' . $titelids . $coid . '"  bgcolor="' . $bgc . '" onclick="updateFucntion(\'' . $titelids . '\', \'' . $coid . '\', \'' . $cursusid . '\')">' . $info[$titels] . '</td>
                 ';
+
+    $output .= '<td width="80%" onclick=" ">';
 
     if (!empty($opmerkingen)) {
 
@@ -35,22 +39,28 @@ foreach ($titels as $titel) {
                 $ogdate = $opmerking['datum'];
                 $newdate = date("d-m-Y H:i", strtotime($ogdate));
 
-                $output .= '<td width="80%"><strong>' . $opmerking['Opmerking'] . '</strong>
-                                       -' . $opmerking['voornaam'] . ' op ' . $newdate . '</td>';
+                $oid = $opmerking['OpmerkingID'];
 
+                $output .= '<ul class="dropdown">
+    <li style="margin-top: 15px" data-toggle="dropdown">
+        <span class="myIcons" id="messages"><strong>' . $opmerking['Opmerking'] . '</strong></span>
+    </li>
 
-
-            } else {
+    <ul class="dropdown-menu">
+        <li><a disabled><strong>' . $opmerking['voornaam'] . ' op ' . $newdate . '</strong></a></li>
+        <li><a href="opmerking.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'&veldid='.$titelids.'&opmerkingid='.$oid.'&optie=change">Bewerken</a></li>
+        <li><a href="opmerking.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'&veldid='.$titelids.'&opmerkingid='.$oid.'&optie=delete">Verwijderen</a></li>
+    </ul>
+</ul>';
             }
         }
     }
 
-
-    $output .= '</tr>';
+    $output .= '</td></tr>';
 }
-$output .= "</table><a href=\"add.php?CursusID=' . $cursusid . '&CursusonderdeelID=' . $coid . '\" class=\"btn btn-info\" role=\"button\">opmerking toevoegen</a></div>";
-
-
+$output .= '</table>
+<a href="add.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'" class="btn btn-default">Opmerking plaatsen</a>
+</div>';
 
 echo $output;
 
