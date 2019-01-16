@@ -34,7 +34,7 @@
 
             //datetime format veranderen van Y-m-d naar d-m-Y
             $var = $row['datum'];
-            $date = date('d-m-Y H:i', strtotime($var));
+            $date = date('d-m-Y', strtotime($var));
 
 
             // header tussen andere cursusids te plaatse
@@ -55,14 +55,15 @@
 
 
             // informatie die in de tabel komt
-            echo "<tr class='view_data' onclick='modalFucntion(\"" . $cursusid . "\",\"" . $coid . "\")' >";
-            echo "<td width='12.5%' id='1" . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $date . "</td>";
-            echo "<td width='12.5%' id='2" . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $row['onderdeelnaam'] . "</td>";
+            echo "<tr class='view_data' onclick='testFucntion(\"" . $cursusid . "\",\"" . $coid . "\")' >";
+            echo "<td width='12.5%' id='1" . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $row['onderdeelnaam'] . "</td>";
+            echo "<td width='12.5%' id='2" . $coid . "' bgcolor='" . $bgcolor . "' style=''> " . $row['Opleidingnaam'] . " </td>";
             echo "<td width='12.5%' id='3" . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $row['Bedrijf'] . "</td>";
             echo "<td width='12.5%' id='4" . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $row['Docent'] . "</td>";
-            echo "<td width='12.5%' id='5" . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $row['Aantal'] . "</td>";
-            echo "<td width='12.5%' id='6" . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $row['Cursuslocatie'] . "</td>";
-            echo "<td width='12.5%' id='7" . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $row['Lesplaats'] . "</td>";
+            echo "<td width='12.5%' id='5" . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $date . "</td>";
+            echo "<td width='12.5%' id='6" . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $row['Aantal'] . "</td>";
+            echo "<td width='12.5%' id='7" . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $row['Locatie'] . "</td>";
+            echo "<td width='12.5%' id='8" . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $row['Plaats'] . "</td>";
             echo "</tr>";
 
 

@@ -15,9 +15,9 @@ session_start();
 $year = $_SESSION['year'];
 $month = $_SESSION['month'];
 
-$sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, OP.Opleidingnaam, O.onderdeelnaam, BCB.Bedrijf, CODD.Docent, Aantal, CO.DatumBegin as datum,
-CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Cursuslocatie,
-CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BS.ship_city ELSE 'Geen locatie' END AS Lesplaats
+$sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, OP.Opleidingnaam, O.onderdeelnaam, BCB.Bedrijf, CODD.Docent, Aantal, DATE(CO.DatumBegin) as datum,
+CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Locatie,
+CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BS.ship_city ELSE 'Geen locatie' END AS Plaats
 FROM cursussen C
 LEFT JOIN opleidingen OP ON C.OpleidingID = OP.OpleidingID
 LEFT JOIN cursusonderdelen CO ON C.CursusID = CO.CursusID
@@ -42,7 +42,7 @@ ORDER BY CO.DatumBegin
 
 $result = $conn->query($sql);
 
-//$res = mysqli_fetch_array($result);
+$res = mysqli_fetch_array($result);
 
 
 
