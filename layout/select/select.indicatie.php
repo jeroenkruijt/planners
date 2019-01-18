@@ -6,7 +6,7 @@
  * Time: 16:15
  */
 
-$bgc = '#e7e7e7';
+$bgc = '#cccccc';
 
     $bezig = 'select * from actief where VeldID = ' . $titelids . ' and Cursusid = ' . $cursusid . '  and Cursusonderdeelid = ' . $coid;
 

@@ -12,7 +12,7 @@ $coid = $_POST["coid"];
 $output = '';
 
 // code om de waarden van de gegevens te pakken aan de hand van de volgende id's cursus id, cursusonderdeel id en docent id
-$query = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, OP.Opleidingnaam, O.onderdeelnaam, BCB.Bedrijf, CODD.Docent, Aantal, DATE(CO.DatumBegin) as cursusdatum,
+$query = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, OP.Opleidingnaam, O.onderdeelnaam, BCB.Bedrijf, CODD.Docent, Aantal, CO.DatumBegin as datum,
 CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Cursuslocatie,
 CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BS.ship_city ELSE 'Geen locatie' END AS Lesplaats 
 FROM cursussen C
@@ -40,12 +40,17 @@ $content = mysqli_query($conn, $query);
 
 while ($row = mysqli_fetch_array($content)) {
 
+//    print_r($row);
+
     $info = $row;
+
+    $info['cursusdatum']  = date('d-m-Y', strtotime($row['datum']));
+    $info['Cursustijd']  = date('H:i', strtotime($row['datum']));
 
 }
 
 //hier komt de code om de veld waarden voor de titel van de gegevens te halen
-$velden = "SELECT * FROM velden WHERE zichtbaar = 1";
+$velden = "SELECT * FROM velden WHERE zichtbaar = 1 order by VeldID";
 
 $result = mysqli_query($conn, $velden);
 

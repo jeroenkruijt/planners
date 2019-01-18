@@ -6,9 +6,10 @@
  * Time: 12:12
  */
 //    thead content de namen die boven aan de colmunen staan
-$sql = "SELECT * FROM velden WHERE Zichtbaar = 1";
+$sql = "SELECT * FROM velden WHERE Zichtbaar = 1 order by VeldID asc 
+";
 $thead = $conn->query($sql);
-
+$row_cnt = $thead->num_rows;
 
 session_start();
 
@@ -37,13 +38,6 @@ LEFT JOIN docenten D ON COD.DocentID = D.DocentID
 GROUP BY COD.CursusOnderdeelID) CODD ON CO.CursusOnderdeelID = CODD.CursusOnderdeelID
 LEFT JOIN psentity P ON C.CursusID = P.psid
 WHERE P.deleted = 0 AND year(CO.DatumBegin) = $year AND MONTH(CO.DatumBegin) = $month
-ORDER BY CO.DatumBegin 
-";
+Order bY C.CursusID";
 
 $result = $conn->query($sql);
-
-//$res = mysqli_fetch_array($result);
-
-
-
-

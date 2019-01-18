@@ -15,20 +15,33 @@ $output .= '
       <div class="table-responsive">
            <table class="table is-bordered">';
 
+//$time = date('d-m-Y', $info['cursusdatum']);
+//$time = date('H:i', $info['cursusdatum']);
+
+
 foreach ($titels as $titel) {
 
     $titels = $titel['Veldnaam'];
     $titelids = $titel['VeldID'];
 
+
+
     include 'select.indicatie.php';
+
+    $bgchange = $titelids.$coid;
+
+//    echo $bgchange . '<br>';
 
     $output .= '
                 <tr >
-                     <td width="10%" class="' . $titelids . $coid . '"  bgcolor="' . $bgc . '"  onclick="updateFucntion(\'' . $titelids . '\', \'' . $coid . '\', \'' . $cursusid . '\')"><label>' . $titels . '</label></td>
-                     <td width="10%" class="' . $titelids . $coid . '"  bgcolor="' . $bgc . '" onclick="updateFucntion(\'' . $titelids . '\', \'' . $coid . '\', \'' . $cursusid . '\')">' . $info[$titels] . '</td>
+                     <td width="10%" class="' . $titelids . $coid . '"  bgcolor="' . $bgc . '"  onclick="updateFucntion(\'' . $titelids . '\', \'' . $coid . '\', \'' . $cursusid . '\')"><label>' . $titels . ':</label></td>
+                     
+                     
+                     <td width="30%" class="' . $titelids . $coid . '"  bgcolor="' . $bgc . '" onclick="updateFucntion(\'' . $titelids . '\', \'' . $coid . '\', \'' . $cursusid . '\')">' . $info[$titels] . '</td>
+                     
                 ';
 
-    $output .= '<td width="80%" onclick=" ">';
+    $output .= '<td width="60%" onclick=" ">';
 
     if (!empty($opmerkingen)) {
 
@@ -47,7 +60,7 @@ foreach ($titels as $titel) {
     </li>
 
     <ul class="dropdown-menu">
-        <li><a disabled><strong>' . $opmerking['voornaam'] . ' op ' . $newdate . '</strong></a></li>
+        <li><a disabled><strong>Op ' . $newdate . '</strong></a></li>
         <li><a href="opmerking.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'&veldid='.$titelids.'&opmerkingid='.$oid.'&optie=change">Bewerken</a></li>
         <li><a href="opmerking.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'&veldid='.$titelids.'&opmerkingid='.$oid.'&optie=delete">Verwijderen</a></li>
     </ul>

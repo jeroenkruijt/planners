@@ -10,7 +10,6 @@ $jaar = array_combine(range(date("Y", strtotime('+2 years')), 2000), range(date(
 
 ?>
 
-
 <form class="form-inline well" action="layout/index/datumpicker.php" method="post">
     <div class="form-group">
         <label class="control-label">jaar</label>

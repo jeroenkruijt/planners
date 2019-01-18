@@ -32,12 +32,16 @@ while ($change = mysqli_fetch_array($comm)) {
 
 }
 
-
 //bezig indicatie maken voor de index pagina
 
-$bgcolor = '#E7E7E7';
+$bgcolor = '#cccccc';
 
-for ($i = 1; $i < 9; $i++) {
+$rowSQL = mysqli_query($conn, "SELECT MAX( VeldID ) AS max FROM velden;" );
+$number = mysqli_fetch_array( $rowSQL );
+$largestNumber = $number['max'];
+
+
+for ($i = 0; $i <= $largestNumber; $i++) {
 //echo $i;
     $bezig = 'select * from actief where VeldID = ' . $i . ' and Cursusid = ' . $cursusid . '  and Cursusonderdeelid = ' . $coid;
 
@@ -47,7 +51,6 @@ for ($i = 1; $i < 9; $i++) {
 
         $done = mysqli_fetch_array($klaar);
           $id = $done['VeldID'].$done['Cursusonderdeelid'];
-
 
         ?>
         <script>
@@ -61,12 +64,3 @@ for ($i = 1; $i < 9; $i++) {
 
     }
 }
-
-
-
-
-
-
-
-
-// style style='font-weight: bold;

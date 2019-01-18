@@ -31,14 +31,17 @@ if (isset($_POST['submit'])) {
     }
 
     if ($conn->multi_query($sql) === TRUE) {
-        echo "New records created successfully";
+        header("location: ../../?status=succes");
+        exit();
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        header("location: ../../");
+        exit();
     }
 
 
 } else {
-    echo 'hell no';
+    header("location: ../../");
+    exit();
 }
 
 
