@@ -93,6 +93,15 @@ $jaar = array_combine(range(date("Y", strtotime('+2 years')), 2000), range(date(
             ?>
         </select>
     </div>
+    <input name="submit" type="submit" class="btn btn-default">
 
-    <input name="submit" type="submit">
+
 </form>
+
+<form class="navbar-form navbar-left" role="search" action="../../search.php" method="post">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+

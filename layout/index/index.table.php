@@ -1,5 +1,6 @@
+<div class="tableFixHead">
 <table class="table is-fullwidth">
-    <thead>
+    <thead >
     <tr>
         <?php
         if ($thead->num_rows > 0) {
@@ -12,7 +13,7 @@
 
                 $titel = ucfirst($ogt);
 
-                echo "<th>" . $titel . "</th>";
+                echo "<th id='fixed'>" . $titel . "</th>";
 
 
                 $veldnaam[] = $ogt;
@@ -47,7 +48,7 @@
 
             // header tussen andere cursusids te plaatse
             if ($cursusid !== $row['CursusID']) {
-                echo "<tr class='showModal' bgcolor='#003d6b' style='color: #FFFFFF;'>";
+                echo "<tr class='showModal'>";
                 echo "<th colspan='100%'>" . $row['Opleidingnaam'] . "</th>";
                 echo "</tr>";
             }
@@ -66,7 +67,7 @@
 
                $info = $veldnaam[$count];
 
-                echo "<td width='12.5%' id='" . $veldid[$count] . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $row[$info] . "</td>";
+                echo "<td  id='" . $veldid[$count] . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $row[$info] . "</td>";
 
             }
 
@@ -79,3 +80,4 @@
     ?>
     </tbody>
 </table>
+</div>

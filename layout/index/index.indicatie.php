@@ -29,20 +29,17 @@ while ($change = mysqli_fetch_array($comm)) {
 
     <?php
 
-
 }
 
 //bezig indicatie maken voor de index pagina
-
 $bgcolor = '#cccccc';
 
 $rowSQL = mysqli_query($conn, "SELECT MAX( VeldID ) AS max FROM velden;" );
 $number = mysqli_fetch_array( $rowSQL );
 $largestNumber = $number['max'];
 
-
 for ($i = 0; $i <= $largestNumber; $i++) {
-//echo $i;
+
     $bezig = 'select * from actief where VeldID = ' . $i . ' and Cursusid = ' . $cursusid . '  and Cursusonderdeelid = ' . $coid;
 
     $klaar = $conn->query($bezig);
