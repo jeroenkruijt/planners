@@ -7,7 +7,7 @@
  */
 
 echo '<div class="table-responsive">';
-echo '<form action="layout/add/add.add.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'" method="POST">';
+echo '<form action="layout/add/add.add.php?CursusID=' . $cursusid . '&CursusonderdeelID=' . $coid . '" method="POST">';
 echo '<table class="table is-bordered">';
 
 foreach ($titels as $titel) {
@@ -17,13 +17,13 @@ foreach ($titels as $titel) {
 
 
 //    include '../select/select.indicatie.php';
-    echo '<tr>';
-    echo '<td width = "10%" class="' . $titelids . $coid . '"  ><label > ' . $titels . '</label ></td >';
-    echo '<td width = "30%" class="' . $titelids . $coid . '" > ' . $info[$titels] . '</td >';
-    echo '<td width="70%"><input name="' . $titelids . '" class="form-control" value="" placeholder="Plaats hier uw opmerking......"></td>';
-    echo '</tr>';
-}
+        echo '<tr>';
+        echo '<td width = "10%" class="' . $titelids . $coid . '"  ><label > ' . $titels . '</label ></td >';
+        echo '<td width = "20%" class="' . $titelids . $coid . '" > ' . $info[$titels] . '</td >';
+        echo '<td width="70%" colspan="3"><input name="' . $titelids . '" class="form-control" value="" placeholder="Plaats hier uw opmerking......"></td>';
+        echo '</tr>';
 
+}
 
 //echo '<button type="submit" value="Submit">';
 echo '</table>';

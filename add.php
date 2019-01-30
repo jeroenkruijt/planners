@@ -10,6 +10,8 @@
 
     include_once "layout/addons/header.php";
 
+    include_once 'layout/add/add.sql.php';
+
     include_once "layout/add/add.index.php";
 
     include_once "layout/addons/footer.php";

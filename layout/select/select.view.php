@@ -15,8 +15,7 @@ $output .= '
       <div class="table-responsive">
            <table class="table is-bordered">';
 
-//$time = date('d-m-Y', $info['cursusdatum']);
-//$time = date('H:i', $info['cursusdatum']);
+
 
 
 foreach ($titels as $titel) {
@@ -69,7 +68,10 @@ foreach ($titels as $titel) {
     $output .= '</td></tr>';
 }
 $output .= '</table>
-<a href="add.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'" class="btn btn-default">Opmerking plaatsen</a>
+<a href="add.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'" class="btn btn-primary">Opmerking plaatsen</a>
+<a href="info.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'" class="btn btn-primary">Velden invullen</a>
+<button type="button" align="right" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
+
 </div>';
 
 echo $output;

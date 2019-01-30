@@ -2,6 +2,7 @@
 <table class="table is-fullwidth">
     <thead >
     <tr>
+
         <?php
         if ($thead->num_rows > 0) {
 
@@ -20,7 +21,6 @@
                 $veldid[] = $id;
 
 //                print_r($veldnaam);
-
 
             }
 
@@ -42,6 +42,9 @@
     if ($result->num_rows > 0) {
 
         while ($row = mysqli_fetch_array($result)) {
+
+//            print_r($row);
+
             //datetime format veranderen van Y-m-d naar d-m-Y en H:i weg halen bij de datetime en apart
             $row['cursusdatum']  = date('d-m-Y', strtotime($row['datum']));
             $row['Cursustijd']  = date('H:i', strtotime($row['datum']));
@@ -63,12 +66,13 @@
             // informatie die in de tabel komt
             echo "<tr class='view_data' onclick='modalFucntion(\"" . $cursusid . "\",\"" . $coid . "\")' >";
 
+
+
             for($count = 0; $count < $acount; $count++) {
 
                $info = $veldnaam[$count];
 
                 echo "<td  id='" . $veldid[$count] . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $row[$info] . "</td>";
-
             }
 
             echo "</tr>";

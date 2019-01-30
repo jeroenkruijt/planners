@@ -13,7 +13,9 @@ if (isset($_POST['submit'])) {
     $jaar = mysqli_real_escape_string($conn, $_POST['jaar']);
     $maand = mysqli_real_escape_string($conn, $_POST['maand']);
 
-    echo $jaar . $maand;
+    $zoek = mysqli_escape_string($conn, $_POST['zoek']);
+
+    echo $zoek;
 
     session_start();
 

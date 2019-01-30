@@ -11,25 +11,28 @@ if (isset($_POST['submit'])) {
     $cid = $_GET['CursusID'];
     $coid = $_GET['CursusonderdeelID'];
 
-
     include_once '../../db/db.connect.php';
 
     $sql = '';
 
-    while ( ($fruit_name = current($_POST)) !== FALSE ) {
+    while (($fruit_name = current($_POST)) !== FALSE) {
 
         $key = key($_POST);
+
+        echo $key . '<br>';
+
 
         $input = mysqli_real_escape_string($conn, $_POST[$key]);
 
 
-        if ($input != '' && $input !='Submit'){
+        if ($input != '' && $input != 'Submit') {
             $sql .= "INSERT INTO opmerking (veldid, cursusid, cursusonderdeelid, usersid, opmerking) values('$key', '$cid', '$coid', '1', '$input');";
+
         }
 
         next($_POST);
     }
-
+    echo $sql .'<br>';
     if ($conn->multi_query($sql) === TRUE) {
         header("location: ../../?status=succes");
         exit();
