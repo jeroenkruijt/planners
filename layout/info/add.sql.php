@@ -13,7 +13,8 @@ if (isset($_GET['CursusID']) || isset($_GET['CursusonderdeelID'])) {
 
 
 // code om de waarden van de gegevens te pakken aan de hand van de volgende id's cursus id, cursusonderdeel id en docent id
-    $query = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, OP.Opleidingnaam, O.onderdeelnaam, BCB.Bedrijf, CODD.Docent, Aantal, CO.DatumBegin as datum, ED.Lunch, ED.Exameninstantie, ED.Subsidie, ED.Certificaten, ED.Gefactureerd, ED.Uitnodigingen,
+    $query = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, OP.Opleidingnaam, O.onderdeelnaam, BCB.Bedrijf, CODD.Docent, Aantal, CO.DatumBegin as datum, ED.Lunch, 
+ED.Exameninstantie, ED.Subsidie, ED.Certificaten, ED.Gefactureerd, ED.Uitnodigingen,ED.Lesmateriaal, ED.Praktijkmateriaal,
 CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Cursuslocatie,
 CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BS.ship_city ELSE 'Geen locatie' END AS Lesplaats
 FROM cursussen C
