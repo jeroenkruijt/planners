@@ -7,8 +7,8 @@
      */
 
     $host = "localhost";
-    $user = "root";
-    $pass = "";
+    $user = "klantenportaal";
+    $pass = "R54#sec:Cod";
     $db = "planningssysteem";
 
     $conn = mysqli_connect($host, $user, $pass, $db);
@@ -17,3 +17,15 @@
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
+
+//    $host = "localhost";
+//    $user = "root";
+//    $pass = "";
+//    $db = "planningssysteem";
+//
+//    $conn = mysqli_connect($host, $user, $pass, $db);
+//
+//// Check connection
+//    if (mysqli_connect_errno()) {
+//        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+//    }
