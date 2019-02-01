@@ -64,7 +64,7 @@ GROUP BY COD.CursusOnderdeelID) CODD ON CO.CursusOnderdeelID = CODD.CursusOnderd
 LEFT JOIN psentity P ON C.CursusID = P.psid
 LEFT JOIN extradata ED ON C.CursusID = ED.CursusID AND CO.CursusOnderdeelID = ED.CursusonderdeelID
 WHERE P.deleted = 0 AND year(CO.DatumBegin) = $year AND MONTH(CO.DatumBegin) = $month
-order by C.CursusID asc, datum asc ";
+order by C.CursusID asc, datum asc";
 }
 
 $result = $conn->query($sql);
