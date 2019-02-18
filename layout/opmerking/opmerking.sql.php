@@ -29,7 +29,8 @@ where OpmerkingID = '.$oif.' and CursusID = '.$cid.' and  CursusonderdeelID = '.
     $veldnaam = $info['Veldnaam'];
 
 
-    $Sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, OP.Opleidingnaam, O.onderdeelnaam, BCB.Bedrijf, CODD.Docent, Aantal, DATE(CO.DatumBegin) as datum,
+    $Sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, OP.Opleidingnaam, O.onderdeelnaam, BCB.Bedrijf, CODD.Docent, Aantal, CO.DatumBegin as datum, 
+ED.Lunch, ED.Subsidie,ED.Exameninstantie, ED.Certificaten, ED.Gefactureerd, ED.Uitnodigingen, ED.Lesmateriaal, ED.Praktijkmateriaal, ED.Certificatendatum, ED.bedrag, 
 CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Locatienaam,
 CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BS.ship_city ELSE 'Geen locatie' END AS Plaats
 FROM cursussen C
@@ -49,6 +50,7 @@ LEFT JOIN (SELECT COD.CursusOnderdeelID, GROUP_CONCAT(\" \", CONCAT(D.Voornaam, 
 FROM cursusonderdeeldocenten COD
 LEFT JOIN docenten D ON COD.DocentID = D.DocentID
 GROUP BY COD.CursusOnderdeelID) CODD ON CO.CursusOnderdeelID = CODD.CursusOnderdeelID
+LEFT JOIN extradata ED ON C.CursusID = ED.CursusID AND CO.CursusOnderdeelID = ED.CursusonderdeelID
 LEFT JOIN psentity P ON C.CursusID = P.psid
 WHERE P.deleted = 0 AND C.CursusID = $cid AND CO.CursusOnderdeelID = $coid";
 
@@ -57,6 +59,18 @@ WHERE P.deleted = 0 AND C.CursusID = $cid AND CO.CursusOnderdeelID = $coid";
 
     $info['cursusdatum']  = date('d-m-Y', strtotime($info['datum']));
     $info['Cursustijd']  = date('H:i', strtotime($info['datum']));
+
+    if ($info['Certificatendatum'] != '') {
+        $date = strtotime($info['Certificatendatum']);
+        $datum = date('d-m-Y', $date);
+
+        $info['Certificaten'] = $info['Certificaten'] . '<br>' . $datum;
+    }
+
+    if ($info['bedrag'] != '') {
+
+        $info['Gefactureerd'] = $info['Gefactureerd'] . '<br>€' . $info['bedrag'];
+    }
 
     $informatie = $info[$veldnaam];
 

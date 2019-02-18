@@ -5,7 +5,7 @@
  * Date: 30/01/2019
  * Time: 09:27
  */
-if(isset($_POST['submit-zoek'])){
+if (isset($_POST['submit-zoek'])) {
 
     require_once "../../db/db.connect.php";
 
@@ -17,8 +17,8 @@ if(isset($_POST['submit-zoek'])){
     $zoek = mysqli_escape_string($conn, $_POST['zoek']);
 
     $sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, OP.Opleidingnaam, O.onderdeelnaam, BCB.Bedrijf, CODD.Docent, Aantal, CO.DatumBegin as datum, 
-ED.Lunch, ED.Subsidie,ED.Exameninstantie, ED.Certificaten, ED.Gefactureerd, ED.Uitnodigingen,ED.Lesmateriaal, ED.Praktijkmateriaal,
-CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Cursuslocatie,
+ED.Lunch, ED.Subsidie,ED.Exameninstantie, ED.Certificaten, ED.Gefactureerd, ED.Uitnodigingen,ED.Lesmateriaal, ED.Praktijkmateriaal, ED.Certificatendatum, ED.bedrag, 
+CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Cursuslocatie, 
 CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BS.ship_city ELSE 'Geen locatie' END AS Lesplaats
 FROM cursussen C
 LEFT JOIN opleidingen OP ON C.OpleidingID = OP.OpleidingID
@@ -40,7 +40,7 @@ GROUP BY COD.CursusOnderdeelID) CODD ON CO.CursusOnderdeelID = CODD.CursusOnderd
 LEFT JOIN psentity P ON C.CursusID = P.psid
 LEFT JOIN extradata ED ON C.CursusID = ED.CursusID AND CO.CursusOnderdeelID = ED.CursusonderdeelID
  WHERE P.deleted = 0 AND (OP.Opleidingnaam LIKE '%$zoek%' OR O.onderdeelnaam LIKE '%$zoek%' OR BCB.Bedrijf LIKE '%$zoek%' or CODD.Docent LIKE '%$zoek%' OR Aantal LIKE '%$zoek%' OR B.accountname LIKE '%$zoek%' OR  BS.ship_city  LIKE '%$zoek%' OR ED.Lunch LIKE '%$zoek%'
- OR ED.Subsidie LIKE '%$zoek%' OR ED.Certificaten LIKE '%$zoek%' OR ED.Gefactureerd LIKE '%$zoek%' OR ED.Uitnodigingen LIKE '%$zoek%' OR ED.exameninstantie LIKE '%$zoek%') AND year(CO.DatumBegin) = '$year' AND MONTH(CO.DatumBegin) = '$month'
+ OR ED.Subsidie LIKE '%$zoek%' OR ED.Certificaten LIKE '%$zoek%' OR ED.Gefactureerd LIKE '%$zoek%' OR ED.Uitnodigingen LIKE '%$zoek%' OR ED.exameninstantie LIKE '%$zoek%' OR CO.DatumBegin LIKE '%$zoek%') AND year(CO.DatumBegin) = '$year' AND MONTH(CO.DatumBegin) = '$month'
 order by C.CursusID asc ";
 
     $_SESSION['sql'] = $sql;
@@ -48,7 +48,7 @@ order by C.CursusID asc ";
     header("location: ../../");
     exit();
 
-}elseif (isset($_POST['submit-unset'])){
+} elseif (isset($_POST['submit-unset'])) {
 
     session_start();
     unset($_SESSION['sql']);
