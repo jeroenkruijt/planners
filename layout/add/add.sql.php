@@ -14,7 +14,7 @@ if (isset($_GET['CursusID']) || isset($_GET['CursusonderdeelID'])) {
 
 // code om de waarden van de gegevens te pakken aan de hand van de volgende id's cursus id, cursusonderdeel id en docent id
     $query = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, OP.Opleidingnaam, O.onderdeelnaam, BCB.Bedrijf, CODD.Docent, Aantal, CO.DatumBegin as datum, 
-ED.Lunch, ED.Exameninstantie, ED.Subsidie, ED.Certificaten, ED.Gefactureerd, ED.Uitnodigingen,ED.Lesmateriaal, ED.Praktijkmateriaal,
+ED.Lunch, ED.Exameninstantie, ED.Subsidie, ED.Certificaten, ED.Gefactureerd, ED.Uitnodigingen,ED.Lesmateriaal, ED.Praktijkmateriaal, ED.Certificatendatum, ED.bedrag,
 CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Cursuslocatie,
 CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BS.ship_city ELSE 'Geen locatie' END AS Lesplaats
 FROM cursussen C
@@ -46,6 +46,19 @@ WHERE P.deleted = 0 AND C.CursusID = $cursusid and CO.CursusOnderdeelID = $coid
         $info = $row;
         $info['cursusdatum']  = date('d-m-Y', strtotime($row['datum']));
         $info['Cursustijd']  = date('H:i', strtotime($row['datum']));
+
+        if ($info['Certificatendatum'] != '') {
+            $date = strtotime($info['Certificatendatum']);
+            $datum = date('d-m-Y', $date);
+
+            $info['Certificaten'] = $info['Certificaten'] . '<br>' . $datum;
+        }
+
+        if ($info['bedrag'] != '') {
+
+            $info['Gefactureerd'] = $info['Gefactureerd'] . '<br>€' . $info['bedrag'];
+        }
+
 
 
     }

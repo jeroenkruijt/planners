@@ -6,15 +6,14 @@
      * Time: 10:48
      */
 
-// db NAS
-$servername3 = "192.168.20.201:3307";
-$username3 = "klantenportaal";
-$password3 = "R54#sec:Cod";
-$dbname3 = "planningssysteem";
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db = "planningssysteem";
 
-// connect to NAS
-$conn = new mysqli($servername3, $username3, $password3, $dbname3);
+$conn = mysqli_connect($host, $user, $pass, $db);
+
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }

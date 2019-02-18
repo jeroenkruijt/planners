@@ -13,8 +13,7 @@ if (isset($_GET['CursusID']) || isset($_GET['CursusonderdeelID'])) {
 
 
 // code om de waarden van de gegevens te pakken aan de hand van de volgende id's cursus id, cursusonderdeel id en docent id
-    $query = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, OP.Opleidingnaam, O.onderdeelnaam, BCB.Bedrijf, CODD.Docent, Aantal, CO.DatumBegin as datum, ED.Lunch, 
-ED.Exameninstantie, ED.Subsidie, ED.Certificaten, ED.Gefactureerd, ED.Uitnodigingen,ED.Lesmateriaal, ED.Praktijkmateriaal,
+    $query = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, ED.Lunch, ED.Exameninstantie, ED.Subsidie, ED.Certificaten, ED.Gefactureerd, ED.Uitnodigingen,ED.Lesmateriaal, ED.Praktijkmateriaal, ED.Certificatendatum, ED.bedrag, 
 CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Cursuslocatie,
 CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BS.ship_city ELSE 'Geen locatie' END AS Lesplaats
 FROM cursussen C
@@ -44,10 +43,6 @@ WHERE P.deleted = 0 AND C.CursusID = $cursusid and CO.CursusOnderdeelID = $coid
     while ($row = mysqli_fetch_array($content)) {
 
         $info = $row;
-        $info['cursusdatum']  = date('d-m-Y', strtotime($row['datum']));
-        $info['Cursustijd']  = date('H:i', strtotime($row['datum']));
-
-
     }
 
 //hier komt de code om de veld waarden voor de titel van de gegevens te halen

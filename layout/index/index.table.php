@@ -49,6 +49,20 @@
             $row['cursusdatum']  = date('d-m-Y', strtotime($row['datum']));
             $row['Cursustijd']  = date('H:i', strtotime($row['datum']));
 
+            if ($row['Certificatendatum'] != '') {
+                $date = strtotime($row['Certificatendatum']);
+                $datum = date('d-m-Y', $date);
+
+                $row['Certificaten'] = $row['Certificaten'] . '<br>' . $datum;
+            }
+
+            if ($row['bedrag'] != '') {
+
+                $row['Gefactureerd'] = $row['Gefactureerd'] . '<br>€' . $row['bedrag'];
+            }
+
+
+
             // header tussen andere cursusids te plaatse
             if ($cursusid !== $row['CursusID']) {
                 echo "<tr class='showModal'>";

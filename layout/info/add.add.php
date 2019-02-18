@@ -29,43 +29,70 @@ if (isset($_POST['submit'])) {
     $certificaten = mysqli_real_escape_string($conn, $_POST['Certificaten']);
 
 
-    if ($selectCertificaten == 'ja' && !empty($certificaten)) {
 
-        $date = date('d-m-Y', strtotime($certificaten));
-//        echo $date;
-
-        $selectCertificaten = $selectCertificaten . ' - ' . $date;
-
-    }
-    if (!empty($gefact)) {
-
-        $selectGefactureerd = $selectGefactureerd . ' - ' . $gefact;
-
-    }
 
     $select = " select * from extradata where CursusID = '$cid' and CursusonderdeelID = '$coid'";
 
     $result = $conn->query($select);
 
     if (mysqli_num_rows($result) == 0) {
-        $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, Lunch, Subsidie, Certificaten, Gefactureerd, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
-                                    values('$cid', '$coid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$selectGefactureerd', '$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
+
+        if ($certificaten == ''){
+            $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, Lunch, Subsidie, Certificaten, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
+                                    values('$cid', '$coid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
+
+        } else {
+
+
+            $date = strtotime($certificaten);
+            $datum = date('Y-m-d', $date);
+
+
+            $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, Lunch, Subsidie, Certificaten, Certificatendatum, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
+                                    values('$cid', '$coid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$datum', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
+
+        }
+//
+//        $datum =
+//
+//        $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, Lunch, Subsidie, Certificaten, Certificatendatum, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal)
+//                                    values('$cid', '$coid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$certificaten', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
+
         if ($conn->query($insert) === TRUE) {
         header("location: ../../?status=succes");
+//            echo $insert;
             exit();
         } else {
         header("location: ../../");
+//            echo $insert;
+
             exit();
         }
 
     } else {
-        $update = "UPDATE extradata SET Lunch='$Lunch', Subsidie='$selectSubsidie', Certificaten='$selectCertificaten', Gefactureerd='$selectGefactureerd', 
+
+        if ($certificaten == ''){
+        $update = "UPDATE extradata SET Lunch='$Lunch', Subsidie='$selectSubsidie', Certificaten='$selectCertificaten', Gefactureerd='$selectGefactureerd', bedrag='$gefact',
 Uitnodigingen='$Uitnodigingen', exameninstantie='$Exameninstantie', Lesmateriaal='$Lesmateriaal', Praktijkmateriaal='$Praktijkmateriaal' WHERE CursusID = '$cid' and CursusonderdeelID = '$coid'";
+
+    } else {
+
+            $date = strtotime($certificaten);
+            $datum = date('Y-m-d', $date);
+
+            $update = "UPDATE extradata SET Lunch='$Lunch', Subsidie='$selectSubsidie', Certificaten='$selectCertificaten', Certificatendatum='$datum' ,Gefactureerd='$selectGefactureerd', bedrag='$gefact',
+Uitnodigingen='$Uitnodigingen', exameninstantie='$Exameninstantie', Lesmateriaal='$Lesmateriaal', Praktijkmateriaal='$Praktijkmateriaal' WHERE CursusID = '$cid' and CursusonderdeelID = '$coid'";
+
+        }
+
         if ($conn->query($update) === TRUE) {
         header("location: ../../?status=succes");
+//            echo $update;
             exit();
         } else {
         header("location: ../../");
+//            echo $update;
+
             exit();
         }
     }
