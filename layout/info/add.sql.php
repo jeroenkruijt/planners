@@ -36,7 +36,7 @@ LEFT JOIN docenten D ON COD.DocentID = D.DocentID
 GROUP BY COD.CursusOnderdeelID) CODD ON CO.CursusOnderdeelID = CODD.CursusOnderdeelID
 LEFT JOIN psentity P ON C.CursusID = P.psid
 LEFT JOIN extradata ED ON C.CursusID = ED.CursusID AND CO.CursusOnderdeelID = ED.CursusonderdeelID
-WHERE P.deleted = 0 AND C.CursusID = 23380 and CO.CursusOnderdeelID = 8681
+WHERE P.deleted = 0 AND C.CursusID = $cursusid and CO.CursusOnderdeelID = $coid
 ";
 
     $content = mysqli_query($conn, $query);
@@ -61,7 +61,7 @@ $velden = "SELECT * FROM velden WHERE zichtbaar = 1 ORDER BY VeldID";
     }
 
 // opmerking uit de db halen
-    $opmerking = "SELECT OpmerkingID, VeldID, Opmerking, datum, u.voornaam FROM opmerking 
+    $opmerking = "SELECT OpmerkingID, VeldID, Opmerking, datum FROM opmerking 
 left join users U on opmerking.UsersID = U.userid 
 WHERE CursusID = $cursusid AND CursusonderdeelID = $coid ";
 

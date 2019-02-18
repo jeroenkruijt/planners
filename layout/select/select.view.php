@@ -27,7 +27,7 @@ foreach ($titels as $titel) {
 
     include 'select.indicatie.php';
 
-    $bgchange = $titelids.$coid;
+    $bgchange = $titelids;
 
 //    echo $bgchange . '<br>';
 
@@ -38,6 +38,9 @@ foreach ($titels as $titel) {
                ';
 
     $output .= '<td width="60%" onclick=" ">';
+
+
+//    print_r($opmerkingen);
 
     if (!empty($opmerkingen)) {
 

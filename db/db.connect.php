@@ -6,26 +6,15 @@
      * Time: 10:48
      */
 
-//    $host = "localhost";
-//    $user = "klantenportaal";
-//    $pass = "R54#sec:Cod";
-//    $db = "planningssysteem";
-//
-//    $conn = mysqli_connect($host, $user, $pass, $db);
-//
-//// Check connection
-//    if (mysqli_connect_errno()) {
-//        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-//    }
+// db NAS
+$servername3 = "192.168.20.201:3307";
+$username3 = "klantenportaal";
+$password3 = "R54#sec:Cod";
+$dbname3 = "planningssysteem";
 
-    $host = "localhost";
-    $user = "root";
-    $pass = "";
-    $db = "planningssysteem";
-
-    $conn = mysqli_connect($host, $user, $pass, $db);
-
+// connect to NAS
+$conn = new mysqli($servername3, $username3, $password3, $dbname3);
 // Check connection
-    if (mysqli_connect_errno()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    }
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}

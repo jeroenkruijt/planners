@@ -55,6 +55,9 @@ WHERE P.deleted = 0 AND C.CursusID = $cid AND CO.CursusOnderdeelID = $coid";
     $result = $conn->query($Sql);
     $info = mysqli_fetch_array($result);
 
+    $info['cursusdatum']  = date('d-m-Y', strtotime($info['datum']));
+    $info['Cursustijd']  = date('H:i', strtotime($info['datum']));
+
     $informatie = $info[$veldnaam];
 
 
