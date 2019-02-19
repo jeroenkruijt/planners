@@ -73,12 +73,13 @@
             // staan hier zodat de functie hierboven niet al de volgende var krijg en dus niet meer functioneert
             $cursusid = $row['CursusID'];
             $coid = $row['CursusOnderdeelID'];
+            $bedrijfid= $row['BedrijfID'];
 
             //indicatie include om aan te geven dat er een opmerking aanwezig is
             include 'index.indicatie.php';
 
             // informatie die in de tabel komt
-            echo "<tr class='view_data' onclick='modalFucntion(\"" . $cursusid . "\",\"" . $coid . "\")' >";
+            echo "<tr class='view_data' onclick='modalFucntion(\"" . $cursusid . "\",\"" . $coid . "\", \"" . $bedrijfid . "\")' >";
 
 
 

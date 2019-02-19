@@ -38,17 +38,18 @@
      // });
 
 
-    function modalFucntion(str, str2) {
+    function modalFucntion(str, str2, str3) {
 
         var cid = str;
         var coid = str2;
+        var bid = str3;
 
 
         $(document).ready(function () {
             $.ajax({
                 url: "select.php",
                 method: "post",
-                data: {cursusid: cid, coid: coid},
+                data: {cursusid: cid, coid: coid, bid: bid},
                 success: function (data) {
                     $('#detailsplan').html(data);
                     $('#dataModal').modal("show");

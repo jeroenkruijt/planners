@@ -7,7 +7,7 @@
  */
 
 echo '<div class="table-responsive">';
-echo '<form action="layout/add/add.add.php?CursusID=' . $cursusid . '&CursusonderdeelID=' . $coid . '" method="POST">';
+echo '<form action="layout/add/add.add.php?CursusID=' . $cursusid . '&CursusonderdeelID=' . $coid . '&CursusonderdeelID=' . $coid . '&BID=' . $bid . '" method="POST">';
 echo '<table class="table is-bordered">';
 
 foreach ($titels as $titel) {

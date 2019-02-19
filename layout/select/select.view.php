@@ -60,8 +60,8 @@ foreach ($titels as $titel) {
 
     <ul class="dropdown-menu">
         <li><a disabled><strong>Op ' . $newdate . '</strong></a></li>
-        <li><a href="opmerking.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'&veldid='.$titelids.'&opmerkingid='.$oid.'&optie=change">Bewerken</a></li>
-        <li><a href="opmerking.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'&veldid='.$titelids.'&opmerkingid='.$oid.'&optie=delete">Verwijderen</a></li>
+        <li><a href="opmerking.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'&veldid='.$titelids.'&BID='.$bedrijfid.'&opmerkingid='.$oid.'&optie=change">Bewerken</a></li>
+        <li><a href="opmerking.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'&veldid='.$titelids.'&BID='.$bedrijfid.'&opmerkingid='.$oid.'&optie=delete">Verwijderen</a></li>
     </ul>
 </ul>';
             }
@@ -71,8 +71,8 @@ foreach ($titels as $titel) {
     $output .= '</td></tr>';
 }
 $output .= '</table>
-<a href="add.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'" class="btn btn-primary">Opmerking plaatsen</a>
-<a href="info.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'" class="btn btn-primary">Velden invullen</a>
+<a href="add.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'&BID='.$bedrijfid.'" class="btn btn-primary">Opmerking plaatsen</a>
+<a href="info.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'&BID='.$bedrijfid.'" class="btn btn-primary">Velden invullen</a>
 <button type="button" align="right" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
 
 </div>';

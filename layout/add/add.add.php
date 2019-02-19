@@ -10,6 +10,7 @@ if (isset($_POST['submit'])) {
 
     $cid = $_GET['CursusID'];
     $coid = $_GET['CursusonderdeelID'];
+    $bid = $_GET['BID'];
 
     include_once '../../db/db.connect.php';
 
@@ -26,7 +27,7 @@ if (isset($_POST['submit'])) {
 
 
         if ($input != '' && $input != 'Submit') {
-            $sql .= "INSERT INTO opmerking (veldid, cursusid, cursusonderdeelid, usersid, opmerking) values('$key', '$cid', '$coid', '1', '$input');";
+            $sql .= "INSERT INTO opmerking (veldid, cursusid, cursusonderdeelid, BedrijfID,usersid, opmerking) values('$key', '$cid', '$coid', '$bid', '1', '$input');";
 
         }
 
