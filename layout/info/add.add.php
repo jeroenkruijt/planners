@@ -10,6 +10,7 @@ if (isset($_POST['submit'])) {
 
     $cid = $_GET['CursusID'];
     $coid = $_GET['CursusonderdeelID'];
+    $bid = $_GET['BID'];
 
 //    print_r($_POST);
 //    echo '<br>';
@@ -31,15 +32,15 @@ if (isset($_POST['submit'])) {
 
 
 
-    $select = " select * from extradata where CursusID = '$cid' and CursusonderdeelID = '$coid'";
+    $select = " select * from extradata where CursusID = '$cid' and CursusonderdeelID = '$coid' and  BedrijfID = '$bid'";
 
     $result = $conn->query($select);
 
     if (mysqli_num_rows($result) == 0) {
 
         if ($certificaten == ''){
-            $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, Lunch, Subsidie, Certificaten, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
-                                    values('$cid', '$coid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
+            $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, BedrijfID, Lunch, Subsidie, Certificaten, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
+                                    values('$cid', '$coid', '$bid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
 
         } else {
 
@@ -48,8 +49,8 @@ if (isset($_POST['submit'])) {
             $datum = date('Y-m-d', $date);
 
 
-            $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, Lunch, Subsidie, Certificaten, Certificatendatum, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
-                                    values('$cid', '$coid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$datum', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
+            $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, BedrijfID, Lunch, Subsidie, Certificaten, Certificatendatum, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
+                                    values('$cid', '$coid', '$bid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$datum', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
 
         }
 //
@@ -59,12 +60,12 @@ if (isset($_POST['submit'])) {
 //                                    values('$cid', '$coid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$certificaten', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
 
         if ($conn->query($insert) === TRUE) {
-        header("location: ../../?status=succes");
-//            echo $insert;
+//        header("location: ../../?status=succes");
+            echo $insert;
             exit();
         } else {
-        header("location: ../../");
-//            echo $insert;
+//        header("location: ../../");
+            echo $insert;
 
             exit();
         }

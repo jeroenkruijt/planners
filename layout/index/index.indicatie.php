@@ -40,11 +40,14 @@ $largestNumber = $number['max'];
 
 for ($i = 0; $i <= $largestNumber; $i++) {
 
+//    if()
+
     $bezig = 'select * from actief where VeldID = ' . $i . ' and Cursusid = ' . $cursusid . '  and Cursusonderdeelid = ' . $coid .' and BedrijfID = ' . $bedrijfid;
 
 //    echo $bezig . '<BR>';
 
     $klaar = $conn->query($bezig);
+
 
     if (mysqli_num_rows($klaar) > 0) {
 

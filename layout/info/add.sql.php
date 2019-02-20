@@ -10,6 +10,7 @@ if (isset($_GET['CursusID']) || isset($_GET['CursusonderdeelID'])) {
 
     $cursusid = $_GET['CursusID'];
     $coid = $_GET['CursusonderdeelID'];
+    $bid = $_GET['BID'];
 
 
 // code om de waarden van de gegevens te pakken aan de hand van de volgende id's cursus id, cursusonderdeel id en docent id
