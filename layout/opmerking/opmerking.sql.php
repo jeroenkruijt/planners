@@ -77,13 +77,16 @@ WHERE P.deleted = 0 AND C.CursusID = $cid and CO.CursusOnderdeelID = $coid AND C
 
 } elseif ($optie == 'delete') {
 
-    $delete = 'DELETE FROM opmerking where Cursusonderdeelid = '.$coid.' and Cursusid= '.$cid.' and VeldID = '.$vid .' and OpmerkingID = '. $oif;
+    $delete = 'DELETE FROM opmerking where Cursusonderdeelid = '.$coid.' and Cursusid= '.$cid.' and VeldID = '.$vid .' and OpmerkingID = '. $oif .' and BedrijfID = '. $bid;
+
+
+    echo $delete;
 
     if ($conn->query($delete) === TRUE) {
         header("location: ./?delete=succes");
         exit();
     } else {
-        echo "Error deleting record: " . $conn->error;
+        header("location: ./?delete=fail");
         exit();
     }
 

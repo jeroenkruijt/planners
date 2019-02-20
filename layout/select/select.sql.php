@@ -39,6 +39,8 @@ LEFT JOIN psentity P ON C.CursusID = P.psid
 WHERE P.deleted = 0 AND C.CursusID = $cursusid and CO.CursusOnderdeelID = $coid AND CB.BedrijfID = $bedrijfid
 ";
 
+
+
 $content = mysqli_query($conn, $query);
 
 while ($row = mysqli_fetch_array($content)) {

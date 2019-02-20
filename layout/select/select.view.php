@@ -32,9 +32,9 @@ foreach ($titels as $titel) {
 //    echo $bgchange . '<br>';
 
     $output .= '<tr>
-                     <td width="10%" class="' . $titelids . $coid . '"  bgcolor="' . $bgc . '"  onclick="updateFucntion(\'' . $titelids . '\', \'' . $coid . '\', \'' . $cursusid . '\')"><label>' . $titels . ':</label></td>
+                     <td width="10%" class="' . $titelids . $coid . '"  bgcolor="' . $bgc . '"  onclick="updateFucntion(\'' . $titelids . '\', \'' . $coid . '\', \'' . $cursusid . '\', \'' . $bedrijfid . '\')"><label>' . $titels . ':</label></td>
                      
-                     <td width="30%" class="' . $titelids . $coid . '"  bgcolor="' . $bgc . '" onclick="updateFucntion(\'' . $titelids . '\', \'' . $coid . '\', \'' . $cursusid . '\')">' . $info[$titels] . '</td>      
+                     <td width="30%" class="' . $titelids . $coid . '"  bgcolor="' . $bgc . '" onclick="updateFucntion(\'' . $titelids . '\', \'' . $coid . '\', \'' . $cursusid . '\', \'' . $bedrijfid . '\')">' . $info[$titels] . '</td>      
                ';
 
     $output .= '<td width="60%" onclick=" ">';

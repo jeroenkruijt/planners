@@ -13,7 +13,7 @@ $comm = $conn->query($comment);
 
 while ($change = mysqli_fetch_array($comm)) {
 
-    $change = $change['VeldID'] . $change['CursusonderdeelID']
+    $change = $change['VeldID'] . $bedrijfid . $coid;
 
     ?>
 
@@ -40,14 +40,16 @@ $largestNumber = $number['max'];
 
 for ($i = 0; $i <= $largestNumber; $i++) {
 
-    $bezig = 'select * from actief where VeldID = ' . $i . ' and Cursusid = ' . $cursusid . '  and Cursusonderdeelid = ' . $coid;
+    $bezig = 'select * from actief where VeldID = ' . $i . ' and Cursusid = ' . $cursusid . '  and Cursusonderdeelid = ' . $coid .' and BedrijfID = ' . $bedrijfid;
+
+//    echo $bezig . '<BR>';
 
     $klaar = $conn->query($bezig);
 
     if (mysqli_num_rows($klaar) > 0) {
 
         $done = mysqli_fetch_array($klaar);
-          $id = $done['VeldID'].$done['Cursusonderdeelid'];
+          $id = $done['VeldID'].  $bedrijfid . $coid
 
         ?>
         <script>
