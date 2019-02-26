@@ -8,7 +8,14 @@
 
 $bgc = '#cccccc';
 
+if($bedrijfid != ''){
     $bezig = 'select * from actief where VeldID = ' . $titelids . ' and Cursusid = ' . $cursusid . '  and Cursusonderdeelid = ' . $coid .' and BedrijfID = ' . $bedrijfid;
+
+} else {
+    $bezig = 'select * from actief where VeldID = ' . $titelids . ' and Cursusid = ' . $cursusid . '  and Cursusonderdeelid = ' . $coid;
+
+}
+
 
     $klaar = $conn->query($bezig);
 

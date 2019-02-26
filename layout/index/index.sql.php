@@ -40,9 +40,10 @@ if (isset($_SESSION['sql'])) {
 $year = $_SESSION['year'];
 $month = $_SESSION['month'];
 
-    $sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, CB.BedrijfID, OP.Opleidingnaam, O.onderdeelnaam, B1.accountname AS Bedrijf, CODD.Docent, Aantal, CO.DatumBegin as datum, 
+    $sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, CB.BedrijfID, OP.Opleidingnaam, O.onderdeelnaam,  CODD.Docent, Aantal, CO.DatumBegin as datum, 
 ED.Lunch, ED.Subsidie,ED.Exameninstantie, ED.Certificaten, ED.Gefactureerd, ED.Uitnodigingen, ED.Lesmateriaal, ED.Praktijkmateriaal, ED.Certificatendatum, ED.bedrag, 
 CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Cursuslocatie,
+CASE WHEN CB.BedrijfID > 0 THEN  B1.accountname ELSE 'Geen bedrijf' END AS Bedrijf,
 CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BS.ship_city ELSE 'Geen locatie' END AS Lesplaats
 FROM cursussen C
 LEFT JOIN opleidingen OP ON C.OpleidingID = OP.OpleidingID
@@ -62,7 +63,7 @@ GROUP BY COD.CursusOnderdeelID) CODD ON CO.CursusOnderdeelID = CODD.CursusOnderd
 LEFT JOIN extradata ED ON C.CursusID = ED.CursusID AND CO.CursusOnderdeelID = ED.CursusonderdeelID
 LEFT JOIN psentity P ON C.CursusID = P.psid
 WHERE P.deleted = 0 AND year(CO.DatumBegin) = $year AND MONTH(CO.DatumBegin) = $month
-order by C.CursusID asc, datum asc
+order by  date(datum)asc
 ";
 
 }

@@ -39,8 +39,17 @@ if (isset($_POST['submit'])) {
     if (mysqli_num_rows($result) == 0) {
 
         if ($certificaten == ''){
-            $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, BedrijfID, Lunch, Subsidie, Certificaten, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
+
+            if($bid != '') {
+                $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, BedrijfID, Lunch, Subsidie, Certificaten, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
                                     values('$cid', '$coid', '$bid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
+            } else {
+                $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, Lunch, Subsidie, Certificaten, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
+                                    values('$cid', '$coid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
+
+            }
+
+
 
         } else {
 
@@ -48,10 +57,14 @@ if (isset($_POST['submit'])) {
             $date = strtotime($certificaten);
             $datum = date('Y-m-d', $date);
 
-
-            $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, BedrijfID, Lunch, Subsidie, Certificaten, Certificatendatum, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
+            if($bid != '') {
+                $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, BedrijfID, Lunch, Subsidie, Certificaten, Certificatendatum, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
                                     values('$cid', '$coid', '$bid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$datum', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
+            } else {
+                $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, Lunch, Subsidie, Certificaten, Certificatendatum, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
+                                    values('$cid', '$coid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$datum', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
 
+            }
         }
 //
 //        $datum =

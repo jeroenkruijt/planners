@@ -42,7 +42,12 @@ for ($i = 0; $i <= $largestNumber; $i++) {
 
 //    if()
 
-    $bezig = 'select * from actief where VeldID = ' . $i . ' and Cursusid = ' . $cursusid . '  and Cursusonderdeelid = ' . $coid .' and BedrijfID = ' . $bedrijfid;
+    if($bedrijfid == ''){
+        $bezig = 'select * from actief where VeldID = ' . $i . ' and Cursusid = ' . $cursusid . '  and Cursusonderdeelid = ' . $coid ;
+    }else{
+        $bezig = 'select * from actief where VeldID = ' . $i . ' and Cursusid = ' . $cursusid . '  and Cursusonderdeelid = ' . $coid .' and BedrijfID = ' . $bedrijfid;
+    }
+
 
 //    echo $bezig . '<BR>';
 
