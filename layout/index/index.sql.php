@@ -9,7 +9,7 @@
 
 
 //    thead content de namen die boven aan de colmunen staan
-$sql = "SELECT * FROM velden WHERE Zichtbaar = 1 order by VeldID asc ";
+$sql = "SELECT * FROM velden WHERE Zichtbaar = 1 order by volgorde asc ";
 
 $thead = $conn->query($sql);
 
