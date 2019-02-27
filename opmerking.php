@@ -7,7 +7,7 @@
  */
 
 
-if (isset($_GET['CursusID']) && isset($_GET['CursusonderdeelID']) && isset($_GET['CursusID']) && isset($_GET['optie'])) {
+if (isset($_GET['CursusID']) && isset($_GET['CursusonderdeelID']) && isset($_GET['optie'])) {
 
 
     require_once "db/db.connect.php";
