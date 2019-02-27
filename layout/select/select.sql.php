@@ -70,7 +70,7 @@ WHERE P.deleted = 0 AND C.CursusID = $cursusid and CO.CursusOnderdeelID = $coid
 ";
 
 }
- echo  $query;
+// echo  $query;
 $content = mysqli_query($conn, $query);
 
 while ($row = mysqli_fetch_array($content)) {

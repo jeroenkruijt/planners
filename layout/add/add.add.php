@@ -27,7 +27,13 @@ if (isset($_POST['submit'])) {
 
 
         if ($input != '' && $input != 'Submit') {
-            $sql .= "INSERT INTO opmerking (veldid, cursusid, cursusonderdeelid, BedrijfID,usersid, opmerking) values('$key', '$cid', '$coid', '$bid', '1', '$input');";
+
+            if ($bid != '') {
+                $sql .= "INSERT INTO opmerking (veldid, cursusid, cursusonderdeelid, BedrijfID,usersid, opmerking) values('$key', '$cid', '$coid', '$bid', '1', '$input');";
+            } else {
+                $sql .= "INSERT INTO opmerking (veldid, cursusid, cursusonderdeelid, usersid, opmerking) values('$key', '$cid', '$coid', '1', '$input');";
+
+            }
 
         }
 
