@@ -33,8 +33,6 @@ if (isset($_SESSION['sql'])) {
 
     $sql = $_SESSION['sql'];
 
-//    unset($_SESSION['sql']);
-
 } else {
 
 $year = $_SESSION['year'];
