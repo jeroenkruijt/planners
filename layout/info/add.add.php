@@ -31,8 +31,12 @@ if (isset($_POST['submit'])) {
 
 
 
+    if  ($bid != '') {
+        $select = " select * from extradata where CursusID = '$cid' and CursusonderdeelID = '$coid' and  BedrijfID = '$bid'";
+    }else {
+        $select = " select * from extradata where CursusID = '$cid' and CursusonderdeelID = '$coid'";
+    }
 
-    $select = " select * from extradata where CursusID = '$cid' and CursusonderdeelID = '$coid' and  BedrijfID = '$bid'";
 
     $result = $conn->query($select);
 
@@ -73,11 +77,11 @@ if (isset($_POST['submit'])) {
 //                                    values('$cid', '$coid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$certificaten', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
 
         if ($conn->query($insert) === TRUE) {
-//        header("location: ../../?status=succes");
+        header("location: ../../?status=succes");
             echo $insert;
             exit();
         } else {
-//        header("location: ../../");
+        header("location: ../../");
             echo $insert;
 
             exit();
