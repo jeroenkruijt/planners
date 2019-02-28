@@ -31,6 +31,7 @@ if (isset($_POST['submit'])) {
 
 
 
+
     if  ($bid != '') {
         $select = " select * from extradata where CursusID = '$cid' and CursusonderdeelID = '$coid' and  BedrijfID = '$bid'";
     }else {

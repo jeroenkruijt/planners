@@ -36,9 +36,10 @@ where OpmerkingID = ' . $oif . ' and CursusID = ' . $cid . ' and  Cursusonderdee
     $veldnaam = $info['Veldnaam'];
 
     if($bid != '') {
-        $Sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, CB.BedrijfID, OP.Opleidingnaam, O.onderdeelnaam, B1.accountname AS Bedrijf, CODD.Docent, Aantal, CO.DatumBegin as datum, 
+        $Sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, CB.BedrijfID, OP.Opleidingnaam, O.onderdeelnaam, CODD.Docent, CODA.Assistent, Aantal, CO.DatumBegin as datum, 
 ED.Lunch, ED.Subsidie,ED.Exameninstantie, ED.Certificaten, ED.Gefactureerd, ED.Uitnodigingen, ED.Lesmateriaal, ED.Praktijkmateriaal, ED.Certificatendatum, ED.bedrag, 
 CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Cursuslocatie,
+CASE WHEN CB.BedrijfID > 0 THEN  B1.accountname ELSE 'Geen bedrijf' END AS Bedrijf,
 CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BS.ship_city ELSE 'Geen locatie' END AS Lesplaats
 FROM cursussen C
 LEFT JOIN opleidingen OP ON C.OpleidingID = OP.OpleidingID
@@ -52,16 +53,25 @@ LEFT JOIN (SELECT CursusID, CursusOnderdeelID, COUNT(CursistID) AS Aantal FROM c
 LEFT JOIN cursusbedrijven CB ON C.CursusID = CB.CursusID
 LEFT JOIN vtigercrm600.vtiger_account B1 ON CB.BedrijfID = B1.accountid
 LEFT JOIN (SELECT COD.CursusOnderdeelID, GROUP_CONCAT(' ', CONCAT(D.Voornaam, ' ', D.Achternaam)) AS Docent
-FROM cursusonderdeeldocenten COD
+FROM cursusonderdeeldocenten COD 
 LEFT JOIN docenten D ON COD.DocentID = D.DocentID
+WHERE COD.Docent = 1
 GROUP BY COD.CursusOnderdeelID) CODD ON CO.CursusOnderdeelID = CODD.CursusOnderdeelID
+LEFT JOIN (SELECT COD.CursusOnderdeelID, GROUP_CONCAT(' ', CONCAT(D.Voornaam, ' ', D.Achternaam)) AS Assistent
+FROM cursusonderdeeldocenten COD 
+LEFT JOIN docenten D ON COD.DocentID = D.DocentID
+WHERE COD.Assistent = 1
+GROUP BY COD.CursusOnderdeelID) CODA ON CO.CursusOnderdeelID = CODA.CursusOnderdeelID
 LEFT JOIN extradata ED ON C.CursusID = ED.CursusID AND CO.CursusOnderdeelID = ED.CursusonderdeelID
 LEFT JOIN psentity P ON C.CursusID = P.psid
 WHERE P.deleted = 0 AND C.CursusID = $cid and CO.CursusOnderdeelID = $coid AND CB.BedrijfID = $bid";
+
     } else{
-        $Sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, CB.BedrijfID, OP.Opleidingnaam, O.onderdeelnaam, B1.accountname AS Bedrijf, CODD.Docent, Aantal, CO.DatumBegin as datum, 
+
+        $Sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, CB.BedrijfID, OP.Opleidingnaam, O.onderdeelnaam, CODD.Docent, CODA.Assistent, Aantal, CO.DatumBegin as datum, 
 ED.Lunch, ED.Subsidie,ED.Exameninstantie, ED.Certificaten, ED.Gefactureerd, ED.Uitnodigingen, ED.Lesmateriaal, ED.Praktijkmateriaal, ED.Certificatendatum, ED.bedrag, 
 CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Cursuslocatie,
+CASE WHEN CB.BedrijfID > 0 THEN  B1.accountname ELSE 'Geen bedrijf' END AS Bedrijf,
 CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BS.ship_city ELSE 'Geen locatie' END AS Lesplaats
 FROM cursussen C
 LEFT JOIN opleidingen OP ON C.OpleidingID = OP.OpleidingID
@@ -75,9 +85,15 @@ LEFT JOIN (SELECT CursusID, CursusOnderdeelID, COUNT(CursistID) AS Aantal FROM c
 LEFT JOIN cursusbedrijven CB ON C.CursusID = CB.CursusID
 LEFT JOIN vtigercrm600.vtiger_account B1 ON CB.BedrijfID = B1.accountid
 LEFT JOIN (SELECT COD.CursusOnderdeelID, GROUP_CONCAT(' ', CONCAT(D.Voornaam, ' ', D.Achternaam)) AS Docent
-FROM cursusonderdeeldocenten COD
+FROM cursusonderdeeldocenten COD 
 LEFT JOIN docenten D ON COD.DocentID = D.DocentID
+WHERE COD.Docent = 1
 GROUP BY COD.CursusOnderdeelID) CODD ON CO.CursusOnderdeelID = CODD.CursusOnderdeelID
+LEFT JOIN (SELECT COD.CursusOnderdeelID, GROUP_CONCAT(' ', CONCAT(D.Voornaam, ' ', D.Achternaam)) AS Assistent
+FROM cursusonderdeeldocenten COD 
+LEFT JOIN docenten D ON COD.DocentID = D.DocentID
+WHERE COD.Assistent = 1
+GROUP BY COD.CursusOnderdeelID) CODA ON CO.CursusOnderdeelID = CODA.CursusOnderdeelID
 LEFT JOIN extradata ED ON C.CursusID = ED.CursusID AND CO.CursusOnderdeelID = ED.CursusonderdeelID
 LEFT JOIN psentity P ON C.CursusID = P.psid
 WHERE P.deleted = 0 AND C.CursusID = $cid and CO.CursusOnderdeelID = $coid";
