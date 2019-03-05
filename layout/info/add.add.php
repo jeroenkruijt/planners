@@ -47,11 +47,11 @@ if (isset($_POST['submit'])) {
         if ($certificaten == ''){
 
             if($bid != '') {
-                $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, BedrijfID, Lunch, Subsidie, Certificaten, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
-                                    values('$cid', '$coid', '$bid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
+                $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, BedrijfID, Lunch, Overnachting, Subsidie, Certificaten, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
+                                    values('$cid', '$coid', '$bid', '$Lunch', '$overnachting', '$selectSubsidie', '$selectCertificaten', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
             } else {
-                $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, Lunch, Subsidie, Certificaten, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
-                                    values('$cid', '$coid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
+                $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, Lunch, Overnachting, Subsidie, Certificaten, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
+                                    values('$cid', '$coid', '$Lunch', '$overnachting', '$selectSubsidie', '$selectCertificaten', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
 
             }
 
