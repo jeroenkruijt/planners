@@ -2364,467 +2364,472 @@ OpleidingID</ColNames>
       <DataType>varchar(256)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="495" parent="259" name="Subsidie">
+    <column id="495" parent="259" name="Overnachting">
       <Position>6</Position>
-      <DataType>varchar(256)|0s</DataType>
+      <DataType>varchar(3)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="496" parent="259" name="Certificaten">
+    <column id="496" parent="259" name="Subsidie">
       <Position>7</Position>
       <DataType>varchar(256)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="497" parent="259" name="Certificatendatum">
+    <column id="497" parent="259" name="Certificaten">
       <Position>8</Position>
+      <DataType>varchar(256)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="498" parent="259" name="Certificatendatum">
+      <Position>9</Position>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="498" parent="259" name="Gefactureerd">
-      <Position>9</Position>
+    <column id="499" parent="259" name="Gefactureerd">
+      <Position>10</Position>
       <DataType>varchar(256)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="499" parent="259" name="bedrag">
-      <Position>10</Position>
+    <column id="500" parent="259" name="bedrag">
+      <Position>11</Position>
       <DataType>varchar(6)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="500" parent="259" name="Uitnodigingen">
-      <Position>11</Position>
-      <DataType>varchar(256)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="501" parent="259" name="exameninstantie">
+    <column id="501" parent="259" name="Uitnodigingen">
       <Position>12</Position>
       <DataType>varchar(256)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="502" parent="259" name="Lesmateriaal">
+    <column id="502" parent="259" name="exameninstantie">
       <Position>13</Position>
-      <DataType>varchar(10)|0s</DataType>
+      <DataType>varchar(256)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="503" parent="259" name="Praktijkmateriaal">
+    <column id="503" parent="259" name="Lesmateriaal">
       <Position>14</Position>
       <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="504" parent="259" name="PRIMARY">
+    <column id="504" parent="259" name="Praktijkmateriaal">
+      <Position>15</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="505" parent="259" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>extraid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="505" parent="260" name="GebruikerID">
+    <column id="506" parent="260" name="GebruikerID">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="506" parent="260" name="AfdelingID">
+    <column id="507" parent="260" name="AfdelingID">
       <Position>2</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="507" parent="260" name="PRIMARY">
+    <key id="508" parent="260" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>GebruikerID
 AfdelingID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="508" parent="261" name="GebruikerID">
+    <column id="509" parent="261" name="GebruikerID">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="509" parent="261" name="OpleidingID">
+    <column id="510" parent="261" name="OpleidingID">
       <Position>2</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="510" parent="261" name="PRIMARY">
+    <key id="511" parent="261" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>GebruikerID
 OpleidingID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="511" parent="262" name="GebruikerID">
+    <column id="512" parent="262" name="GebruikerID">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="512" parent="262" name="BedrijfID">
+    <column id="513" parent="262" name="BedrijfID">
       <Position>2</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="513" parent="262" name="ContactpersoonID">
+    <column id="514" parent="262" name="ContactpersoonID">
       <Position>3</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="514" parent="262" name="CursistID">
+    <column id="515" parent="262" name="CursistID">
       <Position>4</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="515" parent="262" name="Actief">
+    <column id="516" parent="262" name="Actief">
       <Position>5</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="516" parent="262" name="PRIMARY">
+    <key id="517" parent="262" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>GebruikerID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="517" parent="263" name="KlantenportaalID">
+    <column id="518" parent="263" name="KlantenportaalID">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="518" parent="263" name="BedrijfID">
+    <column id="519" parent="263" name="BedrijfID">
       <Position>2</Position>
       <DataType>int(12)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="519" parent="263" name="Actief">
+    <column id="520" parent="263" name="Actief">
       <Position>3</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="520" parent="263" name="PRIMARY">
+    <key id="521" parent="263" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>KlantenportaalID
 BedrijfID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="521" parent="264" name="KlantenportaalID">
+    <column id="522" parent="264" name="KlantenportaalID">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="522" parent="264" name="GebruikerID">
+    <column id="523" parent="264" name="GebruikerID">
       <Position>2</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="523" parent="264" name="BedrijfID">
+    <column id="524" parent="264" name="BedrijfID">
       <Position>3</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="524" parent="264" name="Rechten">
+    <column id="525" parent="264" name="Rechten">
       <Position>4</Position>
       <DataType>tinyint(4)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="525" parent="264" name="Actief">
+    <column id="526" parent="264" name="Actief">
       <Position>5</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="526" parent="264" name="PRIMARY">
+    <key id="527" parent="264" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>KlantenportaalID
 GebruikerID
 BedrijfID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="527" parent="265" name="KlantenportaalID">
+    <column id="528" parent="265" name="KlantenportaalID">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="528" parent="265" name="Klantenportaalnaam">
+    <column id="529" parent="265" name="Klantenportaalnaam">
       <Position>2</Position>
       <DataType>varchar(250)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="529" parent="265" name="Klantenportaaladres">
+    <column id="530" parent="265" name="Klantenportaaladres">
       <Position>3</Position>
       <DataType>varchar(250)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="530" parent="265" name="PRIMARY">
+    <key id="531" parent="265" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>KlantenportaalID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="531" parent="266" name="LocatieID">
+    <column id="532" parent="266" name="LocatieID">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="532" parent="266" name="Locatienaam">
+    <column id="533" parent="266" name="Locatienaam">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="533" parent="266" name="Adres">
+    <column id="534" parent="266" name="Adres">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="534" parent="266" name="Postcode">
+    <column id="535" parent="266" name="Postcode">
       <Position>4</Position>
       <DataType>varchar(16)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="535" parent="266" name="Woonplaats">
+    <column id="536" parent="266" name="Woonplaats">
       <Position>5</Position>
       <DataType>varchar(75)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="536" parent="266" name="Land">
+    <column id="537" parent="266" name="Land">
       <Position>6</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="537" parent="266" name="Telefoonnummer">
+    <column id="538" parent="266" name="Telefoonnummer">
       <Position>7</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="538" parent="266" name="Fax">
+    <column id="539" parent="266" name="Fax">
       <Position>8</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="539" parent="266" name="Email">
+    <column id="540" parent="266" name="Email">
       <Position>9</Position>
       <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="540" parent="266" name="Opmerking">
+    <column id="541" parent="266" name="Opmerking">
       <Position>10</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="541" parent="266" name="PRIMARY">
+    <key id="542" parent="266" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>LocatieID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="542" parent="267" name="OnderdeelID">
+    <column id="543" parent="267" name="OnderdeelID">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="543" parent="267" name="Onderdeelnaam">
+    <column id="544" parent="267" name="Onderdeelnaam">
       <Position>2</Position>
       <DataType>varchar(75)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="544" parent="267" name="OnderdeelTekst">
+    <column id="545" parent="267" name="OnderdeelTekst">
       <Position>3</Position>
       <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="545" parent="267" name="OnderdeelOmschrijving">
+    <column id="546" parent="267" name="OnderdeelOmschrijving">
       <Position>4</Position>
       <DataType>varchar(250)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="546" parent="267" name="OnderdeelZichtbaar">
+    <column id="547" parent="267" name="OnderdeelZichtbaar">
       <Position>5</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="547" parent="267" name="BeoordeelType">
+    <column id="548" parent="267" name="BeoordeelType">
       <Position>6</Position>
       <DataType>tinyint(4)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="548" parent="267" name="PRIMARY">
+    <key id="549" parent="267" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>OnderdeelID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="549" parent="268" name="OpleidingID">
+    <column id="550" parent="268" name="OpleidingID">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="550" parent="268" name="BedrijfID">
+    <column id="551" parent="268" name="BedrijfID">
       <Position>2</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="551" parent="268" name="Geldigheid">
+    <column id="552" parent="268" name="Geldigheid">
       <Position>3</Position>
       <DataType>decimal(4,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0.00</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="552" parent="268" name="Plaatsen">
+    <column id="553" parent="268" name="Plaatsen">
       <Position>4</Position>
       <DataType>int(3)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="553" parent="268" name="PRIMARY">
+    <key id="554" parent="268" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>OpleidingID
 BedrijfID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="554" parent="269" name="OpleidingID">
+    <column id="555" parent="269" name="OpleidingID">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="555" parent="269" name="CertificaatID">
+    <column id="556" parent="269" name="CertificaatID">
       <Position>2</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="556" parent="269" name="Certificaatnaam">
+    <column id="557" parent="269" name="Certificaatnaam">
       <Position>3</Position>
       <DataType>varchar(250)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="557" parent="269" name="Geldigheid">
+    <column id="558" parent="269" name="Geldigheid">
       <Position>4</Position>
       <DataType>tinyint(4)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="558" parent="269" name="PRIMARY">
+    <key id="559" parent="269" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>OpleidingID
 CertificaatID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="559" parent="270" name="OpleidingID">
+    <column id="560" parent="270" name="OpleidingID">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="560" parent="270" name="AfdelingID">
+    <column id="561" parent="270" name="AfdelingID">
       <Position>2</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="561" parent="270" name="Opleidingnaam">
+    <column id="562" parent="270" name="Opleidingnaam">
       <Position>3</Position>
       <DataType>varchar(75)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="562" parent="270" name="Geldigheid">
+    <column id="563" parent="270" name="Geldigheid">
       <Position>4</Position>
       <DataType>decimal(4,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0.00</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="563" parent="270" name="Plaatsen">
+    <column id="564" parent="270" name="Plaatsen">
       <Position>5</Position>
       <DataType>int(3)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="564" parent="270" name="PRIMARY">
+    <key id="565" parent="270" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>OpleidingID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="565" parent="271" name="OpleidingID">
+    <column id="566" parent="271" name="OpleidingID">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="566" parent="271" name="OnderdeelID">
+    <column id="567" parent="271" name="OnderdeelID">
       <Position>2</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="567" parent="271" name="CertificaatID">
+    <column id="568" parent="271" name="CertificaatID">
       <Position>3</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="568" parent="271" name="GroepID">
+    <column id="569" parent="271" name="GroepID">
       <Position>4</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="569" parent="271" name="PRIMARY">
+    <key id="570" parent="271" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>OpleidingID
 OnderdeelID
@@ -2832,405 +2837,405 @@ CertificaatID
 GroepID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="570" parent="272" name="OpleidingID">
+    <column id="571" parent="272" name="OpleidingID">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="571" parent="272" name="OnderdeelID">
+    <column id="572" parent="272" name="OnderdeelID">
       <Position>2</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="572" parent="272" name="PRIMARY">
+    <key id="573" parent="272" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>OpleidingID
 OnderdeelID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="573" parent="273" name="OpmerkingID">
+    <column id="574" parent="273" name="OpmerkingID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="574" parent="273" name="VeldID">
+    <column id="575" parent="273" name="VeldID">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="575" parent="273" name="CursusID">
+    <column id="576" parent="273" name="CursusID">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="576" parent="273" name="CursusonderdeelID">
+    <column id="577" parent="273" name="CursusonderdeelID">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="577" parent="273" name="BedrijfID">
+    <column id="578" parent="273" name="BedrijfID">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="578" parent="273" name="UsersID">
+    <column id="579" parent="273" name="UsersID">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="579" parent="273" name="Opmerking">
+    <column id="580" parent="273" name="Opmerking">
       <Position>7</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="580" parent="273" name="datum">
+    <column id="581" parent="273" name="datum">
       <Position>8</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="581" parent="273" name="PRIMARY">
+    <key id="582" parent="273" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>OpmerkingID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="582" parent="274" name="psid">
+    <column id="583" parent="274" name="psid">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="583" parent="274" name="createrid">
+    <column id="584" parent="274" name="createrid">
       <Position>2</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="584" parent="274" name="ownerid">
+    <column id="585" parent="274" name="ownerid">
       <Position>3</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="585" parent="274" name="modifiedid">
+    <column id="586" parent="274" name="modifiedid">
       <Position>4</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="586" parent="274" name="type">
+    <column id="587" parent="274" name="type">
       <Position>5</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="587" parent="274" name="createdtime">
+    <column id="588" parent="274" name="createdtime">
       <Position>6</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="588" parent="274" name="modifiedtime">
+    <column id="589" parent="274" name="modifiedtime">
       <Position>7</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="589" parent="274" name="deleted">
+    <column id="590" parent="274" name="deleted">
       <Position>8</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="590" parent="274" name="PRIMARY">
+    <key id="591" parent="274" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>psid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="591" parent="275" name="RegistratieID">
+    <column id="592" parent="275" name="RegistratieID">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="592" parent="275" name="AfdelingID">
+    <column id="593" parent="275" name="AfdelingID">
       <Position>2</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="593" parent="275" name="PRIMARY">
+    <key id="594" parent="275" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>RegistratieID
 AfdelingID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="594" parent="276" name=" RegistratieID">
+    <column id="595" parent="276" name=" RegistratieID">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="595" parent="276" name="OpleidingID">
+    <column id="596" parent="276" name="OpleidingID">
       <Position>2</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="596" parent="276" name="PRIMARY">
+    <key id="597" parent="276" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames> RegistratieID
 OpleidingID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="597" parent="277" name="RegistratieID">
+    <column id="598" parent="277" name="RegistratieID">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="598" parent="277" name="Registratienaam">
+    <column id="599" parent="277" name="Registratienaam">
       <Position>2</Position>
       <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="599" parent="277" name="AlleCursussen">
+    <column id="600" parent="277" name="AlleCursussen">
       <Position>3</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="600" parent="277" name="VoorCursus">
+    <column id="601" parent="277" name="VoorCursus">
       <Position>4</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="601" parent="277" name="NaCursus">
+    <column id="602" parent="277" name="NaCursus">
       <Position>5</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="602" parent="277" name="PRIMARY">
+    <key id="603" parent="277" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>RegistratieID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="603" parent="278" name="RegistratieID">
+    <column id="604" parent="278" name="RegistratieID">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="604" parent="278" name="SpecificatieID">
+    <column id="605" parent="278" name="SpecificatieID">
       <Position>2</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="605" parent="278" name="PRIMARY">
+    <key id="606" parent="278" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>RegistratieID
 SpecificatieID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="606" parent="279" name="SpecificatieID">
+    <column id="607" parent="279" name="SpecificatieID">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="607" parent="279" name="OpleidingID">
+    <column id="608" parent="279" name="OpleidingID">
       <Position>2</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="608" parent="279" name="BedrijfID">
+    <column id="609" parent="279" name="BedrijfID">
       <Position>3</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="609" parent="279" name="Specificatienaam">
+    <column id="610" parent="279" name="Specificatienaam">
       <Position>4</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="610" parent="279" name="Prijs">
+    <column id="611" parent="279" name="Prijs">
       <Position>5</Position>
       <DataType>decimal(10,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0.00</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="611" parent="279" name="BTW">
+    <column id="612" parent="279" name="BTW">
       <Position>6</Position>
       <DataType>float|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="612" parent="279" name="Cursus">
+    <column id="613" parent="279" name="Cursus">
       <Position>7</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="613" parent="279" name="Cursist">
+    <column id="614" parent="279" name="Cursist">
       <Position>8</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="614" parent="279" name="Groep">
+    <column id="615" parent="279" name="Groep">
       <Position>9</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="615" parent="279" name="Stuk">
+    <column id="616" parent="279" name="Stuk">
       <Position>10</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="616" parent="279" name="CursistAan">
+    <column id="617" parent="279" name="CursistAan">
       <Position>11</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="617" parent="279" name="Kortingspercentage">
+    <column id="618" parent="279" name="Kortingspercentage">
       <Position>12</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="618" parent="279" name="PRIMARY">
+    <key id="619" parent="279" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>SpecificatieID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="619" parent="280" name="userid">
+    <column id="620" parent="280" name="userid">
       <Position>1</Position>
       <DataType>int(19)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="620" parent="280" name="userlevel">
+    <column id="621" parent="280" name="userlevel">
       <Position>2</Position>
       <DataType>int(2)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="621" parent="280" name="gebruikersnaam">
+    <column id="622" parent="280" name="gebruikersnaam">
       <Position>3</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="622" parent="280" name="wachtwoord">
+    <column id="623" parent="280" name="wachtwoord">
       <Position>4</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="623" parent="280" name="voornaam">
+    <column id="624" parent="280" name="voornaam">
       <Position>5</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="624" parent="280" name="achternaam">
+    <column id="625" parent="280" name="achternaam">
       <Position>6</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="625" parent="280" name="functie">
+    <column id="626" parent="280" name="functie">
       <Position>7</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="626" parent="280" name="telefoonnummer">
+    <column id="627" parent="280" name="telefoonnummer">
       <Position>8</Position>
       <DataType>varchar(16)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="627" parent="280" name="email">
+    <column id="628" parent="280" name="email">
       <Position>9</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="628" parent="280" name="vTigerUserID">
+    <column id="629" parent="280" name="vTigerUserID">
       <Position>10</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="629" parent="280" name="PRIMARY">
+    <key id="630" parent="280" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>userid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="630" parent="281" name="VeldID">
+    <column id="631" parent="281" name="VeldID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="631" parent="281" name="Veldnaam">
+    <column id="632" parent="281" name="Veldnaam">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="632" parent="281" name="Zichtbaar">
+    <column id="633" parent="281" name="Zichtbaar">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="633" parent="281" name="volgorde">
+    <column id="634" parent="281" name="volgorde">
       <Position>4</Position>
       <DataType>int(3)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="634" parent="281" name="PRIMARY">
+    <key id="635" parent="281" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>VeldID</ColNames>
       <Primary>1</Primary>

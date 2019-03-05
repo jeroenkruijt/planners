@@ -100,7 +100,7 @@ foreach ($titels as $titel) {
         echo '</tr>';
 
 
-    } elseif ($titels == 'Lunch' || $titels == 'Subsidie' || $titels == 'Uitnodigingen' || $titels == 'Exameninstantie' || $titels == 'Lesmateriaal' || $titels == 'Praktijkmateriaal') {
+    } elseif ($titels == 'Lunch' || $titels == 'Subsidie' || $titels == 'Uitnodigingen' || $titels == 'Exameninstantie' || $titels == 'Lesmateriaal' || $titels == 'Praktijkmateriaal' || $titels == 'Overnachting' ) {
 
         echo '<tr>';
         echo '<td width = "10%" class="' . $titelids . $coid . '"  ><label > ' . $titels . '</label ></td >';

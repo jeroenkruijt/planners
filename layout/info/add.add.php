@@ -25,6 +25,7 @@ if (isset($_POST['submit'])) {
     $Exameninstantie = mysqli_escape_string($conn, $_POST['selectExameninstantie']);
     $Lesmateriaal = mysqli_escape_string($conn, $_POST['Lesmateriaal']);
     $Praktijkmateriaal = mysqli_escape_string($conn, $_POST['Praktijkmateriaal']);
+    $overnachting = mysqli_escape_string($conn, $_POST['Overnachting']);
     //inputs
     $gefact = mysqli_real_escape_string($conn, $_POST['Gefactureerd']);
     $certificaten = mysqli_real_escape_string($conn, $_POST['Certificaten']);
@@ -63,19 +64,14 @@ if (isset($_POST['submit'])) {
             $datum = date('Y-m-d', $date);
 
             if($bid != '') {
-                $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, BedrijfID, Lunch, Subsidie, Certificaten, Certificatendatum, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
-                                    values('$cid', '$coid', '$bid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$datum', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
+                $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, BedrijfID, Lunch, Overnachting, Subsidie, Certificaten, Certificatendatum, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
+                                    values('$cid', '$coid', '$bid', '$Lunch', '$overnachting','$selectSubsidie', '$selectCertificaten', '$datum', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
             } else {
-                $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, Lunch, Subsidie, Certificaten, Certificatendatum, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
-                                    values('$cid', '$coid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$datum', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
+                $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, Lunch, Overnachting, Subsidie, Certificaten, Certificatendatum, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
+                                    values('$cid', '$coid', '$Lunch', '$overnachting', '$selectSubsidie', '$selectCertificaten', '$datum', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
 
             }
         }
-//
-//        $datum =
-//
-//        $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, Lunch, Subsidie, Certificaten, Certificatendatum, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal)
-//                                    values('$cid', '$coid', '$Lunch', '$selectSubsidie', '$selectCertificaten', '$certificaten', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
 
         if ($conn->query($insert) === TRUE) {
         header("location: ../../?status=succes");
@@ -91,7 +87,7 @@ if (isset($_POST['submit'])) {
     } else {
 
         if ($certificaten == ''){
-        $update = "UPDATE extradata SET Lunch='$Lunch', Subsidie='$selectSubsidie', Certificaten='$selectCertificaten', Gefactureerd='$selectGefactureerd', bedrag='$gefact',
+        $update = "UPDATE extradata SET Lunch='$Lunch', Overnachting='$overnachting', Subsidie='$selectSubsidie', Certificaten='$selectCertificaten', Gefactureerd='$selectGefactureerd', bedrag='$gefact',
 Uitnodigingen='$Uitnodigingen', exameninstantie='$Exameninstantie', Lesmateriaal='$Lesmateriaal', Praktijkmateriaal='$Praktijkmateriaal' WHERE CursusID = '$cid' and CursusonderdeelID = '$coid'";
 
     } else {
@@ -99,7 +95,7 @@ Uitnodigingen='$Uitnodigingen', exameninstantie='$Exameninstantie', Lesmateriaal
             $date = strtotime($certificaten);
             $datum = date('Y-m-d', $date);
 
-            $update = "UPDATE extradata SET Lunch='$Lunch', Subsidie='$selectSubsidie', Certificaten='$selectCertificaten', Certificatendatum='$datum' ,Gefactureerd='$selectGefactureerd', bedrag='$gefact',
+            $update = "UPDATE extradata SET Lunch='$Lunch', Overnachting='$overnachting', Subsidie='$selectSubsidie', Certificaten='$selectCertificaten', Certificatendatum='$datum' ,Gefactureerd='$selectGefactureerd', bedrag='$gefact',
 Uitnodigingen='$Uitnodigingen', exameninstantie='$Exameninstantie', Lesmateriaal='$Lesmateriaal', Praktijkmateriaal='$Praktijkmateriaal' WHERE CursusID = '$cid' and CursusonderdeelID = '$coid'";
 
         }
