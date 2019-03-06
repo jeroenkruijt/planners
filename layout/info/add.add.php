@@ -101,14 +101,15 @@ Uitnodigingen='$Uitnodigingen', exameninstantie='$Exameninstantie', Lesmateriaal
         }
 
         if ($conn->query($update) === TRUE) {
-        header("location: ../../?status=succes");
-//            echo $update;
-            exit();
-        } else {
-        header("location: ../../");
-//            echo $update;
 
+        header("location: ../../?status=succes");
             exit();
+
+        } else {
+
+            header("location: ../../");
+            exit();
+
         }
     }
 
