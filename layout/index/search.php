@@ -54,8 +54,6 @@ order by  date(datum)asc
 
     $_SESSION['sql'] = $sql;
 
-    echo $_SESSION['sql'];
-//    die();
     header("location: ../../");
     exit();
 
@@ -68,7 +66,7 @@ order by  date(datum)asc
     exit();
 
 } else {
-//    die();
+
 
     header("location: ../../");
     exit();

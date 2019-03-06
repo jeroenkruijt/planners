@@ -32,7 +32,6 @@ if (!isset($_SESSION['year'])){
 if (isset($_SESSION['sql'])) {
 
     $sql = $_SESSION['sql'];
-    echo $sql;
 
 } else {
 
