@@ -50,8 +50,7 @@
 //            print_r($row);
 
             //datetime format veranderen van Y-m-d naar d-m-Y en H:i weg halen bij de datetime en apart
-            $row['cursusdatum']  = date('d-m-Y', strtotime($row['datum']));
-            $row['Cursustijd']  = date('H:i', strtotime($row['datum']));
+            $row['cursusdatum'] = date('d-m-Y', strtotime($row['datum'])) . '</br>' . date('H:i', strtotime($row['datum']));
 
             if ($row['Certificatendatum'] != '') {
                 $date = strtotime($row['Certificatendatum']);
