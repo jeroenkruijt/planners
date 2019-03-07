@@ -74,4 +74,3 @@ order by  date(datum)asc
 }
 
 $result = $conn->query($sql);
-
