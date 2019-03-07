@@ -6,12 +6,23 @@
  * Time: 15:26
  */
 
-require_once "db/db.connect.php";
 
-include_once "layout/addons/header.php";
+if (isset($_GET['CursusID']) && isset($_GET['CursusonderdeelID'])) {
 
-include_once 'layout/info/add.sql.php';
 
-include_once "layout/info/add.index.php";
+    require_once "db/db.connect.php";
 
-include_once "layout/addons/footer.php";
+    include_once "layout/addons/header.php";
+
+    include_once 'layout/info/add.sql.php';
+
+    include_once "layout/info/add.index.php";
+
+    include_once "layout/addons/footer.php";
+
+} else {
+
+    header("location: ./");
+    exit();
+
+}
