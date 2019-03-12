@@ -65,10 +65,10 @@ FROM cursusonderdeeldocenten COD
 LEFT JOIN docenten D ON COD.DocentID = D.DocentID
 WHERE COD.Assistent = 1
 GROUP BY COD.CursusOnderdeelID) CODA ON CO.CursusOnderdeelID = CODA.CursusOnderdeelID
-LEFT JOIN extradata ED ON C.CursusID = ED.CursusID AND CO.CursusOnderdeelID = ED.CursusonderdeelID
+LEFT JOIN extradata ED ON C.CursusID = ED.CursusID AND CO.CursusOnderdeelID = ED.CursusonderdeelID and CB.BedrijfID = ED.BedrijfID
 LEFT JOIN psentity P ON C.CursusID = P.psid
 WHERE P.deleted = 0 AND year(CO.DatumBegin) = $year AND MONTH(CO.DatumBegin) = $month
-order by  date(datum)asc
+order by  date(datum)asc, CO.CursusOnderdeelID
 ";
 
 }
