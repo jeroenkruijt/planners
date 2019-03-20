@@ -7,7 +7,7 @@
  */
 
 echo '<div class="table-responsive">';
-echo '<form action="layout/info/add.add.php?CursusID=' . $cursusid . '&CursusonderdeelID=' . $coid . '&BID='.$bid.'" method="POST">';
+echo '<form action="layout/info/add.add.php?CursusID=' . $cursusid . '&CursusonderdeelID=' . $coid . '&BID=' . $bid . '" method="POST">';
 echo '<table class="table is-bordered">';
 
 foreach ($titels as $titel) {
@@ -30,6 +30,7 @@ foreach ($titels as $titel) {
         echo '<td width = "20%" class="' . $titelids . $coid . '" ><input name="' . $titels . '" type="date" class="form-control" value="' . $info['Certificatendatum'] . '"></td >';
         echo '<td width = "20%" class="' . $titelids . $coid . '" > <select name="select' . $titels . '" class="form-control">';
         ?>
+        <option value="">selecteer een optie......</option>
         <option value="ja" <?php if ($info[$titels] == 'ja') echo 'selected'; ?>>Ja</option>
         <option value="nee" <?php if ($info[$titels] == 'nee') echo 'selected'; ?>>Nee</option>
         <?php
@@ -51,6 +52,7 @@ foreach ($titels as $titel) {
         <input type="number" min="0.01" step="0.01"class="form-control currency" name="' . $titels . '" value="' . $info['bedrag'] . '"></td ></div>';
         echo '<td width = "20%" class="' . $titelids . $coid . '" > <select name="select' . $titels . '" class="form-control">';
         ?>
+        <option value="">selecteer een optie......</option>
         <option value="ja" <?php if ($info[$titels] == 'ja') echo 'selected'; ?>>Ja</option>
         <option value="nee" <?php if ($info[$titels] == 'nee') echo 'selected'; ?>>Nee</option>
         <?php
@@ -65,6 +67,7 @@ foreach ($titels as $titel) {
         echo '<td width = "20%" class="' . $titelids . $coid . '" > ' . $info[$titels] . '</td >';
         echo '<td width = "20%" class="' . $titelids . $coid . '" colspan = "2" > <select name="select' . $titels . '" class="form-control">';
         ?>
+        <option value="">selecteer een optie......</option>
         <option value="ja" <?php if ($info[$titels] == 'ja') echo 'selected'; ?>>Ja</option>
         <option value="SOOB" <?php if ($info[$titels] == 'SOOB') echo 'selected'; ?>>SOOB</option>
         <option value="OOM" <?php if ($info[$titels] == 'OOM') echo 'selected'; ?>>OOM</option>
@@ -74,7 +77,7 @@ foreach ($titels as $titel) {
         <option value="SSWM" <?php if ($info[$titels] == 'SSWM') echo 'selected'; ?>>SSWM</option>
         <option value="STOOF" <?php if ($info[$titels] == 'STOOF') echo 'selected'; ?>>STOOF</option>
         <option value="SOG" <?php if ($info[$titels] == 'SOG') echo 'selected'; ?>>SOG</option>
-        <option value="nee" <?php if ($info[$titels] == 'nee') echo 'selected'; ?>>Nee</option>
+        <option value="N.V.T." <?php if ($info[$titels] == 'nee') echo 'selected'; ?>>N.V.T.</option>
         <?php
         echo '</select></td >';
         echo '</tr>';
@@ -87,6 +90,8 @@ foreach ($titels as $titel) {
         echo '<td width = "20%" class="' . $titelids . $coid . '" > ' . $info[$titels] . '</td >';
         echo '<td width = "20%" class="' . $titelids . $coid . '" colspan = "2" > <select name="select' . $titels . '" class="form-control">';
         ?>
+        <option value="">selecteer een optie......</option>
+        <option value="ja" <?php if ($info[$titels] == 'ja') echo 'selected'; ?>>Ja</option>
         <option value="ja" <?php if ($info[$titels] == 'ja') echo 'selected'; ?>>Ja</option>
         <option value="PBNA" <?php if ($info[$titels] == 'PBNA') echo 'selected'; ?>>PBNA</option>
         <option value="Rode Kruis" <?php if ($info[$titels] == 'Rode Kruis') echo 'selected'; ?>>Rode Kruis</option>
@@ -94,21 +99,37 @@ foreach ($titels as $titel) {
         <option value="Oranje Kruis" <?php if ($info[$titels] == 'Oranje Kruis') echo 'selected'; ?>>Oranje Kruis
         </option>
         <option value="BMWT" <?php if ($info[$titels] == 'BMWT') echo 'selected'; ?>>BMWT</option>
-        <option value="nee" <?php if ($info[$titels] == 'nee') echo 'selected'; ?>>Nee</option>
+        <option value="N.V.T." <?php if ($info[$titels] == 'nee') echo 'selected'; ?>>N.V.T.</option>
         <?php
         echo '</select></td >';
         echo '</tr>';
 
 
-    } elseif ($titels == 'Lunch' || $titels == 'Subsidie' || $titels == 'Uitnodigingen' || $titels == 'Exameninstantie' || $titels == 'Lesmateriaal' || $titels == 'Praktijkmateriaal' || $titels == 'Overnachting' ) {
+    } elseif ($titels == 'Uitnodigingen' || $titels == 'Lesmateriaal') {
 
         echo '<tr>';
         echo '<td width = "10%" class="' . $titelids . $coid . '"  ><label > ' . $titels . '</label ></td >';
         echo '<td width = "20%" class="' . $titelids . $coid . '" > ' . $info[$titels] . '</td >';
         echo '<td width = "20%" class="' . $titelids . $coid . '" colspan = "2" > <select name="' . $titels . '" class="form-control">';
         ?>
+        <option value="">selecteer een optie......</option>
         <option value="ja" <?php if ($info[$titels] == 'ja') echo 'selected'; ?>>Ja</option>
         <option value="nee" <?php if ($info[$titels] == 'nee') echo 'selected'; ?>>Nee</option>
+        <?php
+
+        echo '</select></td >';
+        echo '</tr>';
+
+    } elseif ($titels == 'Lunch' || $titels == 'Praktijkmateriaal' || $titels == 'Overnachting') {
+
+        echo '<tr>';
+        echo '<td width = "10%" class="' . $titelids . $coid . '"  ><label > ' . $titels . '</label ></td >';
+        echo '<td width = "20%" class="' . $titelids . $coid . '" > ' . $info[$titels] . '</td >';
+        echo '<td width = "20%" class="' . $titelids . $coid . '" colspan = "2" > <select name="' . $titels . '" class="form-control">';
+        ?>
+        <option value="">selecteer een optie......</option>
+        <option value="ja" <?php if ($info[$titels] == 'ja') echo 'selected'; ?>>Ja</option>
+        <option value="N.V.T." <?php if ($info[$titels] == 'nee') echo 'selected'; ?>>N.V.T.</option>
         <?php
 
         echo '</select></td >';

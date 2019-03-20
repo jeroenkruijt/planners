@@ -13,8 +13,8 @@
 
         var VeldID = vid;
         var CursusonderdeelID = coid;
-        var CursusID = cid
-        var BedrijfID = bid
+        var CursusID = cid;
+        var BedrijfID = bid;
 
 
         $(document).ready(function () {
@@ -36,5 +36,9 @@
                 }
             });
         });
+    }
+
+    function deletefunction() {
+
     }
 </script>

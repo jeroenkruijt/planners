@@ -22,7 +22,9 @@ if (isset($_POST['submit'])) {
     $_SESSION['year'] = $jaar;
     $_SESSION['month'] = $maand;
 
+
     header("location: ../../");
+
     exit();
 
 } else {
