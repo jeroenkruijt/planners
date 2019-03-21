@@ -1,3 +1,18 @@
+<style>
+    .fade-scale {
+        transform: scale(0);
+        opacity: 0;
+        -webkit-transition: all .25s linear;
+        -o-transition: all .25s linear;
+        transition: all .25s linear;
+    }
+
+    .fade-scale.in {
+        opacity: 1;
+        transform: scale(1);
+    }
+</style>
+
 <div id="dataModal" class="modal fade">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -18,24 +33,24 @@
 
 <script>
 
-     // $(document).ready(function(){
-     //     load_data();
-     //     function load_data(page)
-     //     {
-     //         $.ajax({
-     //             url:"pagination.php",
-     //             method:"POST",
-     //             data:{page:page},
-     //             success:function(data){
-     //                 $('#pagination_data').html(data);
-     //             }
-     //         })
-     //     }
-     //     $(document).on('click', '.pagination_link', function(){
-     //         var page = $(this).attr("id");
-     //         load_data(page);
-     //     });
-     // });
+    // $(document).ready(function(){
+    //     load_data();
+    //     function load_data(page)
+    //     {
+    //         $.ajax({
+    //             url:"pagination.php",
+    //             method:"POST",
+    //             data:{page:page},
+    //             success:function(data){
+    //                 $('#pagination_data').html(data);
+    //             }
+    //         })
+    //     }
+    //     $(document).on('click', '.pagination_link', function(){
+    //         var page = $(this).attr("id");
+    //         load_data(page);
+    //     });
+    // });
 
 
     function modalFucntion(str, str2, str3) {
@@ -53,6 +68,7 @@
                 success: function (data) {
                     $('#detailsplan').html(data);
                     $('#dataModal').modal("show");
+
                 }
             });
         });

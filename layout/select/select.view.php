@@ -53,20 +53,26 @@ foreach ($titels as $titel) {
 
                 $oid = $opmerking['OpmerkingID'];
 
+//                print_r($opmerking);
+
+                $p = $opmerking['Opmerking'];
+
                 $output .= '<ul class="dropdown">
     <li style="margin-top: 15px" data-toggle="dropdown">
-        <span class="myIcons" id="messages"><strong>' . $opmerking['Opmerking'] . '</strong></span>
+        <span class="myIcons" id="messages" class = "fuckyou"><strong>' . $p . '</strong></span>
     </li>
 
     <ul class="dropdown-menu">
-        <li><a disabled><strong>Op ' . $newdate . '</strong></a></li>
+        <li><strong>Op ' . $newdate . '</strong></li>
         <li><a href="opmerking.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'&veldid='.$titelids.'&BID='.$bedrijfid.'&opmerkingid='.$oid.'&optie=change">Bewerken</a></li>
-        <li><a href="opmerking.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'&veldid='.$titelids.'&BID='.$bedrijfid.'&opmerkingid='.$oid.'&optie=delete">Verwijderen</a></li>
+        <li><a onclick="deletefunction(\'' . $oid . '\', \'' . $coid . '\', \'' . $cursusid . '\', \'' . $bedrijfid . '\', \'' . $titelids . '\')">Verwijderen</a></li>
     </ul>
 </ul>';
             }
         }
     }
+
+//    echo $p;
 
     $output .= '</td></tr>';
 }
