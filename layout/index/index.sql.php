@@ -38,6 +38,17 @@ if (isset($_SESSION['sql'])) {
 $year = $_SESSION['year'];
 $month = $_SESSION['month'];
 
+
+    if (!isset($_SESSION['afdeling'])) {
+        $where = 'WHERE P.deleted = 0 AND year(CO.DatumBegin) = ' . $year . ' AND MONTH(CO.DatumBegin) = ' . $month;
+    } else {
+
+        $afdelingen = $_SESSION['afdeling'];
+
+        $where = 'WHERE P.deleted = 0 AND year(CO.DatumBegin) = ' . $year . ' AND MONTH(CO.DatumBegin) = ' . $month . ' AND AfdelingID = ' . $afdelingen;
+
+    }
+
     $sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, CB.BedrijfID, OP.Opleidingnaam, O.onderdeelnaam, CODD.Docent, CODA.Assistent, CO.DatumBegin as datum, 
 CASE WHEN Aantal > 0 THEN Aantal ELSE '0' END AS Aantal,
 CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Cursuslocatie,
@@ -67,11 +78,19 @@ WHERE COD.Assistent = 1
 GROUP BY COD.CursusOnderdeelID) CODA ON CO.CursusOnderdeelID = CODA.CursusOnderdeelID
 LEFT JOIN extradata ED ON C.CursusID = ED.CursusID AND CO.CursusOnderdeelID = ED.CursusonderdeelID and CB.BedrijfID = ED.BedrijfID
 LEFT JOIN psentity P ON C.CursusID = P.psid
-WHERE P.deleted = 0 AND year(CO.DatumBegin) = $year AND MONTH(CO.DatumBegin) = $month AND OP.AfdelingID = 91
+$where
 order by  date (datum)asc, CO.CursusOnderdeelID 
-limit 25
 ";
 
 }
 
+//echo $sql;
+
 $result = $conn->query($sql);
+
+
+//$afdelingen selector query dynamic
+$afdelingen = 'SELECT A.AfdelingID, A.AfdelingNaam FROM  afdelingen A INNER JOIN psentity P ON A.AfdelingID = P.psid WHERE P.deleted = 0';
+
+$afd = $conn->query($afdelingen);
+

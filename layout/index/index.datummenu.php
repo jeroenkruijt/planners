@@ -14,7 +14,7 @@ $jaar = array_combine(range(date("Y", strtotime('+2 years')), 2000), range(date(
     <ul class="nav navbar-nav pager">
         <form class="form-inline well" action="layout/index/datumpicker.php" method="post">
             <div class="form-group">
-                <label class="control-label">jaar</label>
+                <label class="control-label">Jaar:</label>
                 <select id='jaar' name="jaar" class="form-control">
 
                     <?php
@@ -53,7 +53,7 @@ $jaar = array_combine(range(date("Y", strtotime('+2 years')), 2000), range(date(
                 </select>
             </div>
             <div class="form-group">
-                <label class="control-label">maand</label>
+                <label class="control-label">Maand:</label>
                 <select id="maand" name="maand" class="form-control">
 
                     <?php
@@ -94,8 +94,33 @@ $jaar = array_combine(range(date("Y", strtotime('+2 years')), 2000), range(date(
 
                     ?>
                 </select>
+
+                <label class="control-label">Afdelingen:</label>
+                <select id="afdelingen" name="afdelingen" class="form-control">
+
+                    <option>Alle afdelingen</option>
+
+                    <?php
+
+
+                    while ($afdelingen = $afd->fetch_assoc()) {
+
+                        if ($afdelingen['AfdelingID'] != $_SESSION['afdeling']) {
+
+                            echo '<option value="' . $afdelingen['AfdelingID'] . '">' . $afdelingen['AfdelingNaam'] . '</option>';
+
+                        } else {
+
+                            echo '<option value="' . $afdelingen['AfdelingID'] . '" selected>' . $afdelingen['AfdelingNaam'] . '</option>';
+
+                        }
+                    }
+
+                    ?>
+                </select>
             </div>
-            <input name="submit" type="submit" class="btn btn-default">
+            <button name="submit" type="submit" class="btn btn-default">selecteren</button>
+
         </form>
     </ul>
     <ul class="nav navbar-nav pager">
@@ -103,7 +128,15 @@ $jaar = array_combine(range(date("Y", strtotime('+2 years')), 2000), range(date(
             <div class="form-group">
                 <input type="text" class="form-control" name="zoek" placeholder="zoeken.....">
                 <button type="submit" name="submit-zoek" class="btn btn-default">Zoek</button>
-                <button type="submit" name="submit-unset" class="btn btn-danger">Verwijder zoekterm</button>
+                <?php
+                if (isset($_GET['zoek'])) {
+
+                    echo '<label class="control-label">U huidige zoekterm: </label> ';
+                    echo ' ' . $_GET['zoek'] . ' ';
+                    echo ' <button type="submit" name="submit-unset" class="btn btn-danger">Verwijder zoekterm</button>';
+                }
+
+                ?>
             </div>
         </form>
     </ul>

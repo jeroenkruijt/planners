@@ -13,8 +13,17 @@ if (isset($_POST['submit-zoek'])) {
 
     $year = $_SESSION['year'];
     $month = $_SESSION['month'];
+    $afdelingen = $_SESSION['afdeling'];
+
+    if (!isset($_SESSION['afdeling'])) {
+        $where = ' AND year(CO.DatumBegin) = ' . $year . ' AND MONTH(CO.DatumBegin) = ' . $month;
+    } else {
+        $where = 'AND year(CO.DatumBegin) = ' . $year . ' AND MONTH(CO.DatumBegin) = ' . $month . ' AND AfdelingID = ' . $afdelingen;
+    }
+
 
     $zoek = mysqli_escape_string($conn, $_POST['zoek']);
+
 
     $sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, CB.BedrijfID, OP.Opleidingnaam, O.onderdeelnaam, CODD.Docent, CODA.Assistent, CO.DatumBegin as datum, 
 CASE WHEN Aantal > 0 THEN Aantal ELSE '0' END AS Aantal,
@@ -47,14 +56,14 @@ LEFT JOIN extradata ED ON C.CursusID = ED.CursusID AND CO.CursusOnderdeelID = ED
 LEFT JOIN psentity P ON C.CursusID = P.psid
  WHERE P.deleted = 0 AND (OP.Opleidingnaam LIKE '%$zoek%' OR O.onderdeelnaam LIKE '%$zoek%' or CODD.Docent LIKE '%$zoek%' OR Aantal LIKE '%$zoek%' OR B.accountname LIKE '%$zoek%' OR  BS.ship_city  LIKE '%$zoek%' OR ED.Lunch LIKE '%$zoek%'
  OR ED.Subsidie LIKE '%$zoek%' OR ED.Certificaten LIKE '%$zoek%' OR ED.Gefactureerd LIKE '%$zoek%' OR ED.Uitnodigingen LIKE '%$zoek%' OR ED.exameninstantie LIKE '%$zoek%' or ED.Overnachting like '%$zoek%' or L.Locatienaam like '%$zoek%' 
-or B.accountname like '%$zoek%' or B1.accountname like '%$zoek%' or L.Woonplaats like '%$zoek%' or BS.ship_city like '%$zoek%') 
- AND year(CO.DatumBegin) = $year AND MONTH(CO.DatumBegin) = $month
+or B.accountname like '%$zoek%' or B1.accountname like '%$zoek%' or L.Woonplaats like '%$zoek%' or BS.ship_city like '%$zoek%' or CODA.Assistent like '%$zoek%') 
+ AND year(CO.DatumBegin) = $year AND MONTH(CO.DatumBegin) = $month 
 order by  date(datum)asc
 ";
 
     $_SESSION['sql'] = $sql;
 
-    header("location: ../../");
+    header("location: ../../?zoek=" . $zoek);
     exit();
 
 } elseif (isset($_POST['submit-unset'])) {
