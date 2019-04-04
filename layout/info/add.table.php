@@ -92,7 +92,6 @@ foreach ($titels as $titel) {
         ?>
         <option value="">selecteer een optie......</option>
         <option value="ja" <?php if ($info[$titels] == 'ja') echo 'selected'; ?>>Ja</option>
-        <option value="ja" <?php if ($info[$titels] == 'ja') echo 'selected'; ?>>Ja</option>
         <option value="PBNA" <?php if ($info[$titels] == 'PBNA') echo 'selected'; ?>>PBNA</option>
         <option value="Rode Kruis" <?php if ($info[$titels] == 'Rode Kruis') echo 'selected'; ?>>Rode Kruis</option>
         <option value="Certiflex" <?php if ($info[$titels] == 'Certiflex') echo 'selected'; ?>>Certiflex</option>
