@@ -10,7 +10,11 @@ $cursusid = $_POST["cursusid"];
 $coid = $_POST["coid"];
 $bedrijfid = $_POST['bid'];
 
-//echo $cursusid .' ' .$coid .' '. $bedrijfid;
+session_start();
+
+if (isset($_POST['sl'])) {
+    $_SESSION['scroll'] = $_POST['sl'];
+};
 
 $output = '';
 

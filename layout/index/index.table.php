@@ -1,4 +1,3 @@
-<div class="tableFixHead">
 <table class="table is-fullwidth">
     <thead >
     <tr>
@@ -102,4 +101,4 @@
     ?>
     </tbody>
 </table>
-</div>
+

@@ -53,8 +53,6 @@ foreach ($titels as $titel) {
 
                 $oid = $opmerking['OpmerkingID'];
 
-//                print_r($opmerking);
-
                 $p = $opmerking['Opmerking'];
 
                 $output .= '<ul class="dropdown">
@@ -71,8 +69,6 @@ foreach ($titels as $titel) {
             }
         }
     }
-
-//    echo $p;
 
     $output .= '</td></tr>';
 }

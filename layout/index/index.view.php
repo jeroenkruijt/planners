@@ -7,13 +7,15 @@
  */
 
 include_once 'index.datummenu.php';
+
+
 ?>
 
 
 <style>
     .tableFixHead {
         overflow-y: auto;
-        height: 800px
+        height: 750px
     }
 
     /* Just common table stuff. */
@@ -32,26 +34,34 @@ include_once 'index.datummenu.php';
     }
 </style>
 
+<div id="feedback"></div>
+
 <body>
 
 <div class="container-fluid">
 
 
     <div class="table-responsive" id="pagination_data">
-
+        <div class="tableFixHead" id="table">
         <?php
-
 
         include_once 'index.table.php';
 
-        ?>
 
+        ?>
+        </div>
     </div>
 </div>
 
-<script>
+
+<script type="text/javascript">
+
+    $('#table').scrollTop(<?php echo $_SESSION['scroll'] ?>);
+
     var $th = $('.tableFixHead').find('thead th');
-    $('.tableFixHead').on('scroll', function() {
-        $th.css('transform', 'translateY('+ this.scrollTop +'px)');
+    $('.tableFixHead').on('scroll', function () {
+        $th.css('transform', 'translateY(' + this.scrollTop + 'px)');
     });
+
 </script>
+
