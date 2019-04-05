@@ -1,11 +1,11 @@
 <table class="table is-fullwidth">
-    <thead >
+    <thead>
     <tr>
 
         <?php
 
-//        $amount = money_format('%(#1n', 20);
-//        echo $amount;
+        //        $amount = money_format('%(#1n', 20);
+        //        echo $amount;
 
         if ($thead->num_rows > 0) {
 
@@ -52,17 +52,22 @@
             $row['cursusdatum'] = date('d-m-Y', strtotime($row['datum'])) . '</br>' . date('H:i', strtotime($row['datum']));
 
             if ($row['Certificatendatum'] != '') {
-                $date = strtotime($row['Certificatendatum']);
-                $datum = date('d-m-Y', $date);
 
-                $row['Certificaten'] = $row['Certificaten'] . '<br>' . $datum;
+                $date = strtotime('01-01-1900');
+                $datum = date('Y-m-d', $date);
+
+                if ($row['Certificatendatum'] != $datum) {
+                    $date = strtotime($row['Certificatendatum']);
+                    $datum = date('d-m-Y', $date);
+                    $row['Certificaten'] = $row['Certificaten'] . '<br>' . $datum;
+                }
+
             }
 
             if ($row['bedrag'] != '') {
 
                 $row['Gefactureerd'] = $row['Gefactureerd'] . '<br>€' . $row['bedrag'];
             }
-
 
 
             // header tussen andere cursusids te plaatse
@@ -75,7 +80,7 @@
             // staan hier zodat de functie hierboven niet al de volgende var krijg en dus niet meer functioneert
             $cursusid = $row['CursusID'];
             $coid = $row['CursusOnderdeelID'];
-            $bedrijfid= $row['BedrijfID'];
+            $bedrijfid = $row['BedrijfID'];
 
             //indicatie include om aan te geven dat er een opmerking aanwezig is
             include 'index.indicatie.php';
@@ -84,12 +89,11 @@
             echo "<tr class='view_data' onclick='modalFucntion(\"" . $cursusid . "\",\"" . $coid . "\", \"" . $bedrijfid . "\")' >";
 
 
+            for ($count = 0; $count < $acount; $count++) {
 
-            for($count = 0; $count < $acount; $count++) {
+                $info = $veldnaam[$count];
 
-               $info = $veldnaam[$count];
-
-                echo "<td  id='" . $veldid[$count] . $bedrijfid . $coid ."' bgcolor='" . $bgcolor . "' style=''>" . $row[$info] . "</td>";
+                echo "<td  id='" . $veldid[$count] . $bedrijfid . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $row[$info] . "</td>";
             }
 
             echo "</tr>";

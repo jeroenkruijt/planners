@@ -31,11 +31,9 @@ if (isset($_POST['submit'])) {
     $certificaten = mysqli_real_escape_string($conn, $_POST['Certificaten']);
 
 
-
-
-    if  ($bid != '') {
+    if ($bid != '') {
         $select = " select * from extradata where CursusID = '$cid' and CursusonderdeelID = '$coid' and  BedrijfID = '$bid'";
-    }else {
+    } else {
         $select = " select * from extradata where CursusID = '$cid' and CursusonderdeelID = '$coid'";
     }
 
@@ -44,9 +42,9 @@ if (isset($_POST['submit'])) {
 
     if (mysqli_num_rows($result) == 0) {
 
-        if ($certificaten == ''){
+        if ($certificaten == '') {
 
-            if($bid != '') {
+            if ($bid != '') {
                 $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, BedrijfID, Lunch, Overnachting, Subsidie, Certificaten, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
                                     values('$cid', '$coid', '$bid', '$Lunch', '$overnachting', '$selectSubsidie', '$selectCertificaten', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
             } else {
@@ -56,14 +54,13 @@ if (isset($_POST['submit'])) {
             }
 
 
-
         } else {
 
 
             $date = strtotime($certificaten);
             $datum = date('Y-m-d', $date);
 
-            if($bid != '') {
+            if ($bid != '') {
                 $insert = "INSERT INTO extradata (CursusID, CursusonderdeelID, BedrijfID, Lunch, Overnachting, Subsidie, Certificaten, Certificatendatum, Gefactureerd, bedrag, Uitnodigingen, exameninstantie, Lesmateriaal, Praktijkmateriaal) 
                                     values('$cid', '$coid', '$bid', '$Lunch', '$overnachting','$selectSubsidie', '$selectCertificaten', '$datum', '$selectGefactureerd', '$gefact','$Uitnodigingen', '$Exameninstantie', '$Lesmateriaal', '$Praktijkmateriaal')";
             } else {
@@ -75,22 +72,26 @@ if (isset($_POST['submit'])) {
 
         if ($conn->query($insert) === TRUE) {
         header("location: ../../?status=succes");
-            echo $insert;
+//            echo $insert;
             exit();
         } else {
         header("location: ../../");
-            echo $insert;
+//            echo $insert;
 
             exit();
         }
 
     } else {
 
-        if ($certificaten == ''){
-        $update = "UPDATE extradata SET Lunch='$Lunch', Overnachting='$overnachting', Subsidie='$selectSubsidie', Certificaten='$selectCertificaten', Gefactureerd='$selectGefactureerd', bedrag='$gefact',
+        if ($certificaten == '') {
+
+            $date = strtotime('01-01-1900');
+            $datum = date('Y-m-d', $date);
+
+            $update = "UPDATE extradata SET Lunch='$Lunch', Overnachting='$overnachting', Subsidie='$selectSubsidie', Certificaten='$selectCertificaten', Certificatendatum='$datum' , Gefactureerd='$selectGefactureerd', bedrag='$gefact',
 Uitnodigingen='$Uitnodigingen', exameninstantie='$Exameninstantie', Lesmateriaal='$Lesmateriaal', Praktijkmateriaal='$Praktijkmateriaal' WHERE CursusID = '$cid' and CursusonderdeelID = '$coid'";
 
-    } else {
+        } else {
 
             $date = strtotime($certificaten);
             $datum = date('Y-m-d', $date);
@@ -103,11 +104,13 @@ Uitnodigingen='$Uitnodigingen', exameninstantie='$Exameninstantie', Lesmateriaal
         if ($conn->query($update) === TRUE) {
 
         header("location: ../../?status=succes");
+//            echo $update;
             exit();
 
         } else {
 
             header("location: ../../");
+
             exit();
 
         }
