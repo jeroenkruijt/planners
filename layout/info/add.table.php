@@ -21,8 +21,11 @@ foreach ($titels as $titel) {
             $date = strtotime($info['Certificatendatum']);
             $datum = date('d-m-Y', $date);
 
+            $select = $info['Certificaten'];
+
             $info['Certificaten'] = $info['Certificaten'] . '<br>' . $datum;
         }
+
 
         echo '<tr>';
         echo '<td width = "10%" class="' . $titelids . $coid . '"  ><label > ' . $titels . '</label ></td >';
@@ -30,9 +33,10 @@ foreach ($titels as $titel) {
         echo '<td width = "20%" class="' . $titelids . $coid . '" ><input name="' . $titels . '" type="date" class="form-control" value="' . $info['Certificatendatum'] . '"></td >';
         echo '<td width = "20%" class="' . $titelids . $coid . '" > <select name="select' . $titels . '" class="form-control">';
         ?>
+
         <option value="">selecteer een optie......</option>
-        <option value="ja" <?php if ($info[$titels] == 'ja') echo 'selected'; ?>>Ja</option>
-        <option value="nee" <?php if ($info[$titels] == 'nee') echo 'selected'; ?>>Nee</option>
+        <option value="ja" <?php if ($select == 'ja') echo 'selected'; ?>>Ja</option>
+        <option value="nee" <?php if ($select == 'nee') echo 'selected'; ?>>Nee</option>
         <?php
         echo '</select></td >';
         echo '</tr>';
@@ -41,6 +45,8 @@ foreach ($titels as $titel) {
     } elseif ($titels == 'Gefactureerd') {
 
         if ($info['bedrag'] != '') {
+
+            $select = $info['Gefactureerd'];
 
             $info['Gefactureerd'] = $info['Gefactureerd'] . '<br>€' . $info['bedrag'];
         }
@@ -53,8 +59,8 @@ foreach ($titels as $titel) {
         echo '<td width = "20%" class="' . $titelids . $coid . '" > <select name="select' . $titels . '" class="form-control">';
         ?>
         <option value="">selecteer een optie......</option>
-        <option value="ja" <?php if ($info[$titels] == 'ja') echo 'selected'; ?>>Ja</option>
-        <option value="nee" <?php if ($info[$titels] == 'nee') echo 'selected'; ?>>Nee</option>
+        <option value="ja" <?php if ($select == 'ja') echo 'selected'; ?>>Ja</option>
+        <option value="nee" <?php if ($select == 'nee') echo 'selected'; ?>>Nee</option>
         <?php
         echo '</select></td >';
         echo '</tr>';
