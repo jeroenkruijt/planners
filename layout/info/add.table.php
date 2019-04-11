@@ -35,8 +35,8 @@ foreach ($titels as $titel) {
         ?>
 
         <option value="">selecteer een optie......</option>
-        <option value="ja" <?php if ($select == 'ja') echo 'selected'; ?>>Ja</option>
-        <option value="nee" <?php if ($select == 'nee') echo 'selected'; ?>>Nee</option>
+        <option value="ja" <?php if (isset($select) && $select == 'ja') echo 'selected'; ?>>Ja</option>
+        <option value="nee" <?php if (isset($select) && $select == 'nee') echo 'selected'; ?>>Nee</option>
         <?php
         echo '</select></td >';
         echo '</tr>';
@@ -59,8 +59,8 @@ foreach ($titels as $titel) {
         echo '<td width = "20%" class="' . $titelids . $coid . '" > <select name="select' . $titels . '" class="form-control">';
         ?>
         <option value="">selecteer een optie......</option>
-        <option value="ja" <?php if ($select == 'ja') echo 'selected'; ?>>Ja</option>
-        <option value="nee" <?php if ($select == 'nee') echo 'selected'; ?>>Nee</option>
+        <option value="ja" <?php if (isset($select) && $select == 'ja') echo 'selected'; ?>>Ja</option>
+        <option value="nee" <?php if (isset($select) && $select == 'nee') echo 'selected'; ?>>Nee</option>
         <?php
         echo '</select></td >';
         echo '</tr>';
