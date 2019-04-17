@@ -73,11 +73,11 @@ foreach ($titels as $titel) {
     $output .= '</td></tr>';
 }
 $output .= '</table>
-<a href="add.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'&BID='.$bedrijfid.'" class="btn btn-primary">Opmerking plaatsen</a>
+<a  onclick="updateFucntion(\'' . $coid . '\', \'' . $cursusid . '\', \'' . $bedrijfid . '\')" class="btn btn-primary">Opmerking plaatsen</a>
 <a href="info.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'&BID='.$bedrijfid.'" class="btn btn-primary">Velden invullen</a>
 <button type="button" align="right" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
 
 </div>';
-
+//href="add.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'&BID='.$bedrijfid.'"
 echo $output;
 

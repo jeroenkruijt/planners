@@ -81,6 +81,20 @@
         var cursusonderdeelid = coid;
         var bedrijfid = bid;
 
+        $(document).ready(function () {
+            $.ajax({
+                url: "select.php",
+                method: "post",
+                data: {cursusid: cid, coid: coid, bid: bid},
+                success: function (data) {
+                    $('#detailsplan').html(data);
+                    $('#dataModal').modal("show");
+
+                }
+            });
+        });
+
+        alert('hi');
     }
 
 
