@@ -24,7 +24,7 @@
 
             </div>
             <div class="modal-footer">
-
+                <button class="btn" data-toggle="modal" href="#stack2">Launch modal</button>
             </div>
         </div>
     </div>

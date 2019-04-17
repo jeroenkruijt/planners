@@ -75,4 +75,13 @@
     }
 
 
+    function updateFucntion(coid, cid, bid) {
+
+        var cursusid = cid;
+        var cursusonderdeelid = coid;
+        var bedrijfid = bid;
+
+    }
+
+
 </script>
