@@ -49,6 +49,28 @@
         })
     }
 
+    function opFunction(str, str2, str3) {
+
+        var coid = str;
+        var cid = str2;
+        var bid = str3;
+
+        var optie = '1';
+
+        $(document).ready(function () {
+            $.ajax({
+                url: "select.php",
+                method: "post",
+                data: {cursusid: cid, coid: coid, bid: bid, optie: optie},
+                success: function (data) {
+                    $('#detailsplan').html(data);
+                    $('#dataModal').modal("show");
+
+                }
+            });
+        });
+    }
+
     function updateFucntion(vid, coid, cid, bid) {
 
         var VeldID = vid;
@@ -87,27 +109,5 @@
     }
 
 
-    function opFunction(str, str2, str3) {
-
-        var coid = str;
-        var cid = str2;
-        var bid = str3;
-
-        var optie = '1';
-
-        $(document).ready(function () {
-            $.ajax({
-                url: "select.php",
-                method: "post",
-                data: {cursusid: cid, coid: coid, bid: bid, optie: optie},
-                success: function (data) {
-                    $('#detailsplan').html(data);
-                    $('#dataModal').modal("show");
-
-                    alert('hi');
-                }
-            });
-        });
-    }
 
 </script>
