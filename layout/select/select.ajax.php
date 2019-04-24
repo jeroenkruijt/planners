@@ -10,6 +10,7 @@
 
 <script>
 
+
     function deletefunction(opid, coid, cid, bid, vid) {
 
         var VeldID = vid;
@@ -17,6 +18,8 @@
         var CursusID = cid;
         var CursusonderdeelID = coid;
         var BedrijfID = bid;
+
+        var optie = '0';
 
         $(document).ready(function () {
             $.ajax({
@@ -27,7 +30,8 @@
                     CursusonderdeelID: CursusonderdeelID,
                     CursusID: CursusID,
                     BedrijfID: BedrijfID,
-                    VeldID: VeldID
+                    VeldID: VeldID,
+                    optie: optie
                 },
                 success: function (data) {
                     $('#test').html(data);
@@ -52,50 +56,58 @@
         var CursusID = cid;
         var BedrijfID = bid;
 
+        var optie = '0';
+
 
         $(document).ready(function () {
             $.ajax({
                 url: "backgroundcel.php",
                 method: "post",
-                data: {VeldID: VeldID, CursusonderdeelID: CursusonderdeelID, CursusID: CursusID, BedrijfID: BedrijfID},
+                data: {
+                    VeldID: VeldID,
+                    CursusonderdeelID: CursusonderdeelID,
+                    CursusID: CursusID,
+                    BedrijfID: BedrijfID,
+                    optie: optie
+                },
                 success: function (data) {
                     $('#test').html(data);
-                        $.ajax({
-                            url: "select.php",
-                            method: "post",
-                            data: {cursusid: CursusID, coid: CursusonderdeelID, bid: BedrijfID},
-                            success: function (data) {
-                                $('#detailsplan').html(data);
-                                $('#dataModal').modal("show");
-                            }
-                        });
+                    $.ajax({
+                        url: "select.php",
+                        method: "post",
+                        data: {cursusid: CursusID, coid: CursusonderdeelID, bid: BedrijfID},
+                        success: function (data) {
+                            $('#detailsplan').html(data);
+                            $('#dataModal').modal("show");
+                        }
+                    });
                 }
             });
         });
     }
 
 
-    function updateFucntion(coid, cid, bid) {
+    function opFunction(str, str2, str3) {
 
-        var cursusid = cid;
-        var cursusonderdeelid = coid;
-        var bedrijfid = bid;
+        var coid = str;
+        var cid = str2;
+        var bid = str3;
+
+        var optie = '1';
 
         $(document).ready(function () {
             $.ajax({
                 url: "select.php",
                 method: "post",
-                data: {cursusid: cid, coid: coid, bid: bid},
+                data: {cursusid: cid, coid: coid, bid: bid, optie: optie},
                 success: function (data) {
                     $('#detailsplan').html(data);
                     $('#dataModal').modal("show");
 
+                    alert('hi');
                 }
             });
         });
-
-        alert('hi');
     }
-
 
 </script>

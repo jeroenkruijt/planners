@@ -9,6 +9,7 @@
 $cursusid = $_POST["cursusid"];
 $coid = $_POST["coid"];
 $bedrijfid = $_POST['bid'];
+//$optie = $_POST['optie'];
 
 session_start();
 

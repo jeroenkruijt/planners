@@ -24,7 +24,6 @@
 
             </div>
             <div class="modal-footer">
-                <button class="btn" data-toggle="modal" href="#stack2">Launch modal</button>
             </div>
         </div>
     </div>
@@ -32,27 +31,6 @@
 
 
 <script>
-
-    // $(document).ready(function(){
-    //     load_data();
-    //     function load_data(page)
-    //     {
-    //         $.ajax({
-    //             url:"pagination.php",
-    //             method:"POST",
-    //             data:{page:page},
-    //             success:function(data){
-    //                 $('#pagination_data').html(data);
-    //             }
-    //         })
-    //     }
-    //     $(document).on('click', '.pagination_link', function(){
-    //         var page = $(this).attr("id");
-    //         load_data(page);
-    //     });
-    // });
-
-
 
     function modalFucntion(str, str2, str3) {
 
