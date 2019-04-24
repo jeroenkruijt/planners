@@ -70,7 +70,7 @@ foreach ($titels as $titel) {
         }
     } else {
 
-        $output .= '<input type="text">';
+        $output .= '<input name="" class="form-control" placeholder="Plaats hier uw opmerking.......">';
 
     }
     $output .= '</td></tr>';
@@ -79,16 +79,18 @@ $output .= '</table>';
 
 if (!isset($_POST['optie'])) {
 
-    $output .= '<a  onclick="opFunction(\'' . $coid . '\', \'' . $cursusid . '\', \'' . $bedrijfid . '\')" class="btn btn-primary">Opmerking plaatsen</a>';
+    $output .= '<a  onclick="opFunction(\'' . $coid . '\', \'' . $cursusid . '\', \'' . $bedrijfid . '\')" class="btn btn-primary ">Opmerking plaatsen</a>
+<a href="info.php?CursusID=' . $cursusid . '&CursusonderdeelID=' . $coid . '&BID=' . $bedrijfid . '" class="btn btn-primary">Velden invullen</a>
+<button type="button" align="right" class="btn btn-danger" data-dismiss="modal">Sluiten</button>';
 
 } else {
 
-    $output .= '<a  onclick="opFunction(\'' . $coid . '\', \'' . $cursusid . '\', \'' . $bedrijfid . '\')" class="btn btn-primary">nah b</a></form>';
+    $output .= '<a  onclick="opFunction(\'' . $coid . '\', \'' . $cursusid . '\', \'' . $bedrijfid . '\')" class="btn btn-primary">Bevestiging</a>
+<button type="button" align="right" class="btn btn-danger" data-dismiss="modal">Sluiten</button> </form>';
 
 }
 
-$output .= '<a href="info.php?CursusID=' . $cursusid . '&CursusonderdeelID=' . $coid . '&BID=' . $bedrijfid . '" class="btn btn-primary">Velden invullen</a>
-<button type="button" align="right" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
+$output .= '
 
 </div>';
 //href="add.php?CursusID='.$cursusid.'&CursusonderdeelID='.$coid.'&BID='.$bedrijfid.'"
