@@ -8,32 +8,33 @@
 
 $bgc = '#cccccc';
 
-if($bedrijfid != ''){
-    $bezig = 'select * from actief where VeldID = ' . $titelids . ' and Cursusid = ' . $cursusid . '  and Cursusonderdeelid = ' . $coid .' and BedrijfID = ' . $bedrijfid;
+if ($bedrijfid != '') {
+
+    $bezig = 'select * from actief where VeldID = ' . $titelids . ' and Cursusid = ' . $cursusid . '  and Cursusonderdeelid = ' . $coid . ' and BedrijfID = ' . $bedrijfid;
 
 } else {
+
     $bezig = 'select * from actief where VeldID = ' . $titelids . ' and Cursusid = ' . $cursusid . '  and Cursusonderdeelid = ' . $coid;
 
 }
 
+$klaar = $conn->query($bezig);
 
-    $klaar = $conn->query($bezig);
+if (mysqli_num_rows($klaar) > 0) {
 
-    if (mysqli_num_rows($klaar) > 0) {
-
-        $done = mysqli_fetch_array($klaar);
-        $id = $done['VeldID'].$done['Cursusonderdeelid'];
+    $done = mysqli_fetch_array($klaar);
+    $id = $done['VeldID'] . $done['Cursusonderdeelid'];
 
 
-        ?>
-        <script>
-            $(document).ready(function () {
+    ?>
+    <script>
+        $(document).ready(function () {
 
-                $(".<?php echo $id?>").attr("bgcolor", "#ffffff");
+            $(".<?php echo $id?>").attr("bgcolor", "#ffffff");
 
-            });
-        </script>
-        <?php
+        });
+    </script>
+    <?php
 
 }
 

@@ -86,10 +86,11 @@ while ($row = mysqli_fetch_array($content)) {
 
     $info = $row;
 
-    $info['cursusdatum']  = date('d-m-Y', strtotime($row['datum']));
-    $info['Cursustijd']  = date('H:i', strtotime($row['datum']));
+    $info['cursusdatum'] = date('d-m-Y', strtotime($row['datum']));
+    $info['Cursustijd'] = date('H:i', strtotime($row['datum']));
 
     if ($info['Certificatendatum'] != '') {
+
         $date = strtotime($info['Certificatendatum']);
         $datum = date('d-m-Y', $date);
 
@@ -100,7 +101,6 @@ while ($row = mysqli_fetch_array($content)) {
 
         $info['Gefactureerd'] = $info['Gefactureerd'] . '<br>€' . $info['bedrag'];
     }
-
 
 
 }
@@ -117,16 +117,19 @@ while ($row = mysqli_fetch_array($result)) {
 
 // opmerking uit de db halen
 
-if($bedrijfid != ''){
+if ($bedrijfid != '') {
+
     $opmerking = "SELECT OpmerkingID, VeldID, Opmerking, datum FROM opmerking 
 left join users U on opmerking.UsersID = U.userid 
 WHERE CursusID = $cursusid AND CursusonderdeelID = $coid AND BedrijfID = $bedrijfid";
+
 } else {
+
     $opmerking = "SELECT OpmerkingID, VeldID, Opmerking, datum FROM opmerking 
 left join users U on opmerking.UsersID = U.userid 
 WHERE CursusID = $cursusid AND CursusonderdeelID = $coid";
-}
 
+}
 
 $res = mysqli_query($conn, $opmerking);
 
