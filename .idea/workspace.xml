@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="1bba14ab-31a2-4b16-8ce6-0605931f8587" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/add/add.sql.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/add/add.sql.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/index/index.indicatie.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/index/index.indicatie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/index/index.table.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/index/index.table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/index/index.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/index/index.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/opmerking/opmerking.sql.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/opmerking/opmerking.sql.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layout/select/select.sql.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/select/select.sql.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/select/select.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/select/select.view.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,73 +64,50 @@
     </expand>
     <select />
   </component>
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/layout/index/index.indicatie.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="306">
+                    <caret line="23" column="132" selection-start-line="23" selection-start-column="132" selection-end-line="23" selection-end-column="132" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/layout/select/select.sql.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../test/magic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+            <state relative-caret-position="255">
+              <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/layout/select/select.view.php">
+        <entry file="file://$PROJECT_DIR$/layout/opmerking/opmerking.sql.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="72" column="56" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
+            <state relative-caret-position="297">
+              <caret line="85" column="112" lean-forward="true" selection-start-line="85" selection-start-column="112" selection-end-line="85" selection-end-column="112" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/layout/select/select.ajax.php">
+        <entry file="file://$PROJECT_DIR$/layout/add/add.sql.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1122">
-              <caret line="107" column="11" lean-forward="true" selection-start-line="107" selection-start-column="11" selection-end-line="107" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../test/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../test/process.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../test/db.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/layout/opmerking/opmerking.buttonfun.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/layout/opmerking/opmerking.add.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/layout/opmerking/opmerking.view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+            <state relative-caret-position="297">
+              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
             </state>
           </provider>
         </entry>
@@ -134,6 +117,42 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="8" column="107" selection-start-line="8" selection-end-line="8" selection-end-column="107" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/layout/select/select.view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1360">
+              <caret line="85" column="39" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/layout/index/index.view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/layout/index/index.table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="34" selection-start-column="34" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/layout/index/index.sql.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-77">
+              <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -165,6 +184,9 @@
       <find>conn</find>
       <find>sess</find>
       <find>lau</find>
+      <find>form</find>
+      <find>inf</find>
+      <find>cursusda</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -186,10 +208,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/datumpicker.php" />
-        <option value="$PROJECT_DIR$/select.php" />
         <option value="$PROJECT_DIR$/backgroundcel.php" />
-        <option value="$PROJECT_DIR$/layout/select/select.indicatie.php" />
         <option value="$PROJECT_DIR$/layout/index/index.datum.php" />
         <option value="$PROJECT_DIR$/todo.php" />
         <option value="$PROJECT_DIR$/layout/change/change.index.php" />
@@ -198,14 +217,12 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/layout/opmerking/opmerking.buttonfun.php" />
         <option value="$PROJECT_DIR$/layout/opmerking/opmerking.view.php" />
-        <option value="$PROJECT_DIR$/layout/add/add.add.php" />
         <option value="$PROJECT_DIR$/layout/opmerking/opmerking.table.php" />
         <option value="$PROJECT_DIR$/layout/opmerking/opmerking.add.php" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/css/celkleur.css" />
         <option value="$PROJECT_DIR$/info.php" />
         <option value="$PROJECT_DIR$/add.php" />
-        <option value="$PROJECT_DIR$/layout/index/index.indicatie.php" />
         <option value="$PROJECT_DIR$/../test/header.inc.php" />
         <option value="$PROJECT_DIR$/../test/footer.inc.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/Rar$DIa9652.23897/dbcontroller.php" />
@@ -221,28 +238,33 @@
         <option value="$PROJECT_DIR$/../test/db.php" />
         <option value="$PROJECT_DIR$/../test/pagination.php" />
         <option value="$PROJECT_DIR$/layout/addons/header.php" />
-        <option value="$PROJECT_DIR$/layout/index/index.view.php" />
-        <option value="$PROJECT_DIR$/layout/index/index.table.php" />
         <option value="$PROJECT_DIR$/layout/info/add.add.php" />
         <option value="$PROJECT_DIR$/layout/info/add.sql.php" />
-        <option value="$PROJECT_DIR$/layout/add/add.sql.php" />
         <option value="$PROJECT_DIR$/layout/info/add.table.php" />
         <option value="$PROJECT_DIR$/opmerkingtest.php" />
         <option value="$PROJECT_DIR$/layout/index/index.sql.php" />
-        <option value="$PROJECT_DIR$/layout/opmerking/opmerking.sql.php" />
         <option value="$PROJECT_DIR$/db/db.connect.php" />
         <option value="$PROJECT_DIR$/layout/select/select.ajax.php" />
         <option value="$PROJECT_DIR$/layout/index/index.ajax.php" />
-        <option value="$PROJECT_DIR$/layout/select/select.view.php" />
-        <option value="$PROJECT_DIR$/../test/index.php" />
         <option value="$PROJECT_DIR$/../test/index.sql.php" />
+        <option value="$PROJECT_DIR$/layout/select/select.indicatie.php" />
+        <option value="$PROJECT_DIR$/../test/magic.js" />
+        <option value="$PROJECT_DIR$/layout/add/add.add.php" />
+        <option value="$PROJECT_DIR$/../test/process.php" />
+        <option value="$PROJECT_DIR$/layout/select/select.view.php" />
         <option value="$PROJECT_DIR$/layout/select/select.sql.php" />
+        <option value="$PROJECT_DIR$/layout/opmerking/opmerking.sql.php" />
+        <option value="$PROJECT_DIR$/layout/add/add.sql.php" />
+        <option value="$PROJECT_DIR$/../test/index.php" />
+        <option value="$PROJECT_DIR$/layout/index/index.table.php" />
+        <option value="$PROJECT_DIR$/layout/index/index.view.php" />
+        <option value="$PROJECT_DIR$/layout/index/index.indicatie.php" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="364" />
-    <option name="y" value="39" />
+    <option name="x" value="-445" />
+    <option name="y" value="156" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -275,7 +297,25 @@
               <item name="planners" type="b2602c69:ProjectViewProjectNode" />
               <item name="planners" type="462c0819:PsiDirectoryNode" />
               <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="add" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="planners" type="b2602c69:ProjectViewProjectNode" />
+              <item name="planners" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="addons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="planners" type="b2602c69:ProjectViewProjectNode" />
+              <item name="planners" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
               <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="planners" type="b2602c69:ProjectViewProjectNode" />
+              <item name="planners" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="info" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="planners" type="b2602c69:ProjectViewProjectNode" />
@@ -411,7 +451,9 @@
       <workItem from="1555572841802" duration="3337000" />
       <workItem from="1556001718763" duration="13866000" />
       <workItem from="1556088300698" duration="16831000" />
-      <workItem from="1556174884141" duration="1903000" />
+      <workItem from="1556174884141" duration="10826000" />
+      <workItem from="1556261630396" duration="2611000" />
+      <workItem from="1556606372496" duration="18388000" />
     </task>
     <task id="LOCAL-00001" summary="versie 0.9">
       <created>1545292028254</created>
@@ -679,11 +721,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556115252813</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="versie war een lege datum in de datebase gezet(1900-01-01) deze word in php uit de array gevang en verwerkt als alleen als de waarde van de dropdown.&#10;&#10;--- functions ---&#10;&#10;* data overzicht(aanhand van geselecteerd jaar, maand &amp; afdelling) &#10;* zoekveld&#10;* modal open on click tr&#10;* opmerking kunnen plaatsen&#10;* opmerking kunnen bewerken&#10;* opmerking kunnen verwijderen &#10;* extravelden kunnen plaatsen/invullen&#10;* extravelden kunnen wijzigen &#10;* dynamic thead aan hand van db &#10;* bezigheid kunnen aangeven">
+      <created>1556181026152</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1556181026152</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="353065000" />
+    <option name="totallyTimeSpent" value="382987000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -698,7 +747,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14498934" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14818764" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -720,6 +769,29 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.26226014" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14818764" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32719395" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49840087" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Database Console" order="12" weight="0.32936078" />
+      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49946696" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.26226014" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -801,7 +873,6 @@
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../test/displaydata.php" />
     <entry file="file://$PROJECT_DIR$/../test/loaddata.php" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/17764cf2-e12a-410b-96dc-d98b27656e78/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
@@ -834,13 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layout/index/index.indicatie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/layout/addons/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -858,44 +922,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layout/info/add.add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="48" selection-start-line="47" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout/add/add.sql.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../test/pagination.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout/index/index.table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="88" column="78" selection-start-line="88" selection-start-column="69" selection-end-line="88" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout/info/add.index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout/info/add.table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../test/pagination.php" />
     <entry file="file://$PROJECT_DIR$/backgroundcel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="722">
@@ -903,38 +930,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/info.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout/add/add.index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout/add/add.table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout/index/index.view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
@@ -949,13 +948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout/select/select.indicatie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" selection-start-line="10" selection-end-line="16" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -980,31 +972,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layout/index/index.sql.php">
+    <entry file="file://$PROJECT_DIR$/layout/index/index.ajax.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="75" column="63" selection-start-line="75" selection-start-column="63" selection-end-line="75" selection-end-column="63" />
+        <state relative-caret-position="629">
+          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/opmerking/opmerking.view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/select/select.indicatie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/db.connect.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="31" column="3" lean-forward="true" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
+        <state relative-caret-position="51">
+          <caret line="8" selection-start-line="8" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/opmerking/opmerking.add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/select/select.ajax.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="51" column="26" lean-forward="true" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/opmerking.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="42" lean-forward="true" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+        <state relative-caret-position="187">
+          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layout/index/index.ajax.php">
+    <entry file="file://$PROJECT_DIR$/../test/process.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+        <state relative-caret-position="620">
+          <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/info/add.add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="48" selection-start-line="47" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/info/add.table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-510">
+          <caret line="32" column="89" selection-start-line="32" selection-start-column="89" selection-end-line="32" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/info/add.index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/add/add.index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/add/add.table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/add/add.add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1015,23 +1084,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layout/opmerking/opmerking.sql.php">
+    <entry file="file://$PROJECT_DIR$/layout/select/select.sql.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="86" column="99" selection-start-line="86" selection-start-column="99" selection-end-line="86" selection-end-column="99" />
+        <state relative-caret-position="626">
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/layout/opmerking/opmerking.buttonfun.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/layout/opmerking/opmerking.add.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout/opmerking/opmerking.view.php">
+    <entry file="file://$PROJECT_DIR$/layout/add/add.sql.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        <state relative-caret-position="297">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../test/magic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../test/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="739">
+          <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/index/index.sql.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-77">
+          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layout/index/index.table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="34" selection-start-column="34" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1042,41 +1136,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/layout/opmerking/opmerking.sql.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="85" column="112" lean-forward="true" selection-start-line="85" selection-start-column="112" selection-end-line="85" selection-end-column="112" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/layout/select/select.view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="72" column="56" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
+        <state relative-caret-position="1360">
+          <caret line="85" column="39" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../test/db.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../test/index.php">
+    <entry file="file://$PROJECT_DIR$/layout/index/index.view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        <state relative-caret-position="357">
+          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../test/process.php">
+    <entry file="file://$PROJECT_DIR$/layout/index/index.indicatie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout/select/select.ajax.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="107" column="11" lean-forward="true" selection-start-line="107" selection-start-column="11" selection-end-line="107" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout/select/select.sql.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+        <state relative-caret-position="306">
+          <caret line="23" column="132" selection-start-line="23" selection-start-column="132" selection-end-line="23" selection-end-column="132" />
         </state>
       </provider>
     </entry>

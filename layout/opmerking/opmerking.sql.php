@@ -93,8 +93,7 @@ WHERE P.deleted = 0 AND C.CursusID = $cid and CO.CursusOnderdeelID = $coid";
     $result = $conn->query($Sql);
     $info = mysqli_fetch_array($result);
 
-    $info['cursusdatum']  = date('d-m-Y', strtotime($info['datum']));
-    $info['Cursustijd']  = date('H:i', strtotime($info['datum']));
+    $info['cursusdatum'] = date('d-m-Y', strtotime($info['datum'])) . '</br>' . date('H:i', strtotime($info['datum']));
 
     if ($info['Certificatendatum'] != '') {
         $date = strtotime($info['Certificatendatum']);

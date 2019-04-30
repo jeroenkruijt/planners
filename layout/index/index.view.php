@@ -18,7 +18,6 @@ include_once 'index.datummenu.php';
         height: 750px
     }
 
-    /* Just common table stuff. */
     table {
         border-collapse: collapse;
         width: 100%;
@@ -33,8 +32,6 @@ include_once 'index.datummenu.php';
         color: #FFFFFF;
     }
 </style>
-
-<div id="feedback"></div>
 
 <body>
 

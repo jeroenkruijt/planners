@@ -75,8 +75,8 @@ WHERE P.deleted = 0 AND C.CursusID = $cursusid and CO.CursusOnderdeelID = $coid
     while ($row = mysqli_fetch_array($content)) {
 
         $info = $row;
-        $info['cursusdatum'] = date('d-m-Y', strtotime($row['datum']));
-        $info['Cursustijd'] = date('H:i', strtotime($row['datum']));
+        $info['cursusdatum'] = date('d-m-Y', strtotime($row['datum'])) . '</br>' . date('H:i', strtotime($row['datum']));;
+
 
         if ($info['Certificatendatum'] != '') {
             $date = strtotime($info['Certificatendatum']);

@@ -94,6 +94,7 @@
                 $info = $veldnaam[$count];
 
                 echo "<td  id='" . $veldid[$count] . $bedrijfid . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $row[$info] . "</td>";
+
             }
 
             echo "</tr>";
@@ -106,3 +107,4 @@
     </tbody>
 </table>
 
+w

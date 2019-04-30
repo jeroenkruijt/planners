@@ -6,12 +6,16 @@
  * Time: 15:47
  */
 
-$output .= '
+
+if (!isset($_POST['optie'])) {
+    $output .= '
       <div class="table-responsive">
            <table class="table is-bordered">';
-
-if (isset($_POST['optie'])) {
-    $output .= '<form class="signup-form" action="" method="post">';
+} else {
+    $output .= '
+      <div class="table-responsive">
+           <table class="table is-bordered">
+           <form class="signup-form" action="../add/add.add.php" method="post">';
 }
 
 
@@ -79,13 +83,13 @@ $output .= '</table>';
 
 if (!isset($_POST['optie'])) {
 
-    $output .= '<a  onclick="opFunction(\'' . $coid . '\', \'' . $cursusid . '\', \'' . $bedrijfid . '\')" class="btn btn-primary ">Opmerking plaatsen</a>
+    $output .= '<a href="add.php?CursusID=' . $cursusid . '&CursusonderdeelID=' . $coid . '&BID=' . $bedrijfid . '" class="btn btn-primary ">Opmerking plaatsen</a>
 <a href="info.php?CursusID=' . $cursusid . '&CursusonderdeelID=' . $coid . '&BID=' . $bedrijfid . '" class="btn btn-primary">Velden invullen</a>
 <button type="button" align="right" class="btn btn-danger" data-dismiss="modal">Sluiten</button>';
 
 } else {
 
-    $output .= '<a  onclick="opFunction(\'' . $coid . '\', \'' . $cursusid . '\', \'' . $bedrijfid . '\')" class="btn btn-primary">Bevestiging</a>
+    $output .= '<button type="submit" value="Submit" class="btn btn-primary">Bevestiging</button>
 <button type="button" align="right" class="btn btn-danger" data-dismiss="modal">Sluiten</button> </form>';
 
 }
