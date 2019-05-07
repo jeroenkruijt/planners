@@ -36,7 +36,7 @@ where OpmerkingID = ' . $oif . ' and CursusID = ' . $cid . ' and  Cursusonderdee
     $veldnaam = $info['Veldnaam'];
 
     if($bid != '') {
-        $Sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, CB.BedrijfID, OP.Opleidingnaam, O.onderdeelnaam, CODD.Docent, CODA.Assistent, CO.DatumBegin as datum, 
+        $Sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, CB.BedrijfID, OP.Opleidingnaam, O.onderdeelnaam, CODD.Docent, CODA.Assistent, CO.DatumBegin as datum, CO.DatumEind,
 CASE WHEN Aantal > 0 THEN Aantal ELSE '0' END AS Aantal, CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Cursuslocatie, 
 CASE WHEN CB.BedrijfID > 0 THEN B1.accountname ELSE 'Geen bedrijf' END AS Bedrijf, CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BS.ship_city ELSE 'Geen locatie' END AS Lesplaats, 
 ED.Lunch, ED.Subsidie,ED.Exameninstantie, ED.Certificaten, ED.Gefactureerd, ED.Uitnodigingen, ED.Lesmateriaal, ED.Praktijkmateriaal, ED.Certificatendatum, ED.bedrag, ED.Overnachting 
@@ -63,7 +63,7 @@ WHERE P.deleted = 0 AND C.CursusID = $cid and CO.CursusOnderdeelID = $coid AND C
 
     } else{
 
-        $Sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, CB.BedrijfID, OP.Opleidingnaam, O.onderdeelnaam, CODD.Docent, CODA.Assistent, CO.DatumBegin as datum, 
+        $Sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, CB.BedrijfID, OP.Opleidingnaam, O.onderdeelnaam, CODD.Docent, CODA.Assistent, CO.DatumBegin as datum, CO.DatumEind,
 CASE WHEN Aantal > 0 THEN Aantal ELSE '0' END AS Aantal, CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Cursuslocatie, 
 CASE WHEN CB.BedrijfID > 0 THEN B1.accountname ELSE 'Geen bedrijf' END AS Bedrijf, CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BS.ship_city ELSE 'Geen locatie' END AS Lesplaats, 
 ED.Lunch, ED.Subsidie,ED.Exameninstantie, ED.Certificaten, ED.Gefactureerd, ED.Uitnodigingen, ED.Lesmateriaal, ED.Praktijkmateriaal, ED.Certificatendatum, ED.bedrag, ED.Overnachting 
@@ -93,7 +93,7 @@ WHERE P.deleted = 0 AND C.CursusID = $cid and CO.CursusOnderdeelID = $coid";
     $result = $conn->query($Sql);
     $info = mysqli_fetch_array($result);
 
-    $info['cursusdatum'] = date('d-m-Y', strtotime($info['datum'])) . '</br>' . date('H:i', strtotime($info['datum']));
+    $info['cursusdatum'] = date('d-m-Y', strtotime($info['datum'])) . '</br>' . date('H:i', strtotime($info['datum'])) . ' - ' . date('H:i', strtotime($info['DatumEind']));
 
     if ($info['Certificatendatum'] != '') {
         $date = strtotime($info['Certificatendatum']);

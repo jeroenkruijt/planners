@@ -28,7 +28,6 @@ if (!isset($_SESSION['year'])){
 
 }
 
-
 if (isset($_SESSION['sql'])) {
 
     $sql = $_SESSION['sql'];
@@ -37,7 +36,6 @@ if (isset($_SESSION['sql'])) {
 
 $year = $_SESSION['year'];
 $month = $_SESSION['month'];
-
 
     if (!isset($_SESSION['afdeling'])) {
         $where = 'WHERE P.deleted = 0 AND year(CO.DatumBegin) = ' . $year . ' AND MONTH(CO.DatumBegin) = ' . $month;
@@ -50,7 +48,7 @@ $month = $_SESSION['month'];
     }
 
 
-    $sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, CB.BedrijfID, OP.Opleidingnaam, O.onderdeelnaam, CODD.Docent, CODA.Assistent, CO.DatumBegin as datum, 
+    $sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, CB.BedrijfID, OP.Opleidingnaam, O.onderdeelnaam, CODD.Docent, CODA.Assistent, CO.DatumBegin as datum,  CO.DatumEind,
 CASE WHEN Aantal > 0 THEN Aantal ELSE '0' END AS Aantal, CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Cursuslocatie, 
 CASE WHEN CB.BedrijfID > 0 THEN B1.accountname ELSE 'Geen bedrijf' END AS Bedrijf, CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BS.ship_city ELSE 'Geen locatie' END AS Lesplaats, 
 ED.Lunch, ED.Subsidie,ED.Exameninstantie, ED.Certificaten, ED.Gefactureerd, ED.Uitnodigingen, ED.Lesmateriaal, ED.Praktijkmateriaal, ED.Certificatendatum, ED.bedrag, ED.Overnachting 

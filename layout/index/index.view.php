@@ -29,6 +29,7 @@ include_once 'index.datummenu.php';
 
     th {
         background: #003d6b;
+
         color: #FFFFFF;
     }
 </style>

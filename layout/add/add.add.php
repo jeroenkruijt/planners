@@ -16,9 +16,9 @@ if (isset($_POST['submit'])) {
 
     $sql = '';
 
-    while (($fruit_name = current($_POST)) !== FALSE) {
+    while (($count = current($_POST)) !== FALSE) {
 
-        $key = key($_POST);
+        $key = key($_POST); 
 
         echo $key . '<br>';
 

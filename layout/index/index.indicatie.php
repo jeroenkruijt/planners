@@ -21,7 +21,7 @@ while ($change = mysqli_fetch_array($comm)) {
     <script>
         $(document).ready(function () {
 
-            $("#<?php echo $change?>").attr("style", "font-weight: bold;font-style: italic; color:#2e6da4; border: 2px solid #003d6b;");
+            $("#<?php echo $change?>").attr("style", "font-weight: bold;font-style: italic; color:#2e6da4; border: 2px solid #207A21; ");
 
         });
     </script>
