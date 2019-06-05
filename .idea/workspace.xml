@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bba14ab-31a2-4b16-8ce6-0605931f8587" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/db.connect.php" beforeDir="false" afterPath="$PROJECT_DIR$/db/db.connect.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layout/index/index.sql.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/index/index.sql.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout/index/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/index/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/select.php" beforeDir="false" afterPath="$PROJECT_DIR$/select.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/layout/index/index.sql.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="824">
-              <caret line="72" column="44" lean-forward="true" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="44" />
+            <state relative-caret-position="433">
+              <caret line="49" column="1" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -263,8 +259,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-395" />
-    <option name="y" value="-22" />
+    <option name="x" value="-196" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1055" />
   </component>
@@ -431,7 +427,7 @@
       <workItem from="1558076262298" duration="3034000" />
       <workItem from="1559631045633" duration="8490000" />
       <workItem from="1559645232958" duration="2345000" />
-      <workItem from="1559716748749" duration="6387000" />
+      <workItem from="1559716748749" duration="6996000" />
     </task>
     <task id="LOCAL-00001" summary="versie 0.9">
       <created>1545292028254</created>
@@ -713,11 +709,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557220174010</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="versie war een lege datum in de datebase gezet(1900-01-01) deze word in php uit de array gevang en verwerkt als alleen als de waarde van de dropdown.&#10;&#10;--- functions ---&#10;&#10;* data overzicht(aanhand van geselecteerd jaar, maand &amp; afdelling) &#10;* zoekveld&#10;* modal open on click tr&#10;* opmerking kunnen plaatsen&#10;* opmerking kunnen bewerken&#10;* opmerking kunnen verwijderen &#10;* extravelden kunnen plaatsen/invullen&#10;* extravelden kunnen wijzigen &#10;* dynamic thead aan hand van db &#10;* bezigheid kunnen aangeven">
+      <created>1559735481223</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1559735481223</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="447435000" />
+    <option name="totallyTimeSpent" value="448044000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1035,8 +1038,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/layout/index/index.sql.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="824">
-          <caret line="72" column="44" lean-forward="true" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="44" />
+        <state relative-caret-position="433">
+          <caret line="49" column="1" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
         </state>
       </provider>
     </entry>
