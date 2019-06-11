@@ -17,6 +17,8 @@ $row_cnt = $thead->num_rows;
 
 session_start();
 
+
+
 if(!isset($_SESSION['month'])){
 
     $_SESSION['month'] = date('m');
@@ -71,14 +73,16 @@ LEFT JOIN (SELECT COD.CursusOnderdeelID, GROUP_CONCAT(' ', CONCAT(D.Voornaam, ' 
 FROM cursusonderdeeldocenten COD LEFT JOIN docenten D ON COD.DocentID = D.DocentID WHERE COD.Assistent = 1 GROUP BY COD.CursusOnderdeelID) CODA ON CO.CursusOnderdeelID = CODA.CursusOnderdeelID 
 LEFT JOIN extradata ED ON C.CursusID = ED.CursusID AND CO.CursusOnderdeelID = ED.CursusonderdeelID
 LEFT JOIN psentity P ON C.CursusID = P.psid 
-$where group by C.CursusID
-order by date(CO.DatumBegin)
-
+$where
+order by date(CO.DatumBegin),  CO.CursusOnderdeelID
 ";
 
 }
 
 $result = $conn->query($sql);
+
+
+
 
 //$afdelingen selector query dynamic
 $afdelingen = 'SELECT A.AfdelingID, A.AfdelingNaam FROM  afdelingen A INNER JOIN psentity P ON A.AfdelingID = P.psid WHERE P.deleted = 0';

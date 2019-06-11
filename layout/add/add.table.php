@@ -9,6 +9,7 @@
 echo '<div class="table-responsive">';
 echo '<form action="layout/add/add.add.php?CursusID=' . $cursusid . '&CursusonderdeelID=' . $coid . '&CursusonderdeelID=' . $coid . '&BID=' . $bid . '" method="POST">';
 echo '<table class="table is-bordered">';
+echo '    <input type="checkbox">';
 
 foreach ($titels as $titel) {
 
