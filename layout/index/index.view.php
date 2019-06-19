@@ -27,7 +27,14 @@ include_once 'index.datummenu.php';
         padding: 8px 16px;
     }
 
+
     th {
+        background: #003d6b;
+
+        color: #FFFFFF;
+    }
+
+    #opleiding {
         background: #003d6b;
 
         color: #FFFFFF;
@@ -44,7 +51,6 @@ include_once 'index.datummenu.php';
         <?php
 
         include_once 'index.table.php';
-
 
         ?>
         </div>

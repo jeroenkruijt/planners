@@ -1,11 +1,12 @@
 <?php
-    /**
-     * Created by PhpStorm.
-     * User: jkruijt
-     * Date: 1-10-2018
-     * Time: 10:48
-     */
-//
+/**
+ * Created by PhpStorm.
+ * User: jkruijt
+ * Date: 1-10-2018
+ * Time: 10:48
+ */
+
+//localhost
 $host = "localhost";
 $user = "root";
 $pass = "";
