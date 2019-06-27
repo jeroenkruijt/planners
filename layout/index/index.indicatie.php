@@ -31,30 +31,32 @@ while ($change = mysqli_fetch_array($comm)) {
 
 }
 
-
+//
 ////bezig indicatie maken voor de index pagina
-$bgcolor = '#cccccc';
-$rowSQL = mysqli_query($conn, "SELECT MAX( VeldID ) AS max FROM velden;" );
-$number = mysqli_fetch_array( $rowSQL );
-$largestNumber = $number['max'];
-for ($i = 0; $i <= $largestNumber; $i++) {
-//    if()
-    if($bedrijfid == ''){
-        $bezig = 'select * from actief where VeldID = ' . $i . ' and Cursusid = ' . $cursusid . '  and Cursusonderdeelid = ' . $coid ;
-    }else{
-        $bezig = 'select * from actief where VeldID = ' . $i . ' and Cursusid = ' . $cursusid . '  and Cursusonderdeelid = ' . $coid .' and BedrijfID = ' . $bedrijfid;
-    }
-//    echo $bezig . '<BR>';
-    $klaar = $conn->query($bezig);
-    if (mysqli_num_rows($klaar) > 0) {
-        $done = mysqli_fetch_array($klaar);
-        $id = $done['VeldID'].  $bedrijfid . $coid
-        ?>
+$bgcolor = '#ffffff';
+//$rowSQL = mysqli_query($conn, "SELECT MAX( VeldID ) AS max FROM velden;" );
+//$number = mysqli_fetch_array( $rowSQL );
+//$largestNumber = $number['max'];
+//for ($i = 0; $i <= $largestNumber; $i++) {
+////    if()
+//    if($bedrijfid == ''){
+//        $bezig = 'select * from actief where VeldID = ' . $i . ' and Cursusid = ' . $cursusid . '  and Cursusonderdeelid = ' . $coid ;
+//    }else{
+//        $bezig = 'select * from actief where VeldID = ' . $i . ' and Cursusid = ' . $cursusid . '  and Cursusonderdeelid = ' . $coid .' and BedrijfID = ' . $bedrijfid;
+//    }
+////    echo $bezig . '<BR>';
+//    $klaar = $conn->query($bezig);
+//    if (mysqli_num_rows($klaar) > 0) {
+//        $done = mysqli_fetch_array($klaar);
+//        $id = $done['VeldID'].  $bedrijfid . $coid;
+//        echo 'hello';
+//        ?>
         <script>
-            $(document).ready(function () {
-                $("#<?php echo $id?>//").attr("bgcolor", "#ffffff");
-//            });
-//        </script>
-      <?php
-    }
-}
+           // $(document).ready(function () {
+           //     $("#<?php //echo $id?>////").attr("bgcolor", "#ffffff");
+           //});
+     </script>
+<?php
+//    }
+//}
+?>

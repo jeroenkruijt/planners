@@ -155,7 +155,7 @@ if (mysqli_num_rows($result) > 0) {
         }
 
         $sql2 = "
-			SELECT  C.CursusID, CB.BedrijfID, CO.CursusOnderdeelID, OP.Opleidingnaam, O.Onderdeelnaam, CO.DatumBegin as datum, CO.DatumEind, CODD.Docent, CODA.Assistent,
+			SELECT  C.CursusID, CB.BedrijfID, CO.CursusOnderdeelID, OP.Opleidingnaam, O.onderdeelnaam, CO.DatumBegin as datum, CO.DatumEind, CODD.Docent, CODA.Assistent,
 			CASE WHEN CB.BedrijfID > 0 THEN B.accountname ELSE 'Geen bedrijf' END AS Bedrijf,
             CASE WHEN Aantal > 0 THEN Aantal ELSE '0' END AS Aantal, CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Cursuslocatie,
             CASE WHEN CB.BedrijfID > 0 THEN B.accountname ELSE 'Geen bedrijf' END AS Bedrijf, CASE WHEN COL.LocatieID > 0 THEN L.Woonplaats WHEN COL.BedrijfID > 0 THEN BS.ship_city ELSE 'Geen locatie' END AS Lesplaats,

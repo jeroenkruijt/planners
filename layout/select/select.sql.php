@@ -5,10 +5,12 @@
  * Date: 15/11/2018
  * Time: 17:00
  */
-
+$bedrijfid = '';
 $cursusid = $_POST["cursusid"];
 $coid = $_POST["coid"];
-$bedrijfid = $_POST['bid'];
+if (isset($_POST['bid'])) {
+    $bedrijfid = $_POST['bid'];
+}
 //$optie = $_POST['optie'];
 
 session_start();
