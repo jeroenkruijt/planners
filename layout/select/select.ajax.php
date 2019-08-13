@@ -11,13 +11,14 @@
 <script>
 
 
-    function deletefunction(opid, coid, cid, bid, vid) {
+    function deletefunction(opid, coid, cid, bid, vid, mop) {
 
         var VeldID = vid;
         var opmerkingid = opid;
         var CursusID = cid;
         var CursusonderdeelID = coid;
         var BedrijfID = bid;
+        var massaopmerking = mop;
 
         var optie = '0';
 
@@ -31,7 +32,8 @@
                     CursusID: CursusID,
                     BedrijfID: BedrijfID,
                     VeldID: VeldID,
-                    optie: optie
+                    optie: optie,
+                    massaopmerking: massaopmerking
                 },
                 success: function (data) {
                     $('#test').html(data);

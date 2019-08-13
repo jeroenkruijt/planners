@@ -78,6 +78,11 @@ WHERE P.deleted = 0 AND C.CursusID = $cursusid and CO.CursusOnderdeelID = $coid
         $info['cursusdatum'] = date('d-m-Y', strtotime($row['datum'])) . '</br>' . date('H:i', strtotime($row['datum'])) . ' - ' . date('H:i', strtotime($row['DatumEind']));
 
 
+
+        if ($info['Certificatendatum'] = '1900-01-01'){
+            $info['Certificatendatum'] = '';
+        }
+
         if ($info['Certificatendatum'] != '') {
             $date = strtotime($info['Certificatendatum']);
             $datum = date('d-m-Y', $date);

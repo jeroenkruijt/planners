@@ -88,6 +88,10 @@ while ($row = mysqli_fetch_array($content)) {
 
     $info = $row;
 
+    if ($info['Certificatendatum'] = '1900-01-01'){
+        $info['Certificatendatum'] = '';
+    }
+
     $info['cursusdatum'] = date('d-m-Y', strtotime($row['datum'])) . '</br>' . date('H:i', strtotime($row['datum'])) . ' - ' . date('H:i', strtotime($row['DatumEind']));
     $info['Cursustijd'] = date('H:i', strtotime($row['datum']));
 
@@ -118,6 +122,20 @@ while ($row = mysqli_fetch_array($result)) {
 }
 
 // opmerking uit de db halen
+$opmerking = "SELECT OpmerkingID, VeldID, Opmerking, datum, MassaOpmerking FROM opmerking 
+left join users U on opmerking.UsersID = U.userid 
+WHERE CursusID = $cursusid AND MassaOpmerking = '1'";
+
+$res = mysqli_query($conn, $opmerking);
+
+
+while ($row = mysqli_fetch_array($res)) {
+
+    $opmerkingen[] = $row;
+
+}
+
+//print_r($res);
 
 if ($bedrijfid != '') {
 

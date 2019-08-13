@@ -1,114 +1,10 @@
-<!--<table class="table is-fullwidth">-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!---->
-<!--                --><?php
-//
-//                //        $amount = money_format('%(#1n', 20);
-//                //        echo $amount;
-//
-//                if ($thead->num_rows > 0) {
-//
-//
-//                    while ($row = mysqli_fetch_array($thead)) {
-//
-//                        $ogt = $row['Veldnaam'];
-//                        $id = $row['VeldID'];
-//
-//                        $titel = ucfirst($ogt);
-//
-//                        echo "<th id='fixed'>" . $titel . "</th>";
-//
-//
-//                        $veldnaam[] = $ogt;
-//                        $veldid[] = $id;
-//
-//        //                print_r($veldnaam);
-//
-//                    }
-//
-//                }
-//
-//                ?>
-<!---->
-<!--            </tr>-->
-<!--            </thead>-->
-<!--            <tbody>-->
-<!---->
-<!--            --><?php
-//
-//            // include word gebruikt om de data in de table te zetten en de tussen thead er tussen te doen op cursusid verandering
-//            $cursusid = $row['CursusID'];
-//
-//            $acount = count($veldnaam);
-//
-//            if ($result->num_rows > 0) {
-//
-//                while ($row = mysqli_fetch_array($result)) {
-//
-//        //            print_r($row);
-//
-//                    //datetime format veranderen van Y-m-d naar d-m-Y en H:i weg halen bij de datetime en apart
-//                    $row['cursusdatum'] = date('d-m-Y', strtotime($row['datum'])) . '</br>' . date('H:i', strtotime($row['datum'])) . ' - ' . date('H:i', strtotime($row['DatumEind']));
-//
-//                    if ($row['Certificatendatum'] != '') {
-//
-//                        $date = strtotime('01-01-1900');
-//                        $datum = date('Y-m-d', $date);
-//
-//                        if ($row['Certificatendatum'] != $datum) {
-//                            $date = strtotime($row['Certificatendatum']);
-//                            $datum = date('d-m-Y', $date);
-//                            $row['Certificaten'] = $row['Certificaten'] . '<br>' . $datum;
-//                        }
-//
-//                    }
-//
-//                    if ($row['bedrag'] != '') {
-//
-//                        $row['Gefactureerd'] = $row['Gefactureerd'] . '<br>€' . $row['bedrag'];
-//                    }
-//
-//
-//                    // header tussen andere cursusids te plaatse
-//                    if ($cursusid !== $row['CursusID']) {
-//                        echo "<tr class='showModal'>";
-//                        echo "<th colspan='100%'>" . $row['Opleidingnaam'] . "</th>";
-//                        echo "</tr>";
-//                    }
-//
-//                    // staan hier zodat de functie hierboven niet al de volgende var krijg en dus niet meer functioneert
-//                    $cursusid = $row['CursusID'];
-//                    $coid = $row['CursusOnderdeelID'];
-//                    $bedrijfid = $row['BedrijfID'];
-//
-//                    //indicatie include om aan te geven dat er een opmerking aanwezig is
-//                    include 'index.indicatie.php';
-//
-//                    // informatie die in de tabel komt
-//                    echo "<tr class='view_data' onclick='modalFucntion(\"" . $cursusid . "\",\"" . $coid . "\", \"" . $bedrijfid . "\")' >";
-//
-//
-//                    for ($count = 0; $count < $acount; $count++) {
-//
-//                        $info = $veldnaam[$count];
-//
-//                        echo "<td  id='" . $veldid[$count] . $bedrijfid . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $row[$info] . "</td>";
-//
-//                    }
-//
-//                    echo "</tr>";
-//
-//                }
-//
-//            }
-//
-//            ?>
-<!--            </tbody>-->
-<!--        </table>-->
+
+
+
+
 
 <?php
-echo '<table class="table is-fullwidth">';
+echo '<table class="table-sm table-hover table-bordered table-striped is-fullwidth">';
 echo '<thead class="">';
 echo '<tr>';
 $sql = "SELECT * FROM velden WHERE Zichtbaar = 1 order by volgorde asc ";
@@ -126,18 +22,32 @@ while ($row = mysqli_fetch_array($thead)) {
     $veldid[] = $id;
 }
 
+if (isset($_SESSION['afdeling'])) {
+
+    $where = 'AND AfdelingID = ' . $_SESSION['afdeling'];
+
+} else {
+
+    $where = '';
+
+}
+
 $acount = count($veldid);
 
 echo '</tr>';
 echo '</thead>';
 
+
 $sql = "SELECT DISTINCT CO.CursusID, DATE(CO.DatumBegin) AS Datum
 		FROM cursusonderdelen CO
         LEFT JOIN psentity P ON CO.CursusID = P.psid
-		WHERE P.deleted = 0 AND YEAR(CO.DatumBegin) = $year AND MONTH(CO.DatumBegin) = $month
+        INNER JOIN opleidingonderdelen OP ON CO.OnderdeelID = OP.OnderdeelID
+        INNER JOIN opleidingen O on OP.OpleidingID = O.OpleidingID
+		WHERE P.deleted = 0 AND YEAR(CO.DatumBegin) = $year AND MONTH(CO.DatumBegin) = $month $where
 		ORDER BY CO.DatumBegin";
 
 $CursusID = 28115;
+
 
 $result = mysqli_query($conn, $sql);
 $datas = array();
@@ -145,16 +55,27 @@ if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         $datas[] = $row;
     }
+    $CID = array_column($datas, 'CursusID');
 
-    foreach ($datas as $data) {
 
-        if ($data['CursusID'] > 0) {
+    $id = '';
 
-            $CursusID = $data['CursusID'];
+    $id = "'" . implode("', '", $CID) . "'";
 
-        }
+    $ids = join(',', array_fill(0, count($id), $id));
 
-        $sql2 = "
+    if (isset($_SESSION['zoek'])) {
+
+        $zoek = $_SESSION['zoek'];
+
+    } else {
+
+        $zoek = '';
+
+    }
+
+
+    $sql2 = "
 			SELECT  C.CursusID, CB.BedrijfID, CO.CursusOnderdeelID, OP.Opleidingnaam, O.onderdeelnaam, CO.DatumBegin as datum, CO.DatumEind, CODD.Docent, CODA.Assistent,
 			CASE WHEN CB.BedrijfID > 0 THEN B.accountname ELSE 'Geen bedrijf' END AS Bedrijf,
             CASE WHEN Aantal > 0 THEN Aantal ELSE '0' END AS Aantal, CASE WHEN COL.LocatieID > 0 THEN L.Locatienaam WHEN COL.BedrijfID > 0 THEN B.accountname ELSE 'Geen locatie' END AS Cursuslocatie,
@@ -177,53 +98,69 @@ if (mysqli_num_rows($result) > 0) {
             LEFT JOIN docenten D ON COD.DocentID = D.DocentID WHERE COD.Docent = 1 GROUP BY COD.CursusOnderdeelID) CODD ON CO.CursusOnderdeelID = CODD.CursusOnderdeelID
             LEFT JOIN (SELECT COD.CursusOnderdeelID, GROUP_CONCAT(' ', CONCAT(D.Voornaam, ' ', D.Achternaam)) AS Assistent
             FROM cursusonderdeeldocenten COD LEFT JOIN docenten D ON COD.DocentID = D.DocentID WHERE COD.Assistent = 1 GROUP BY COD.CursusOnderdeelID) CODA ON CO.CursusOnderdeelID = CODA.CursusOnderdeelID
-			LEFT JOIN extradata ED ON C.CursusID = ED.CursusID AND CO.CursusOnderdeelID = ED.CursusonderdeelID
+			LEFT JOIN extradata ED ON C.CursusID = ED.CursusID AND CO.CursusOnderdeelID = ED.CursusonderdeelID and CB.BedrijfID = ED.BedrijfID 
 			LEFT JOIN psentity P ON C.CursusID = P.psid
-			WHERE P.deleted = 0 AND C.CursusID = $CursusID
-			ORDER BY date(CO.DatumBegin),  CO.CursusOnderdeelID ";
+            WHERE P.deleted = 0
+            AND C.CursusID IN ($ids)
+            order by C.CursusID
+            ";
 
-        $result2 = mysqli_query($conn, $sql2);
+    $result2 = mysqli_query($conn, $sql2);
 
-        $datas2 = array();
-        while ($row = mysqli_fetch_assoc($result2)) {
-            $datas2[] = $row;
-            $opleiding = $row['Opleidingnaam'];
-        }
+    $cursusid = '';
 
+    while ($datas2 = mysqli_fetch_assoc($result2)) {
 
-        echo "<tr>
-            <td id='opleiding' colspan='100%'>" . $opleiding . "</td>
+        if ($cursusid !== $datas2['CursusID']) {
+            echo "<tr>
+            <td id='opleiding' colspan='100%'>" . $datas2['Opleidingnaam'] . "</td>
             </tr>";
-
-
-
-
-        foreach ($datas2 as $data2) {
-
-            $cursusid = $data2['CursusID'];
-
-            $coid = $data2['CursusOnderdeelID'];
-            $bedrijfid = $data2['BedrijfID'];
-
-            include 'index.indicatie.php';
-
-            $data2['cursusdatum'] = date('d-m-Y', strtotime($data2['datum'])) . '</br>' . date('H:i', strtotime($data2['datum'])) . ' - ' . date('H:i', strtotime($data2['DatumEind']));
-
-            echo "<tr class='view_data' onclick='modalFucntion(" . $cursusid . "," . $coid . ", " . $bedrijfid . ")' >";
-            for ($count = 0; $count < $acount; $count++) {
-
-                $info = $veldnaam[$count];
-
-
-                echo "<td  id='" . $veldid[$count] . $bedrijfid . $coid . "' bgcolor='" . $bgcolor . "' style=''>" . $data2[$info] . "</td>";
-
-            }
-            echo "</tr>";
         }
+
+        $cursusid = $datas2['CursusID'];
+
+        $coid = $datas2['CursusOnderdeelID'];
+        $bedrijfid = $datas2['BedrijfID'];
+
+
+        if ($datas2['Certificatendatum'] = '1900-01-01') {
+            $datas2['Certificatendatum'] = '';
+        }
+
+        if ($datas2['Certificatendatum'] != '') {
+            $newDate = date("d-m-Y", strtotime($datas2['Certificatendatum']));
+
+            $datas2['Certificaten'] = $datas2['Certificaten'] . '<br>' . $newDate;
+        }
+
+
+        if ($datas2['bedrag'] != '') {
+            $datas2['Gefactureerd'] = $datas2['Gefactureerd'] . '<br>€' . $datas2['bedrag'];
+        }
+
+        if($datas2['Lesmateriaal'] != '' && $datas2['Praktijkmateriaal']){
+            $datas2['materiaal'] = 'Lesmateriaal: '. $datas2['Lesmateriaal'].'<br>Praktijkmatriaal: '. $datas2['Praktijkmateriaal'];
+        }
+
+
+
+        include 'index.indicatie.php';
+
+        $datas2['cursusdatum'] = date('d-m-Y', strtotime($datas2['datum'])) . '</br>' . date('H:i', strtotime($datas2['datum'])) . ' - ' . date('H:i', strtotime($datas2['DatumEind']));
+
+        echo "<tr class='view_data' onclick='modalFucntion(" . $cursusid . "," . $coid . ", " . $bedrijfid . ")'  >";
+        for ($count = 0; $count < $acount; $count++) {
+
+            $info = $veldnaam[$count];
+
+            echo "<td class='$veldid[$count]$cursusid' id='" . $veldid[$count] . $bedrijfid . $coid . "'  style='text-align:center;'>" . $datas2[$info] . "</td>";
+
+        }
+        echo "</tr>";
     }
+  
 }
 echo '</table>';
-
 
 
 ?>

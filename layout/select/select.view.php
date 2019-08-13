@@ -66,7 +66,7 @@ foreach ($titels as $titel) {
                     $output .= '<ul class="dropdown-menu">
         <li><strong>Op ' . $newdate . '</strong></li>
         <li><a href="opmerking.php?CursusID=' . $cursusid . '&CursusonderdeelID=' . $coid . '&veldid=' . $titelids . '&BID=' . $bedrijfid . '&opmerkingid=' . $oid . '&optie=change">Bewerken</a></li>
-        <li><a onclick="deletefunction(\'' . $oid . '\', \'' . $coid . '\', \'' . $cursusid . '\', \'' . $bedrijfid . '\', \'' . $titelids . '\')">Verwijderen</a></li>
+        <li><a onclick="deletefunction(\'' . $oid . '\', \'' . $coid . '\', \'' . $cursusid . '\', \'' . $bedrijfid . '\', \'' . $titelids . '\', \'' . $opmerking['MassaOpmerking'] . '\')">Verwijderen</a></li>
     </ul>
 </ul>';
                 }
@@ -84,7 +84,6 @@ $output .= '</table>';
 if (!isset($_POST['optie'])) {
 
     $output .= '<a href="add.php?CursusID=' . $cursusid . '&CursusonderdeelID=' . $coid . '&BID=' . $bedrijfid . '" class="btn btn-primary ">Opmerking plaatsen</a>
-<a href="info.php?CursusID=' . $cursusid . '&CursusonderdeelID=' . $coid . '&BID=' . $bedrijfid . '" class="btn btn-primary">Velden invullen</a>
 <button type="button" align="right" class="btn btn-danger" data-dismiss="modal">Sluiten</button>';
 
 } else {

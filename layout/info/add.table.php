@@ -17,6 +17,10 @@ foreach ($titels as $titel) {
 
     if ($titels == 'Certificaten') {
 
+        if ($info['Certificatendatum'] = '1900-01-01'){
+            $info['Certificatendatum'] = '';
+        }
+
         if ($info['Certificatendatum'] != '') {
             $date = strtotime($info['Certificatendatum']);
             $datum = date('d-m-Y', $date);

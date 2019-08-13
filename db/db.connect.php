@@ -19,7 +19,7 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-//// db NAS
+////// db NAS
 //$servername3 = "192.168.20.5";
 //$username3 = "Planning";
 //$password3 = "twebopleidingen7";

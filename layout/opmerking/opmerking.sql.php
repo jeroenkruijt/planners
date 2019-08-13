@@ -22,10 +22,10 @@ if ($optie == 'change') {
 
     if($bid != '') {
         $sql = ' select * from opmerking left join velden on opmerking.VeldID = velden.VeldID
-where OpmerkingID = ' . $oif . ' and CursusID = ' . $cid . ' and  CursusonderdeelID = ' . $coid . ' AND BedrijfID = ' . $bid . ' and opmerking.VeldID = ' . $vid;
+where OpmerkingID = ' . $oif . ' and opmerking.VeldID = ' . $vid;
     } else{
         $sql = ' select * from opmerking left join velden on opmerking.VeldID = velden.VeldID
-where OpmerkingID = ' . $oif . ' and CursusID = ' . $cid . ' and  CursusonderdeelID = ' . $coid . '  and opmerking.VeldID = ' . $vid;
+where OpmerkingID = ' . $oif . ' and opmerking.VeldID = ' . $vid;
     }
 
     $result = $conn->query($sql);
@@ -34,6 +34,8 @@ where OpmerkingID = ' . $oif . ' and CursusID = ' . $cid . ' and  Cursusonderdee
     $opmerking = $info['Opmerking'];
 
     $veldnaam = $info['Veldnaam'];
+
+//    echo $sql;
 
     if($bid != '') {
         $Sql = "SELECT C.CursusID, C.OpleidingID, CO.CursusOnderdeelID, CB.BedrijfID, OP.Opleidingnaam, O.onderdeelnaam, CODD.Docent, CODA.Assistent, CO.DatumBegin as datum, CO.DatumEind,

@@ -129,12 +129,13 @@ $jaar = array_combine(range(date("Y", strtotime('+2 years')), 2000), range(date(
                 <input type="text" class="form-control" name="zoek" placeholder="zoeken.....">
                 <button type="submit" name="submit-zoek" class="btn btn-default">Zoek</button>
                 <?php
-                if (isset($_GET['zoek'])) {
+                if (isset($_SESSION['zoekterm'])) {
 
                     echo '<label class="control-label">U huidige zoekterm: </label> ';
-                    echo ' ' . $_GET['zoek'] . ' ';
+                    echo ' ' . $_SESSION['zoekterm'] . ' ';
+                    }
                     echo ' <button type="submit" name="submit-unset" class="btn btn-danger">Verwijder zoekterm</button>';
-                }
+
 
                 ?>
             </div>

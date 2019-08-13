@@ -55,7 +55,7 @@
     }
 
     $('#dataModal').on('hidden.bs.modal', function () {
-        location.reload();
+        // location.reload();
     })
 
 </script>

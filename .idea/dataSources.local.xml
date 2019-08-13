@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="planningssysteem@localhost" uuid="1d4e43ee-321f-4de0-9ebc-0f6688c144e7">
-      <database-info product="MySQL" version="5.7.21" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )" dbms="MYSQL" exact-version="5.7.21" exact-driver-version="5.1">
+    <data-source name="planningssysteem@192.168.20.5" uuid="1d4e43ee-321f-4de0-9ebc-0f6688c144e7">
+      <database-info product="MySQL" version="5.7.21" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )" dbms="MYSQL" exact-version="5.7.21">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
-      <user-name>root</user-name>
+      <user-name>Planning</user-name>
       <introspection-schemas>*:@,testing,vtigercrm600</introspection-schemas>
     </data-source>
     <data-source name="vtigercrm600@localhost" uuid="b3822367-0c97-4845-a390-a4d779a1c9d0">

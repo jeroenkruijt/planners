@@ -14,13 +14,11 @@ $vid = mysqli_real_escape_string($conn, $_POST['VeldID']);
 $coid = mysqli_real_escape_string($conn, $_POST['CursusonderdeelID']);
 $cid = mysqli_real_escape_string($conn, $_POST['CursusID']);
 $bid = mysqli_real_escape_string($conn, $_POST['BedrijfID']);
+$mop = mysqli_real_escape_string($conn, $_POST['massaopmerking']);
 
+$delete = 'DELETE FROM opmerking WHERE OpmerkingID = '. $opid;
 
-if ($bid != '') {
-    $delete = 'DELETE FROM opmerking where Cursusonderdeelid = ' . $coid . ' and Cursusid= ' . $cid . ' and VeldID = ' . $vid . ' and OpmerkingID = ' . $opid . ' and BedrijfID = ' . $bid;
-} else {
-    $delete = 'DELETE FROM opmerking where Cursusonderdeelid = ' . $coid . ' and Cursusid= ' . $cid . ' and VeldID = ' . $vid . ' and OpmerkingID = ' . $opid;
-}
+echo $delete;
 
-
+//die();
 $conn->query($delete);

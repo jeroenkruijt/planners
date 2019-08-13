@@ -31,6 +31,10 @@ if (isset($_POST['submit'])) {
     $certificaten = mysqli_real_escape_string($conn, $_POST['Certificaten']);
 
 
+
+    echo $Lunch . $overnachting;
+
+
     if ($bid != '') {
         $select = " select * from extradata where CursusID = '$cid' and CursusonderdeelID = '$coid' and  BedrijfID = '$bid'";
     } else {
@@ -71,11 +75,11 @@ if (isset($_POST['submit'])) {
         }
 
         if ($conn->query($insert) === TRUE) {
-        header("location: ../../?status=succes");
+//        header("location: ../../?status=succes");
 //            echo $insert;
             exit();
         } else {
-        header("location: ../../");
+//        header("location: ../../");
 //            echo $insert;
 
             exit();
@@ -103,13 +107,13 @@ Uitnodigingen='$Uitnodigingen', exameninstantie='$Exameninstantie', Lesmateriaal
 
         if ($conn->query($update) === TRUE) {
 
-        header("location: ../../?status=succes");
+//        header("location: ../../?status=succes");
 //            echo $update;
             exit();
 
         } else {
 
-            header("location: ../../");
+//            header("location: ../../");
 
             exit();
 
@@ -118,7 +122,7 @@ Uitnodigingen='$Uitnodigingen', exameninstantie='$Exameninstantie', Lesmateriaal
 
 
 } else {
-    header("location: ../../");
+//    header("location: ../../");
     exit();
 }
 
